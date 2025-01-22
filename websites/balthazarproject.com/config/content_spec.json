@@ -1,0 +1,374 @@
+{
+    "company_info": {
+        "name": "Balthazar Project",
+        "languages": ["sv", "en"],
+        "default_language": "sv",
+        "translations": {
+            "sv": {
+                "tagline": "Din Partner för Digital Utveckling",
+                "description": "Vi skapar moderna webbplatser och digitala lösningar som driver din verksamhet framåt. Specialiserade på webbdesign, SEO och skräddarsydd utveckling.",
+                "values": [
+                    "Kreativitet",
+                    "Kvalitet",
+                    "Resultat",
+                    "Innovation"
+                ]
+            },
+            "en": {
+                "tagline": "Your Digital Development Partner",
+                "description": "We create modern websites and digital solutions that drive your business forward. Specialized in web design, SEO, and custom development.",
+                "values": [
+                    "Creativity",
+                    "Quality",
+                    "Results",
+                    "Innovation"
+                ]
+            }
+        },
+        "contact": {
+            "email": "contact@balthazarproject.com",
+            "location": "Stockholm, Sweden",
+            "social_media": {
+                "github": "https://github.com/wikatar",
+                "linkedin": "https://linkedin.com/company/balthazarproject"
+            }
+        }
+    },
+    "services": {
+        "categories": [
+            {
+                "id": "web-agency",
+                "translations": {
+                    "sv": {
+                        "title": "Webbyrå",
+                        "description": "Moderna och effektiva webbplatser som driver resultat"
+                    },
+                    "en": {
+                        "title": "Web Agency",
+                        "description": "Modern and effective websites that drive results"
+                    }
+                },
+                "services": [
+                    {
+                        "id": "web-design",
+                        "icon": "palette",
+                        "translations": {
+                            "sv": {
+                                "title": "Webbdesign",
+                                "description": "Skräddarsydd design som speglar ditt varumärke",
+                                "features": [
+                                    "Responsiv Design",
+                                    "Användarcentrerad UX",
+                                    "Modern Design",
+                                    "Konverteringsoptimering"
+                                ]
+                            },
+                            "en": {
+                                "title": "Web Design",
+                                "description": "Custom design that reflects your brand",
+                                "features": [
+                                    "Responsive Design",
+                                    "User-Centered UX",
+                                    "Modern Design",
+                                    "Conversion Optimization"
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "id": "seo",
+                        "icon": "search",
+                        "translations": {
+                            "sv": {
+                                "title": "SEO-optimering",
+                                "description": "Öka din synlighet och nå fler kunder online",
+                                "features": [
+                                    "Teknisk SEO",
+                                    "Innehållsoptimering",
+                                    "Lokal SEO",
+                                    "Resultatanalys"
+                                ]
+                            },
+                            "en": {
+                                "title": "SEO Optimization",
+                                "description": "Increase your visibility and reach more customers online",
+                                "features": [
+                                    "Technical SEO",
+                                    "Content Optimization",
+                                    "Local SEO",
+                                    "Performance Analysis"
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "id": "custom-development",
+                "translations": {
+                    "sv": {
+                        "title": "Skräddarsydd Utveckling",
+                        "description": "Specialanpassade lösningar för dina unika behov"
+                    },
+                    "en": {
+                        "title": "Custom Development",
+                        "description": "Tailored solutions for your unique needs"
+                    }
+                },
+                "services": [
+                    {
+                        "id": "custom-web",
+                        "icon": "code",
+                        "translations": {
+                            "sv": {
+                                "title": "Webbutveckling",
+                                "description": "Skräddarsydda webbapplikationer och system",
+                                "features": [
+                                    "Företagssystem",
+                                    "E-handelslösningar",
+                                    "API-integration",
+                                    "Databassystem"
+                                ]
+                            },
+                            "en": {
+                                "title": "Web Development",
+                                "description": "Custom web applications and systems",
+                                "features": [
+                                    "Business Systems",
+                                    "E-commerce Solutions",
+                                    "API Integration",
+                                    "Database Systems"
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "id": "inhouse",
+                        "icon": "building",
+                        "translations": {
+                            "sv": {
+                                "title": "Inhouse-utveckling",
+                                "description": "Dedikerad utveckling för företag",
+                                "features": [
+                                    "Systemintegration",
+                                    "Processautomatisering",
+                                    "Teknisk Konsultation",
+                                    "Långsiktigt Samarbete"
+                                ]
+                            },
+                            "en": {
+                                "title": "In-house Development",
+                                "description": "Dedicated development for companies",
+                                "features": [
+                                    "System Integration",
+                                    "Process Automation",
+                                    "Technical Consulting",
+                                    "Long-term Partnership"
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "pages": {
+        "home": {
+            "sections": {
+                "hero": {
+                    "translations": {
+                        "sv": {
+                            "title": "Din Partner för Digital Utveckling",
+                            "subtitle": "Vi skapar moderna webbplatser och digitala lösningar som driver din verksamhet framåt",
+                            "cta": {
+                                "primary": {
+                                    "text": "Kom igång",
+                                    "action": "#contact"
+                                },
+                                "secondary": {
+                                    "text": "Våra tjänster",
+                                    "action": "#services"
+                                }
+                            }
+                        },
+                        "en": {
+                            "title": "Your Digital Development Partner",
+                            "subtitle": "We create modern websites and digital solutions that drive your business forward",
+                            "cta": {
+                                "primary": {
+                                    "text": "Get Started",
+                                    "action": "#contact"
+                                },
+                                "secondary": {
+                                    "text": "Our Services",
+                                    "action": "#services"
+                                }
+                            }
+                        }
+                    }
+                },
+                "services": {
+                    "title": "Our Services",
+                    "items": [
+                        {
+                            "title": "Web Development",
+                            "icon": "code",
+                            "description": "Custom web applications built with modern technologies and best practices",
+                            "features": [
+                                "Responsive Design",
+                                "SEO Optimization",
+                                "Performance Focus",
+                                "Security First"
+                            ]
+                        },
+                        {
+                            "title": "Automation Solutions",
+                            "icon": "robot",
+                            "description": "Streamline your business processes with intelligent automation",
+                            "features": [
+                                "Process Automation",
+                                "Workflow Optimization",
+                                "Integration Services",
+                                "Custom Scripts"
+                            ]
+                        },
+                        {
+                            "title": "Enterprise Solutions",
+                            "icon": "building",
+                            "description": "Scalable solutions for growing businesses",
+                            "features": [
+                                "Custom Software",
+                                "System Integration",
+                                "Cloud Solutions",
+                                "Technical Consulting"
+                            ]
+                        }
+                    ]
+                },
+                "about": {
+                    "title": "About Us",
+                    "content": "We are a team of passionate developers and engineers dedicated to creating exceptional software solutions. Our focus is on delivering high-quality, scalable, and maintainable applications that solve real business problems.",
+                    "key_points": [
+                        {
+                            "title": "Experience",
+                            "description": "Years of industry experience in software development and automation"
+                        },
+                        {
+                            "title": "Innovation",
+                            "description": "Using cutting-edge technologies and methodologies"
+                        },
+                        {
+                            "title": "Quality",
+                            "description": "Commitment to excellence in every project"
+                        }
+                    ]
+                },
+                "contact": {
+                    "translations": {
+                        "sv": {
+                            "title": "Kontakta Oss",
+                            "description": "Redo att starta ditt projekt? Kontakta oss idag.",
+                            "form": {
+                                "fields": [
+                                    {
+                                        "name": "name",
+                                        "type": "text",
+                                        "label": "Namn",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "email",
+                                        "type": "email",
+                                        "label": "E-postadress",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "service",
+                                        "type": "select",
+                                        "label": "Tjänst",
+                                        "options": [
+                                            "Webbdesign",
+                                            "SEO",
+                                            "Webbutveckling",
+                                            "Inhouse-utveckling",
+                                            "Övrigt"
+                                        ]
+                                    },
+                                    {
+                                        "name": "message",
+                                        "type": "textarea",
+                                        "label": "Meddelande",
+                                        "required": true
+                                    }
+                                ]
+                            }
+                        },
+                        "en": {
+                            "title": "Contact Us",
+                            "description": "Ready to start your project? Contact us today.",
+                            "form": {
+                                "fields": [
+                                    {
+                                        "name": "name",
+                                        "type": "text",
+                                        "label": "Name",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "email",
+                                        "type": "email",
+                                        "label": "Email Address",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "service",
+                                        "type": "select",
+                                        "label": "Service",
+                                        "options": [
+                                            "Web Design",
+                                            "SEO",
+                                            "Web Development",
+                                            "In-house Development",
+                                            "Other"
+                                        ]
+                                    },
+                                    {
+                                        "name": "message",
+                                        "type": "textarea",
+                                        "label": "Message",
+                                        "required": true
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "design_preferences": {
+        "color_scheme": {
+            "primary": "#4F46E5",
+            "secondary": "#06B6D4",
+            "accent": "#F59E0B",
+            "background": {
+                "light": "#FFFFFF",
+                "dark": "#1F2937"
+            }
+        },
+        "typography": {
+            "headings": "Inter",
+            "body": "Inter",
+            "scale": {
+                "h1": "3.5rem",
+                "h2": "2.5rem",
+                "h3": "2rem",
+                "body": "1rem"
+            }
+        },
+        "spacing": {
+            "section_padding": "5rem",
+            "component_gap": "2rem"
+        }
+    }
+} 

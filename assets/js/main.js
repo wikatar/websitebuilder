@@ -100,19 +100,20 @@ const analytics = {
     }
 };
 
-// Language Switcher
-const switchLanguage = (lang) => {
-    document.documentElement.lang = lang;
-    // Additional language switching logic to be implemented by each site
-};
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', () => {
+    // Initialize theme
+    initTheme();
 
-// Export utilities
-window.siteUtils = {
-    initTheme,
-    toggleTheme,
-    scrollToElement,
-    toggleMobileMenu,
-    validateForm,
-    analytics,
-    switchLanguage
-}; 
+    // Add smooth scrolling to all anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = anchor.getAttribute('href').slice(1);
+            scrollToElement(targetId, 60); // 60px offset for header
+        });
+    });
+
+    // Track page view
+    analytics.pageView(document.title);
+}); 

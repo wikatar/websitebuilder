@@ -1,0 +1,36 @@
+{
+    "meta": {
+        "title": "Balthazar Project - Professional Web Development Services",
+        "description": "Expert web development and digital solutions by Balthazar Project. Custom websites, SEO optimization, and digital strategy consulting.",
+        "keywords": "web development, digital solutions, SEO, website design, digital strategy",
+        "robots": "index, follow"
+    },
+    "schema_org": {
+        "type": "ProfessionalService",
+        "business_info": {
+            "name": "Balthazar Project",
+            "description": "Professional web development and digital solutions provider",
+            "url": "https://balthazarproject.com",
+            "telephone": "",
+            "address": {
+                "streetAddress": "",
+                "addressLocality": "Stockholm",
+                "addressRegion": "Stockholm",
+                "postalCode": "",
+                "addressCountry": "SE"
+            }
+        }
+    },
+    "social_media": {
+        "og_title": "Balthazar Project - Web Development Excellence",
+        "og_description": "Transform your digital presence with expert web development services from Balthazar Project",
+        "og_type": "website",
+        "twitter_card": "summary_large_image"
+    },
+    "monitoring": {
+        "traffic_drop_threshold": 15,
+        "ctr_min": 2.5,
+        "ctr_max": 8.0,
+        "content_freshness_days": 90
+    }
+} 

@@ -1,0 +1,38 @@
+{
+    "site_name": "Balthazar Project",
+    "domain": "balthazarproject.com",
+    "template": {
+        "name": "business",
+        "version": "1.0.0"
+    },
+    "languages": ["en", "sv"],
+    "default_language": "en",
+    "features": {
+        "multi_language": true,
+        "analytics": true,
+        "contact_form": true,
+        "review_system": true
+    },
+    "theme": {
+        "colors": {
+            "primary": "#4F46E5",
+            "secondary": "#06B6D4",
+            "accent": "#F59E0B"
+        },
+        "fonts": {
+            "heading": "Inter",
+            "body": "Inter"
+        }
+    },
+    "components": {
+        "enabled": [
+            "header",
+            "footer",
+            "hero",
+            "services",
+            "about",
+            "contact",
+            "testimonials"
+        ]
+    }
+} 

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balthazar Project - Professional Software Development</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Professional software development and consulting services. Specializing in web development, automation, and enterprise solutions.">
+    <meta name="keywords" content="software development, consulting, web development, automation, enterprise solutions">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Balthazar Project - Professional Software Development">
+    <meta property="og:description" content="Professional software development and consulting services. Specializing in web development, automation, and enterprise solutions.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://balthazarproject.com">
+    
+    <!-- Tailwind CSS + DaisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.19/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="bg-base-100 shadow-lg fixed w-full top-0 z-50">
+        <div class="navbar container mx-auto">
+            <div class="navbar-start">
+                <div class="dropdown">
+                    <label tabindex="0" class="btn btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+                        </svg>
+                    </label>
+                    <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <a class="btn btn-ghost normal-case text-xl">Balthazar Project</a>
+            </div>
+            <div class="navbar-end hidden lg:flex">
+                <ul class="menu menu-horizontal px-1">
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact" class="btn btn-primary">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero min-h-screen bg-base-200 pt-16">
+        <div class="hero-content text-center">
+            <div class="max-w-md">
+                <h1 class="text-5xl font-bold animate-fade-in">Professional Software Solutions</h1>
+                <p class="py-6 animate-slide-up">Transforming ideas into powerful software solutions. We specialize in web development, automation, and enterprise applications.</p>
+                <div class="flex gap-4 justify-center">
+                    <a href="#contact" class="btn btn-primary">Get Started</a>
+                    <a href="#services" class="btn btn-outline">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-base-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12">Our Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Web Development -->
+                <div class="card bg-base-200 shadow-xl">
+                    <div class="card-body">
+                        <div class="text-4xl text-primary mb-4">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3 class="card-title">Web Development</h3>
+                        <p>Custom web applications built with modern technologies and best practices</p>
+                        <ul class="mt-4 space-y-2">
+                            <li><i class="fas fa-check text-success mr-2"></i>Responsive Design</li>
+                            <li><i class="fas fa-check text-success mr-2"></i>SEO Optimization</li>
+                            <li><i class="fas fa-check text-success mr-2"></i>Performance Focus</li>
+                            <li><i class="fas fa-check text-success mr-2"></i>Security First</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Automation -->
+                <div class="card bg-base-200 shadow-xl">
+                    <div class="card-body">
+                        <div class="text-4xl text-primary mb-4">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3 class="card-title">Automation Solutions</h3>
+                        <p>Streamline your business processes with intelligent automation</p>
+                        <ul class="mt-4 space-y-2">
+                            <li><i class="fas fa-check text-success mr-2"></i>Process Automation</li>
+                            <li><i class="fas fa-check text-success mr-2"></i>Workflow Optimization</li>
+                            <li><i class="fas fa-check text-success mr-2"></i>Integration Services</li>
+                            <li><i class="fas fa-check text-success mr-2"></i>Custom Scripts</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Enterprise Solutions -->
+                <div class="card bg-base-200 shadow-xl">
+                    <div class="card-body">
+                        <div class="text-4xl text-primary mb-4">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h3 class="card-title">Enterprise Solutions</h3>
+                        <p>Scalable solutions for growing businesses</p>
+                        <ul class="mt-4 space-y-2">
+                            <li><i class="fas fa-check text-success mr-2"></i>Custom Software</li>
+                            <li><i class="fas fa-check text-success mr-2"></i>System Integration</li>
+                            <li><i class="fas fa-check text-success mr-2"></i>Cloud Solutions</li>
+                            <li><i class="fas fa-check text-success mr-2"></i>Technical Consulting</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-base-200">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12">About Us</h2>
+            <div class="max-w-3xl mx-auto text-center mb-12">
+                <p class="text-lg">We are a team of passionate developers and engineers dedicated to creating exceptional software solutions. Our focus is on delivering high-quality, scalable, and maintainable applications that solve real business problems.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="card bg-base-100">
+                    <div class="card-body items-center text-center">
+                        <div class="text-4xl text-primary mb-4">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3 class="card-title">Experience</h3>
+                        <p>Years of industry experience in software development and automation</p>
+                    </div>
+                </div>
+                <div class="card bg-base-100">
+                    <div class="card-body items-center text-center">
+                        <div class="text-4xl text-primary mb-4">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3 class="card-title">Innovation</h3>
+                        <p>Using cutting-edge technologies and methodologies</p>
+                    </div>
+                </div>
+                <div class="card bg-base-100">
+                    <div class="card-body items-center text-center">
+                        <div class="text-4xl text-primary mb-4">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h3 class="card-title">Quality</h3>
+                        <p>Commitment to excellence in every project</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-base-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12">Contact Us</h2>
+            <div class="max-w-md mx-auto">
+                <p class="text-center mb-8">Ready to start your project? Get in touch with us.</p>
+                <form id="contactForm" class="space-y-4">
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text">Full Name</span>
+                        </label>
+                        <input type="text" name="name" class="input input-bordered" required />
+                    </div>
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text">Email Address</span>
+                        </label>
+                        <input type="email" name="email" class="input input-bordered" required />
+                    </div>
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text">Service Interest</span>
+                        </label>
+                        <select name="service" class="select select-bordered">
+                            <option value="">Select a service</option>
+                            <option value="web">Web Development</option>
+                            <option value="automation">Automation</option>
+                            <option value="enterprise">Enterprise Solutions</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text">Message</span>
+                        </label>
+                        <textarea name="message" class="textarea textarea-bordered h-24" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-full">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer p-10 bg-neutral text-neutral-content">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <span class="footer-title">Services</span>
+                <a class="link link-hover">Web Development</a>
+                <a class="link link-hover">Automation</a>
+                <a class="link link-hover">Enterprise Solutions</a>
+                <a class="link link-hover">Consulting</a>
+            </div>
+            <div>
+                <span class="footer-title">Company</span>
+                <a class="link link-hover">About us</a>
+                <a class="link link-hover">Contact</a>
+                <a class="link link-hover">Projects</a>
+            </div>
+            <div>
+                <span class="footer-title">Legal</span>
+                <a class="link link-hover">Terms of use</a>
+                <a class="link link-hover">Privacy policy</a>
+                <a class="link link-hover">Cookie policy</a>
+            </div>
+            <div>
+                <span class="footer-title">Contact</span>
+                <a href="mailto:contact@balthazarproject.com" class="link link-hover">contact@balthazarproject.com</a>
+                <p>Stockholm, Sweden</p>
+                <div class="flex gap-4 mt-4">
+                    <a href="https://github.com/wikatar" target="_blank" class="text-2xl"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/company/balthazarproject" target="_blank" class="text-2xl"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="/assets/js/main.js"></script>
+    
+    <script>
+        // Initialize form validation
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const rules = {
+                name: [{ required: true, minLength: 2 }],
+                email: [{ required: true, email: true }],
+                message: [{ required: true, minLength: 10 }]
+            };
+            
+            if (validateForm('contactForm', rules)) {
+                // Track form submission
+                analytics.trackEvent('Contact', 'form_submit');
+                // TODO: Add actual form submission logic
+                alert('Thank you for your message! We will get back to you soon.');
+                this.reset();
+            }
+        });
+    </script>
+</body>
+</html> 

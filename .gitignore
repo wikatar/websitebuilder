@@ -1,0 +1,40 @@
+# Logs
+logs/
+*.log
+
+# Backups
+backup/
+
+# SSL
+ssl/
+*.pem
+*.key
+*.crt
+
+# Environment
+.env
+.env.*
+
+# Dependencies
+node_modules/
+venv/
+
+# Cache
+.cache/
+__pycache__/
+*.pyc
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+*~ 

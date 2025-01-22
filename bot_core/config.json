@@ -1,0 +1,21 @@
+{
+    "templates": {
+        "basic_site": {
+            "description": "A simple, responsive website template",
+            "variables": {
+                "primary_color": "#007bff",
+                "secondary_color": "#6c757d",
+                "text_color": "#333333"
+            }
+        },
+        "blog_template": {
+            "description": "Blog-oriented website template",
+            "variables": {
+                "primary_color": "#28a745",
+                "secondary_color": "#17a2b8",
+                "text_color": "#212529"
+            }
+        }
+    },
+    "default_template": "basic_site"
+} 
