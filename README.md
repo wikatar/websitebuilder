@@ -503,3 +503,101 @@ setup = onboarding.initialize_client(
 )
 ```
 
+## Template System
+
+### Structure
+```
+templates/
+├── business/                  # Business template
+│   ├── public/               # Public assets
+│   │   ├── css/             # Stylesheets
+│   │   │   ├── tailwind.css
+│   │   │   └── custom.css
+│   │   ├── js/              # JavaScript
+│   │   │   ├── navigation.js
+│   │   │   └── animations.js
+│   │   └── img/             # Static images
+│   ├── components/          # Reusable components
+│   │   ├── header/
+│   │   ├── footer/
+│   │   └── sections/
+│   └── config.json          # Template configuration
+│
+└── shared/                   # Shared resources
+    ├── seo/                 # SEO components
+    ├── analytics/           # Analytics setup
+    └── security/           # Security features
+```
+
+### Template Configuration
+```json
+{
+    "name": "Business Template",
+    "version": "1.0.0",
+    "components": {
+        "required": ["header", "footer", "hero"],
+        "optional": ["testimonials", "services", "contact", "about"]
+    },
+    "styling": {
+        "framework": "tailwind",
+        "plugins": ["daisyui"]
+    }
+}
+```
+
+## Monitoring System
+
+### Uptime Monitoring
+The system performs comprehensive health checks:
+
+```python
+from bot_core.monitoring import UptimeMonitor
+
+monitor = UptimeMonitor()
+status = monitor.check_site("example.com")
+```
+
+Features:
+- HTTP/HTTPS endpoint monitoring
+- SSL certificate validation
+- DNS record verification
+- Response time tracking
+- Custom alert thresholds
+
+### Performance Metrics
+```python
+# Get detailed uptime statistics
+stats = monitor.get_uptime_stats("example.com", days=30)
+print(f"Uptime: {stats['uptime_percentage']}%")
+```
+
+## Backup System
+
+### Daily Backups
+Automated daily backup system with retention policies:
+
+```bash
+# Backup a specific site
+./scripts/backup/daily_backup.sh --site=example.com
+```
+
+Features:
+- Website files backup
+- Nginx configuration backup
+- SSL certificate backup
+- 7-day retention policy
+- Backup manifest generation
+- Latest backup symlink
+
+### Backup Structure
+```
+/var/backups/websites/
+├── example.com/
+│   ├── 20240122/           # Daily backup
+│   │   ├── files.tar.gz    # Website files
+│   │   ├── nginx.conf      # Nginx config
+│   │   ├── ssl/            # SSL certificates
+│   │   └── manifest.json   # Backup metadata
+│   └── latest -> 20240122  # Symlink to latest
+```
+
