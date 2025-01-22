@@ -662,3 +662,36 @@ Features:
 - Customizable fields
 - SEO-optimized structure
 
+### GitHub Repository Structure
+⚠️ **IMPORTANT: Repository Organization** ⚠️
+
+This project follows a multi-repository structure:
+
+1. **Core System Repository** (`websitebuilder`)
+   ```
+   websitebuilder/
+   ├── bot_core/         # Core functionality
+   ├── shared/           # Shared resources
+   └── scripts/          # Build scripts
+   ```
+   - Contains only the core system and shared resources
+   - NO website-specific content
+   - Managed by core team only
+
+2. **Individual Website Repositories**
+   ```
+   website-name/
+   ├── public_html/      # Website content
+   ├── config/          # Site configuration
+   └── assets/         # Site-specific assets
+   ```
+   - Each website gets its own repository
+   - Contains only website-specific content
+   - Can be managed by website owners
+
+3. **Repository Separation**
+   - Website files are NEVER committed to the core repository
+   - The `websites/` directory in core is for local development only
+   - Each website must be initialized as its own Git repository
+   - Website repositories should follow the naming convention: `{domain-name}-website`
+
