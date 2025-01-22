@@ -12,10 +12,16 @@ WebsiteBuilderBot/
 │   │   ├── basic_site/        # Basic responsive template
 │   │   └── blog_template/     # Blog-specific template
 │   └── config.json            # Global bot configuration
-├── websites/                   # Generated websites
+├── websites/                   # Generated websites (gitignored)
+│   └── [website_name]/        # Individual website projects
 ├── tests/                     # Test suite
 ├── scripts/                   # Automation scripts
-└── docs/                      # Documentation
+│   ├── setup.sh              # Initial setup script
+│   ├── deploy.sh             # Git deployment script
+│   └── clean.sh              # System sanitizer
+├── .gitignore                # Strict ignore rules
+├── docs/                     # Documentation
+└── requirements.txt          # Pinned dependencies
 ```
 
 ## Features
@@ -38,6 +44,7 @@ WebsiteBuilderBot/
 1. Clone the repository
 2. Run `./scripts/setup.sh`
 3. Install dependencies: `pip install -r requirements.txt`
+4. Create virtual environment: `python -m venv .venv`
 
 ### Basic Usage
 ```python
@@ -46,7 +53,11 @@ from bot_core.builder import WebsiteBuilder
 builder = WebsiteBuilder()
 config = {
     "title": "My Website",
-    "primary_color": "#ff5733"
+    "primary_color": "#ff5733",
+    "meta": {
+        "author": "Your Name",
+        "license": "MIT"
+    }
 }
 builder.create_website("my-website", config)
 ```
@@ -59,25 +70,72 @@ This project requires the following Python packages:
 
 ## Repository Strategy
 
-The project uses a unique repository management approach:
+### Core Repository Rules
+1. **Main Branch Protection**:
+   - Contains only bot logic, templates, and configuration
+   - Protected from direct pushes
+   - Requires pull request reviews
+   
+2. **Never Commit**:
+   - Generated websites
+   - Temporary files
+   - IDE configurations
+   - Environment variables or secrets
 
-1. **Main Bot Repository**: 
-   - Contains the core bot code and templates
-   - Branch: `main`
-   - Excludes generated websites
+### Website Repositories
+Each generated website gets its own repository:
+- Created automatically during deployment
+- Contains only website-specific files
+- Enables independent version control
+- Separate from main bot repository
 
-2. **Website Repositories**: 
-   - Each generated website gets its own repository
-   - Created automatically during deployment
-   - Contains only website-specific files
-   - Enables independent version control and deployment
+## Development Workflow
+
+### Template Changes
+1. Create new template versions (never modify existing)
+2. Update template registry in config
+3. Run test suite
+4. Create pull request
+
+### Core Modifications
+1. Branch from protected main
+2. Make changes
+3. Run sanitizer: `./scripts/clean.sh`
+4. Create pull request (requires 2 approvals)
 
 ## Deployment Workflow
 
-1. Generate website using the bot
-2. Bot creates a new GitHub repository for the website
-3. Initial files are pushed to the new repository
-4. GitHub Pages (or other hosting) is configured automatically
+1. Generate website using the bot:
+```bash
+python -m bot_core.builder create --name "mysite" --template basic
+```
+
+2. Deploy to GitHub:
+```bash
+./scripts/deploy.sh mysite "Initial commit"
+```
+
+3. Configure GitHub Pages or other hosting
+
+## Quality Gates
+
+### Pre-commit Checks
+```yaml
+# .pre-commit-config.yaml
+repos:
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v4.4.0
+  hooks:
+    - id: check-yaml
+    - id: end-of-file-fixer
+    - id: trailing-whitespace
+```
+
+### Post-generation Validation
+```bash
+# Run template tests
+pytest tests/ --site-name "mysite"
+```
 
 ## Resources
 - [Jinja2 Documentation](https://jinja.palletsprojects.com/)
@@ -90,5 +148,5 @@ The project uses a unique repository management approach:
 - Deployment guides
 
 ## License
-MIT License
+MIT License - See LICENSE for details
 
