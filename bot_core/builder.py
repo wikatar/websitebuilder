@@ -11,24 +11,34 @@ from datetime import datetime
 from jinja2 import Environment, FileSystemLoader
 
 class WebsiteBuilder:
-    def __init__(self, base_dir: str = "../website_projects"):
+    def __init__(self):
         """
-        Initialize WebsiteBuilder with a base directory outside the git repository.
+        Initialize WebsiteBuilder with proper directory structure.
+        """
+        # Core directories
+        self.root_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        self.websites_dir = os.path.join(self.root_dir, "websites")
+        self.shared_dir = os.path.join(self.root_dir, "shared")
         
-        Args:
-            base_dir: Base directory for all website projects, defaults to '../website_projects'
-        """
-        self.base_dir = os.path.abspath(base_dir)
-        self.template_dir = "bot_core/templates"
+        # Shared resource directories
+        self.templates_dir = os.path.join(self.shared_dir, "templates")
+        self.components_dir = os.path.join(self.shared_dir, "components")
+        self.assets_dir = os.path.join(self.shared_dir, "assets")
+        self.scripts_dir = os.path.join(self.shared_dir, "scripts")
+        
+        # Create all necessary directories
+        for dir_path in [
+            self.websites_dir,
+            self.shared_dir,
+            self.templates_dir,
+            self.components_dir,
+            self.assets_dir,
+            self.scripts_dir
+        ]:
+            os.makedirs(dir_path, exist_ok=True)
+        
         self.current_site = None
-        self.env = Environment(loader=FileSystemLoader(str(self.template_dir)))
-        
-        # Create base directory if it doesn't exist
-        os.makedirs(self.base_dir, exist_ok=True)
-        
-        # Load global config
-        with open("bot_core/config.json") as f:
-            self.config = json.load(f)
+        self.env = Environment(loader=FileSystemLoader(str(self.templates_dir)))
 
     def create_website(
         self,
@@ -44,23 +54,33 @@ class WebsiteBuilder:
             config: Website configuration
             template: Template name to use
         """
-        # Setup site directory structure
-        site_path = os.path.join(self.base_dir, domain)
-        os.makedirs(site_path, exist_ok=True)
+        # Setup website directory structure
+        site_path = os.path.join(self.websites_dir, domain)
         
-        # Create standard directories
-        for dir_name in ['public_html', 'logs', 'backup', 'ssl', 'config']:
+        # Create standard website directories
+        for dir_name in [
+            'public_html',
+            'public_html/assets',
+            'public_html/assets/images',
+            'public_html/assets/css',
+            'public_html/assets/js',
+            'public_html/components',
+            'logs',
+            'backup',
+            'ssl',
+            'config'
+        ]:
             os.makedirs(os.path.join(site_path, dir_name), exist_ok=True)
         
         # Set working directory to public_html
         public_path = os.path.join(site_path, 'public_html')
         
         # Load template configuration
-        template_config_path = os.path.join(self.template_dir, template, "config.json")
+        template_config_path = os.path.join(self.templates_dir, template, "config.json")
         with open(template_config_path, 'r') as f:
             template_config = json.load(f)
             
-        # Copy required components
+        # Copy required components from shared components
         for component in template_config["components"]["required"]:
             self._copy_component(template, component, public_path)
             
@@ -68,6 +88,9 @@ class WebsiteBuilder:
         for component in config.get("components", []):
             if component in template_config["components"]["optional"]:
                 self._copy_component(template, component, public_path)
+        
+        # Copy shared assets
+        self._copy_shared_assets(public_path)
         
         # Generate site configuration
         site_config = {
@@ -86,12 +109,20 @@ class WebsiteBuilder:
         return site_path
     
     def _copy_component(self, template: str, component: str, site_path: str):
-        """Copy a component from template to site directory."""
-        src = os.path.join(self.template_dir, template, "components", component)
+        """Copy a component from shared components to site directory."""
+        src = os.path.join(self.components_dir, template, component)
         dst = os.path.join(site_path, "components", component)
         
         if os.path.exists(src):
             shutil.copytree(src, dst, dirs_exist_ok=True)
+    
+    def _copy_shared_assets(self, public_path: str):
+        """Copy shared assets to the website's public directory."""
+        for asset_type in ['css', 'js', 'images']:
+            src = os.path.join(self.assets_dir, asset_type)
+            dst = os.path.join(public_path, 'assets', asset_type)
+            if os.path.exists(src):
+                shutil.copytree(src, dst, dirs_exist_ok=True)
     
     def customize_theme(self, colors: Dict[str, str], fonts: Dict[str, str]):
         """Customize theme colors and fonts."""

@@ -4,56 +4,53 @@ A comprehensive website building automation system with advanced SEO capabilitie
 
 ## Project Structure
 
-```
-WebsiteBuilderBot/
-├── bot_core/                    # Core bot functionality
-│   ├── seo/                    # SEO automation system
-│   │   ├── __init__.py        # Package initialization
-│   │   ├── automation.py      # Main SEO interface
-│   │   ├── sentinel.py        # SEO monitoring
-│   │   ├── cost_governor.py   # Budget management
-│   │   ├── review_manager.py  # Review handling
-│   │   ├── gmb_manager.py     # Google My Business automation
-│   │   └── content_refresh.py # AI content freshness monitoring
-│   ├── compliance/            # Legal compliance tools
-│   │   ├── gdpr.py           # GDPR automation
-│   │   ├── ccpa.py           # CCPA compliance
-│   │   └── ada.py            # Accessibility tools
-│   ├── monitoring/            # System monitoring
-│   │   ├── uptime.py         # Uptime tracking
-│   │   └── performance.py     # Performance metrics
-│   ├── security/             # Security features
-│   │   ├── waf.py           # Web Application Firewall
-│   │   └── rate_limiter.py  # API rate limiting
-│   ├── localization/         # Multi-language support
-│   │   ├── translator.py    # Content translation
-│   │   └── locale_manager.py # Locale handling
-│   ├── commercial/          # Business features
-│   │   ├── stripe.py       # Payment processing
-│   │   └── billing.py      # Usage billing
-│   ├── templates/           # Website templates
-│   │   ├── design_libraries/
-│   │   │   ├── tailwind-basic/
-│   │   │   ├── tailwind-daisyui/
-│   │   │   └── custom-css/
-│   ├── ai/                  # AI integration
-│   ├── deployment/         # Deployment automation
-│   ├── builder.py         # Website generation
-│   └── config.json        # Global configuration
-├── docs/                  # Documentation
-├── scripts/               # Automation scripts
-│   ├── setup.sh          # Initial setup
-│   ├── deploy.sh         # Deployment
-│   ├── update-deps.sh    # Dependencies
-│   ├── export-client.sh  # Client export
-│   └── vps_setup/        # VPS configuration
-│       ├── hetzner_init.sh   # Server initialization
-│       ├── deploy_nginx.sh   # Nginx setup
-│       ├── ssl_init.sh       # SSL configuration
-│       └── harden.sh         # Security hardening
-└── requirements.txt      # Dependencies
+⚠️ **IMPORTANT: Core Structure Guidelines** ⚠️
+
+This project follows a strict structural organization that requires project owner approval for any modifications. The core structure is as follows:
 
 ```
+WebsiteBuilder/
+├── bot_core/                # Core bot functionality (DO NOT MODIFY WITHOUT APPROVAL)
+├── shared/                  # Shared resources for all websites
+│   ├── templates/          # Base website templates
+│   ├── components/        # Reusable components
+│   ├── assets/           # Shared static assets
+│   │   ├── css/         # Global styles
+│   │   ├── js/          # Shared scripts
+│   │   └── images/      # Common images
+│   └── scripts/         # Shared utility scripts
+├── websites/              # Individual website implementations
+│   └── example.com/      # Each website in its own directory
+│       ├── public_html/  # Web root
+│       ├── logs/        # Site-specific logs
+│       ├── backup/      # Site backups
+│       ├── ssl/         # SSL certificates
+│       └── config/      # Site configuration
+└── scripts/              # Build and deployment scripts
+```
+
+### Structural Modification Policy
+1. **Core Structure Changes**
+   - ANY modifications to the core directory structure require explicit approval from the project owner
+   - This includes adding, removing, or renaming top-level directories
+   - Changes to the fundamental organization pattern must be documented and approved
+
+2. **Website Directory Structure**
+   - Each website must maintain the standard structure within its directory
+   - Modifications to the website-specific structure require approval
+   - Additional directories or files should follow established patterns
+
+3. **Shared Resources**
+   - The `shared/` directory structure is fundamental to the project
+   - New shared resources must be properly categorized within existing directories
+   - Creation of new shared directory categories requires approval
+
+4. **Contribution Guidelines**
+   - Fork the repository for any proposed structural changes
+   - Create a detailed proposal documenting the need for structural modifications
+   - Submit changes through pull requests with project owner review
+
+This structure is designed to maintain consistency, scalability, and maintainability across all websites built with this system.
 
 ## Core Components
 
