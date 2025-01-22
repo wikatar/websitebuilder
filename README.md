@@ -1,56 +1,164 @@
+# Balthazar Project Website
+
+Official website repository for balthazarproject.com
+
+## Directory Structure
+```
+balthazarproject.com/
+├── public_html/     # Web root directory
+├── config/         # Site-specific configuration
+├── assets/         # Site-specific assets
+│   ├── css/       # Stylesheets
+│   ├── js/        # JavaScript files
+│   └── images/    # Image assets
+├── logs/          # Site-specific logs
+├── backup/        # Site backups
+└── ssl/           # SSL certificates
+```
+
+## Development
+
+This website is built using the Website Builder Bot system, following standardized templates and best practices for SEO optimization.
+
+### Local Development
+1. Clone the repository
+2. Set up local development environment
+3. Follow the development workflow from the main Website Builder documentation
+
+### Deployment
+Deployment is handled through the Website Builder Bot's automated deployment system.
+
+## Maintenance
+- Regular backups are stored in the `backup/` directory
+- Logs are available in the `logs/` directory
+- SSL certificates are managed in the `ssl/` directory
+
+## Contact
+For any questions or issues, please contact the project maintainers.
+
 # Website Builder Bot
 
-A comprehensive website building automation system with advanced SEO capabilities, cost management, and review handling.
+⚠️ **CRITICAL STRUCTURAL GUIDELINES** ⚠️
 
-## Project Structure
+This project follows a strict separation of concerns between core functionality and individual websites. This separation is **MANDATORY** and must be followed without exception.
 
-⚠️ **IMPORTANT: Core Structure Guidelines** ⚠️
-
-This project follows a strict structural organization that requires project owner approval for any modifications. The core structure is as follows:
+## Repository Structure
 
 ```
-WebsiteBuilder/
-├── bot_core/                # Core bot functionality (DO NOT MODIFY WITHOUT APPROVAL)
-├── shared/                  # Shared resources for all websites
-│   ├── templates/          # Base website templates
-│   ├── components/        # Reusable components
-│   ├── assets/           # Shared static assets
-│   │   ├── css/         # Global styles
-│   │   ├── js/          # Shared scripts
-│   │   └── images/      # Common images
-│   └── scripts/         # Shared utility scripts
-├── websites/              # Individual website implementations
-│   └── example.com/      # Each website in its own directory
-│       ├── public_html/  # Web root
-│       ├── logs/        # Site-specific logs
-│       ├── backup/      # Site backups
-│       ├── ssl/         # SSL certificates
-│       └── config/      # Site configuration
-└── scripts/              # Build and deployment scripts
+WebsiteBuilder/              # Main repository
+├── bot_core/               # Core bot functionality
+│   ├── builder/           # Website generation logic
+│   ├── seo/              # SEO automation tools
+│   └── config/           # Core configuration
+│
+├── shared/               # Shared resources (REUSABLE COMPONENTS ONLY)
+│   ├── templates/       # Base website templates
+│   │   ├── business/   # Business website template
+│   │   └── blog/       # Blog website template
+│   ├── components/     # Reusable UI components
+│   └── assets/         # Shared static assets
+│
+├── docs/               # Core documentation
+├── scripts/           # Build and deployment scripts
+└── websites/          # Individual website implementations
+    └── example.com/   # Each website in its own directory
+        ├── .git/     # Separate Git repository
+        ├── config/   # Site-specific configuration
+        ├── public_html/  # Web root
+        ├── assets/   # Site-specific assets
+        ├── logs/    # Site-specific logs
+        └── backup/  # Site backups
+
 ```
 
-### Structural Modification Policy
-1. **Core Structure Changes**
-   - ANY modifications to the core directory structure require explicit approval from the project owner
-   - This includes adding, removing, or renaming top-level directories
-   - Changes to the fundamental organization pattern must be documented and approved
+## ⚠️ Critical Rules ⚠️
 
-2. **Website Directory Structure**
-   - Each website must maintain the standard structure within its directory
-   - Modifications to the website-specific structure require approval
-   - Additional directories or files should follow established patterns
+1. **Strict Separation**
+   - Each website MUST be in its own directory under `websites/`
+   - Each website MUST be its own Git repository
+   - Website-specific code MUST NEVER be in the main repository
+   - Reusable components MUST be in the `shared/` directory
 
-3. **Shared Resources**
-   - The `shared/` directory structure is fundamental to the project
-   - New shared resources must be properly categorized within existing directories
-   - Creation of new shared directory categories requires approval
+2. **Code Reusability**
+   - Any code that might be used by multiple websites MUST be in the main repository
+   - Code in website directories will ONLY be available to that specific website
+   - Templates in `shared/templates/` are the base for new websites
 
-4. **Contribution Guidelines**
-   - Fork the repository for any proposed structural changes
-   - Create a detailed proposal documenting the need for structural modifications
-   - Submit changes through pull requests with project owner review
+3. **Repository Management**
+   - Main repository: Contains only core functionality and shared resources
+   - Website repositories: Contains only website-specific code and content
+   - NO EXCEPTIONS to this separation
 
-This structure is designed to maintain consistency, scalability, and maintainability across all websites built with this system.
+4. **Development Workflow**
+   - New features for core functionality: Add to main repository
+   - Website-specific features: Add to website's repository
+   - Reusable components: Must be added to `shared/` directory
+
+5. **Asset Management**
+   - Shared assets: Must be in `shared/assets/`
+   - Website-specific assets: Must be in `websites/[domain]/assets/`
+   - No mixing of shared and specific assets
+
+## Why This Structure Matters
+
+1. **Scalability**
+   - Each website is independent
+   - Core updates affect all sites uniformly
+   - No risk of cross-site contamination
+
+2. **Maintenance**
+   - Clear separation of concerns
+   - Easy to identify issues
+   - Simple to update individual sites
+
+3. **Version Control**
+   - Clean Git history for each site
+   - Independent deployment cycles
+   - No conflicts between sites
+
+## Common Mistakes to Avoid
+
+❌ Adding website-specific code to main repository
+❌ Mixing shared and specific assets
+❌ Creating site-specific features in `shared/`
+❌ Copying code between website directories
+
+✅ Always use shared templates for new sites
+✅ Keep website-specific code in website directory
+✅ Put reusable components in `shared/`
+✅ Maintain separate Git repositories
+
+## Implementation Example
+
+1. Creating a new website:
+```bash
+# CORRECT
+cd websites/
+mkdir newsite.com
+cd newsite.com
+git init
+# Use template from shared/templates/
+
+# INCORRECT
+# Adding site-specific code to main repository
+# Copying code from another website directory
+```
+
+2. Adding reusable features:
+```bash
+# CORRECT
+cd shared/components/
+# Add component here for all sites
+
+# INCORRECT
+# Adding to specific website directory
+# Copying between website directories
+```
+
+Remember: If you're unsure where code should go, ask:
+"Will this be used by multiple websites?"
+- Yes → Add to main repository
+- No → Add to specific website repository
 
 ## Core Components
 
@@ -694,4 +802,67 @@ This project follows a multi-repository structure:
    - The `websites/` directory in core is for local development only
    - Each website must be initialized as its own Git repository
    - Website repositories should follow the naming convention: `{domain-name}-website`
+
+## Template Implementation Details
+
+### Business Template Structure (`shared/templates/business/`)
+```
+business/
+├── template_spec.json    # Template specification
+├── config.json          # Configuration defaults
+├── assets/
+│   ├── css/
+│   │   └── base.css    # Core styles and utilities
+│   └── js/
+│       └── utils.js    # Shared JavaScript utilities
+└── components/
+    └── header.html     # Reusable header component
+```
+
+### Template Specification
+The `template_spec.json` defines:
+- Framework: Tailwind 3.4.0 with DaisyUI
+- Required directories and components
+- Multi-language support configuration
+- SEO requirements and schema.org types
+- Customization options for colors, typography, and spacing
+
+### Base Styles (`base.css`)
+- Custom animations (fadeIn, slideUp)
+- Responsive layout components
+- Theme customization variables
+- Mobile-first responsive design
+- Google Fonts integration (Inter)
+
+### JavaScript Utilities (`utils.js`)
+- Theme management (light/dark mode)
+- Smooth scrolling implementation
+- Mobile menu handling
+- Form validation
+- Analytics tracking
+- Language switching support
+
+### Components
+Each component (e.g., `header.html`) includes:
+- DaisyUI integration
+- Responsive design
+- Multi-language support
+- Theme toggle functionality
+- Accessibility features
+
+### Implementation Rules
+1. **Template Usage**
+   - All new business websites MUST use this template as base
+   - Customization only through approved configuration options
+   - Site-specific changes must be in website's own repository
+
+2. **Asset Management**
+   - Shared assets: Use from `shared/templates/business/assets/`
+   - Custom assets: Add to website's `assets/` directory
+   - No modification of shared template files
+
+3. **Component Customization**
+   - Extend shared components through composition
+   - Override styles using site-specific CSS
+   - Maintain component structure for updates
 
