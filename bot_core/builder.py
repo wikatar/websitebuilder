@@ -11,11 +11,20 @@ from datetime import datetime
 from jinja2 import Environment, FileSystemLoader
 
 class WebsiteBuilder:
-    def __init__(self, output_dir: str = "websites"):
-        self.output_dir = output_dir
+    def __init__(self, base_dir: str = "../website_projects"):
+        """
+        Initialize WebsiteBuilder with a base directory outside the git repository.
+        
+        Args:
+            base_dir: Base directory for all website projects, defaults to '../website_projects'
+        """
+        self.base_dir = os.path.abspath(base_dir)
         self.template_dir = "bot_core/templates"
         self.current_site = None
         self.env = Environment(loader=FileSystemLoader(str(self.template_dir)))
+        
+        # Create base directory if it doesn't exist
+        os.makedirs(self.base_dir, exist_ok=True)
         
         # Load global config
         with open("bot_core/config.json") as f:
@@ -23,14 +32,28 @@ class WebsiteBuilder:
 
     def create_website(
         self,
-        site_name: str,
+        domain: str,
         config: Dict,
         template: str = "business"
     ) -> str:
-        """Create a new website from template."""
-        # Setup site directory
-        site_path = os.path.join(self.output_dir, site_name)
+        """
+        Create a new website from template.
+        
+        Args:
+            domain: Domain name (e.g., 'balthazarproject.com')
+            config: Website configuration
+            template: Template name to use
+        """
+        # Setup site directory structure
+        site_path = os.path.join(self.base_dir, domain)
         os.makedirs(site_path, exist_ok=True)
+        
+        # Create standard directories
+        for dir_name in ['public_html', 'logs', 'backup', 'ssl', 'config']:
+            os.makedirs(os.path.join(site_path, dir_name), exist_ok=True)
+        
+        # Set working directory to public_html
+        public_path = os.path.join(site_path, 'public_html')
         
         # Load template configuration
         template_config_path = os.path.join(self.template_dir, template, "config.json")
@@ -39,23 +62,23 @@ class WebsiteBuilder:
             
         # Copy required components
         for component in template_config["components"]["required"]:
-            self._copy_component(template, component, site_path)
+            self._copy_component(template, component, public_path)
             
         # Copy optional components if specified
         for component in config.get("components", []):
             if component in template_config["components"]["optional"]:
-                self._copy_component(template, component, site_path)
+                self._copy_component(template, component, public_path)
         
         # Generate site configuration
         site_config = {
             **template_config,
             **config,
-            "site_name": site_name,
+            "domain": domain,
             "creation_date": str(datetime.now())
         }
         
         # Save site configuration
-        config_path = os.path.join(site_path, "config.json")
+        config_path = os.path.join(site_path, "config/site_config.json")
         with open(config_path, 'w') as f:
             json.dump(site_config, f, indent=4)
             
