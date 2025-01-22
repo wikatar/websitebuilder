@@ -364,56 +364,62 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Production Infrastructure
 
-### Hetzner VPS Setup
+### Infrastructure Overview
+```
+infrastructure/
+├── base/           # One-time server setup
+│   └── hetzner     # Base Hetzner configuration
+└── project/        # Per-website deployment
+    └── sites/      # Individual site configs
+```
+
+### Base Infrastructure Setup
+The base setup is done once per server and creates a reusable foundation:
+
 ```bash
-# Initialize secure server
-./scripts/vps_setup/hetzner_init.sh \
-  --domain=yourdomain.com \
-  --email=admin@email.com \
-  --php=8.2 \
-  --node=20
-
-# Deploy Nginx configuration
-./scripts/vps_setup/deploy_nginx.sh --production
-
-# Initialize SSL certificates
-./scripts/vps_setup/ssl_init.sh --domain=yourdomain.com
-
-# Apply security hardening
-./scripts/vps_setup/harden.sh
+# Initialize base server
+./scripts/vps_setup/base/hetzner_init.sh --server-ip=X.X.X.X
 ```
 
-### Docker Deployment
-```yaml
-# docker-compose.prod.yml
-version: '3.8'
-services:
-  app:
-    build: .
-    restart: always
-    environment:
-      NODE_ENV: production
-    volumes:
-      - ./app:/var/www/html
-    
-  redis:
-    image: redis:alpine
-    volumes:
-      - redis_data:/data
+This sets up:
+- Nginx with optimized configuration
+- SSL certificate management
+- Security hardening (firewall, fail2ban)
+- Log rotation
+- Backup system
+- Multi-site directory structure
 
-  db:
-    image: postgres:15
-    volumes:
-      - db_data:/var/lib/postgresql/data
+### Per-Website Deployment
+Each website can be deployed using our standardized script:
+
+```bash
+# Deploy a new website
+./scripts/vps_setup/project/deploy_site.sh \
+    --domain=example.com \
+    --template=business \
+    --ssl=true
 ```
 
-### Disaster Recovery
+Features:
+- Automated Nginx configuration
+- SSL certificate setup
+- Template deployment
+- Security headers
+- Logging setup
+- Backup configuration
 
-```mermaid
-graph TD
-  A[Daily Backups] --> B[Encrypted S3]
-  A --> C[Local NAS]
-  D[Failover] -->|Primary Down| E[DigitalOcean]
+### Directory Structure
+```
+/var/www/
+├── websites/                # Live websites
+│   ├── example.com/
+│   │   ├── public_html/    # Website files
+│   │   ├── logs/          # Site-specific logs
+│   │   └── backup/        # Local backups
+│   └── another-site.com/
+└── templates/              # Website templates
+    ├── business/
+    └── blog/
 ```
 
 ## Compliance Automation
