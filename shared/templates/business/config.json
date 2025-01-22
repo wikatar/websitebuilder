@@ -1,0 +1,78 @@
+{
+    "name": "Business Template",
+    "version": "1.0.0",
+    "description": "Professional business website template with modern design and animations",
+    "framework": {
+        "name": "tailwind",
+        "version": "3.4.0",
+        "plugins": ["daisyui"]
+    },
+    "components": {
+        "required": [
+            "header",
+            "footer",
+            "hero"
+        ],
+        "optional": [
+            "testimonials",
+            "services",
+            "contact",
+            "about",
+            "pricing",
+            "team",
+            "blog",
+            "faq"
+        ]
+    },
+    "theme": {
+        "colors": {
+            "primary": "#4F46E5",
+            "secondary": "#EC4899",
+            "accent": "#14B8A6",
+            "neutral": "#1F2937",
+            "base-100": "#FFFFFF"
+        },
+        "fonts": {
+            "heading": "Inter",
+            "body": "Inter"
+        }
+    },
+    "seo": {
+        "meta_templates": {
+            "title": "{{company_name}} - {{page_title}}",
+            "description": "{{page_description}}",
+            "keywords": "{{keywords}}"
+        },
+        "required_sections": [
+            "about",
+            "services",
+            "contact"
+        ]
+    },
+    "analytics": {
+        "google_analytics": true,
+        "meta_pixel": false,
+        "custom_events": [
+            "scroll_depth",
+            "cta_clicks",
+            "form_submissions"
+        ]
+    },
+    "variables": {
+        "company_name": "",
+        "company_description": "",
+        "hero_title": "",
+        "hero_description": "",
+        "hero_image": "",
+        "hero_image_alt": "",
+        "cta_primary_text": "Get Started",
+        "cta_secondary_text": "Learn More",
+        "social_links": {
+            "twitter": "",
+            "facebook": "",
+            "linkedin": ""
+        },
+        "services": [],
+        "stats": []
+    }
+} 

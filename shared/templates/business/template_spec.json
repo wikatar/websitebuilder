@@ -1,0 +1,97 @@
+{
+    "template_name": "business",
+    "version": "1.0.0",
+    "description": "Standard business website template with multi-language support",
+    "framework": {
+        "name": "tailwind",
+        "version": "3.4.0",
+        "plugins": ["daisyui"]
+    },
+    "structure": {
+        "required_directories": [
+            "public_html",
+            "config",
+            "assets/css",
+            "assets/js",
+            "assets/images",
+            "logs",
+            "backup",
+            "ssl"
+        ],
+        "components": {
+            "required": [
+                "header",
+                "footer",
+                "hero",
+                "services",
+                "contact"
+            ],
+            "optional": [
+                "testimonials",
+                "portfolio",
+                "blog",
+                "team"
+            ]
+        }
+    },
+    "features": {
+        "multi_language": true,
+        "seo_optimization": true,
+        "analytics_ready": true,
+        "contact_form": true,
+        "responsive": true
+    },
+    "dependencies": {
+        "cdn": [
+            {
+                "name": "tailwindcss",
+                "url": "https://cdn.tailwindcss.com"
+            },
+            {
+                "name": "daisyui",
+                "url": "https://cdn.jsdelivr.net/npm/daisyui@4.4.19/dist/full.css"
+            },
+            {
+                "name": "font-awesome",
+                "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+            }
+        ],
+        "fonts": [
+            {
+                "name": "Inter",
+                "url": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+            }
+        ]
+    },
+    "seo": {
+        "required_meta": [
+            "title",
+            "description",
+            "keywords",
+            "og:title",
+            "og:description",
+            "og:type",
+            "og:url"
+        ],
+        "schema_org": [
+            "LocalBusiness",
+            "WebSite",
+            "Organization"
+        ]
+    },
+    "customization": {
+        "colors": {
+            "primary": "#4F46E5",
+            "secondary": "#06B6D4",
+            "accent": "#F59E0B"
+        },
+        "typography": {
+            "headings": "Inter",
+            "body": "Inter"
+        },
+        "spacing": {
+            "section_padding": "5rem",
+            "component_gap": "2rem"
+        }
+    }
+} 

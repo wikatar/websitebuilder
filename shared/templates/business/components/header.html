@@ -1,0 +1,45 @@
+<!-- Header Component -->
+<header class="bg-base-100 shadow-lg fixed w-full top-0 z-50">
+    <div class="navbar container mx-auto">
+        <div class="navbar-start">
+            <div class="dropdown">
+                <label tabindex="0" class="btn btn-ghost lg:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+                    </svg>
+                </label>
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    <!-- Mobile Menu Items - To be populated by site config -->
+                    <li><a href="#services" data-lang-key="nav.services">Services</a></li>
+                    <li><a href="#about" data-lang-key="nav.about">About</a></li>
+                    <li><a href="#contact" data-lang-key="nav.contact">Contact</a></li>
+                </ul>
+            </div>
+            <a class="btn btn-ghost normal-case text-xl" data-lang-key="site.name">Company Name</a>
+        </div>
+        <div class="navbar-end hidden lg:flex">
+            <ul class="menu menu-horizontal px-1">
+                <!-- Desktop Menu Items - To be populated by site config -->
+                <li><a href="#services" data-lang-key="nav.services">Services</a></li>
+                <li><a href="#about" data-lang-key="nav.about">About</a></li>
+                <li><a href="#contact" class="btn btn-primary" data-lang-key="nav.contact">Contact</a></li>
+            </ul>
+            <!-- Language Switcher -->
+            <div class="dropdown dropdown-end ml-4">
+                <label tabindex="0" class="btn btn-ghost">
+                    <i class="fas fa-globe"></i>
+                </label>
+                <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+                    <li><a onclick="siteUtils.switchLanguage('sv')">Svenska</a></li>
+                    <li><a onclick="siteUtils.switchLanguage('en')">English</a></li>
+                </ul>
+            </div>
+            <!-- Theme Toggle -->
+            <button class="btn btn-ghost ml-2" onclick="siteUtils.toggleTheme()">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </div>
+</header>
+<!-- Spacer for fixed header -->
+<div class="h-16"></div> 
