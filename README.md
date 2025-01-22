@@ -55,9 +55,37 @@ For any questions or issues, please contact the project maintainers.
 
 # Website Builder Bot
 
-⚠️ **CRITICAL STRUCTURAL GUIDELINES** ⚠️
+⚠️ **CRITICAL: STRICT REPOSITORY SEPARATION** ⚠️
 
-This project follows a strict separation of concerns between core functionality and individual websites. This separation is **MANDATORY** and must be followed without exception.
+This is the core system repository. It MUST NOT contain any website-specific code or configuration.
+
+## Repository Rules
+
+1. **Website-Specific Code is FORBIDDEN Here**
+   - NO website-specific build scripts
+   - NO website-specific configurations
+   - NO website-specific content
+   - NO website deployment files
+
+2. **Correct Location for Website Code**
+   - Each website MUST have its own separate repository
+   - Example: `balthazarproject-website` for balthazarproject.com
+   - Website repositories should be completely independent
+
+3. **What Belongs Here**
+   - Core builder functionality
+   - Shared templates
+   - Reusable components
+   - Generic build scripts
+   - Core documentation
+
+4. **Pre-Commit Checklist**
+   - [ ] Is this code used by multiple websites?
+   - [ ] Is this a shared resource?
+   - [ ] Is this core functionality?
+   - [ ] Have I removed all website-specific code?
+
+If the answer to ANY of these is NO, the code belongs in a website-specific repository!
 
 ## Repository Structure
 
