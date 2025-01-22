@@ -615,3 +615,53 @@ Features:
 │   └── latest -> 20240122  # Symlink to latest
 ```
 
+## SEO Capabilities
+
+#### Schema.org Generator
+The system includes a comprehensive Schema.org markup generator for enhanced SEO:
+
+```python
+from bot_core.seo.schema_generator import SchemaGenerator
+
+# Initialize the generator
+generator = SchemaGenerator()
+
+# Generate LocalBusiness schema
+business_schema = generator.generate_local_business(
+    business_name="My Business",
+    address={
+        "street": "123 Main St",
+        "city": "Stockholm",
+        "region": "Stockholm",
+        "postal_code": "12345",
+        "country": "Sweden"
+    },
+    geo={"latitude": 59.3293, "longitude": 18.0686},
+    telephone="+46-123-456789"
+)
+
+# Generate FAQ schema
+faq_schema = generator.generate_faq([
+    {
+        "question": "What services do you offer?",
+        "answer": "We offer web development and SEO services."
+    }
+])
+
+# Convert to HTML script tag
+script_tag = generator.to_script_tag(business_schema)
+```
+
+Supported Schema Types:
+- LocalBusiness (with geo-location)
+- Service (with pricing)
+- FAQ Page
+- Review Aggregation
+
+Features:
+- Automatic validation
+- HTML script tag generation
+- Multiple schema support
+- Customizable fields
+- SEO-optimized structure
+
