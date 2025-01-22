@@ -15,27 +15,43 @@ WebsiteBuilderBot/
 │   │   ├── review_manager.py  # Review handling
 │   │   ├── gmb_manager.py     # Google My Business automation
 │   │   └── content_refresh.py # AI content freshness monitoring
-│   ├── templates/             # Website templates
-│   │   ├── design_libraries/  # Different styling approaches
+│   ├── compliance/            # Legal compliance tools
+│   │   ├── gdpr.py           # GDPR automation
+│   │   ├── ccpa.py           # CCPA compliance
+│   │   └── ada.py            # Accessibility tools
+│   ├── monitoring/            # System monitoring
+│   │   ├── uptime.py         # Uptime tracking
+│   │   └── performance.py     # Performance metrics
+│   ├── security/             # Security features
+│   │   ├── waf.py           # Web Application Firewall
+│   │   └── rate_limiter.py  # API rate limiting
+│   ├── localization/         # Multi-language support
+│   │   ├── translator.py    # Content translation
+│   │   └── locale_manager.py # Locale handling
+│   ├── commercial/          # Business features
+│   │   ├── stripe.py       # Payment processing
+│   │   └── billing.py      # Usage billing
+│   ├── templates/           # Website templates
+│   │   ├── design_libraries/
 │   │   │   ├── tailwind-basic/
 │   │   │   ├── tailwind-daisyui/
 │   │   │   └── custom-css/
-│   ├── ai/                    # AI integration modules
-│   │   ├── content_gen.py    # Content generation
-│   │   ├── humanizer.py      # Content humanization
-│   │   └── cost_tracker.py   # AI cost monitoring
-│   ├── deployment/           # Deployment automation
-│   │   ├── netlify.py       # Netlify integration
-│   │   └── vercel.py        # Vercel integration
-│   ├── builder.py           # Website generation logic
-│   └── config.json          # Global bot configuration
-├── docs/                    # Documentation
-├── scripts/                 # Automation scripts
-│   ├── setup.sh            # Initial setup script
-│   ├── deploy.sh           # Git deployment script
-│   ├── update-deps.sh      # Dependency updater
-│   └── export-client.sh    # Client export utility
-└── requirements.txt        # Project dependencies
+│   ├── ai/                  # AI integration
+│   ├── deployment/         # Deployment automation
+│   ├── builder.py         # Website generation
+│   └── config.json        # Global configuration
+├── docs/                  # Documentation
+├── scripts/               # Automation scripts
+│   ├── setup.sh          # Initial setup
+│   ├── deploy.sh         # Deployment
+│   ├── update-deps.sh    # Dependencies
+│   ├── export-client.sh  # Client export
+│   └── vps_setup/        # VPS configuration
+│       ├── hetzner_init.sh   # Server initialization
+│       ├── deploy_nginx.sh   # Nginx setup
+│       ├── ssl_init.sh       # SSL configuration
+│       └── harden.sh         # Security hardening
+└── requirements.txt      # Dependencies
 
 ```
 
@@ -345,4 +361,139 @@ if results['pending_actions']:
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Production Infrastructure
+
+### Hetzner VPS Setup
+```bash
+# Initialize secure server
+./scripts/vps_setup/hetzner_init.sh \
+  --domain=yourdomain.com \
+  --email=admin@email.com \
+  --php=8.2 \
+  --node=20
+
+# Deploy Nginx configuration
+./scripts/vps_setup/deploy_nginx.sh --production
+
+# Initialize SSL certificates
+./scripts/vps_setup/ssl_init.sh --domain=yourdomain.com
+
+# Apply security hardening
+./scripts/vps_setup/harden.sh
+```
+
+### Docker Deployment
+```yaml
+# docker-compose.prod.yml
+version: '3.8'
+services:
+  app:
+    build: .
+    restart: always
+    environment:
+      NODE_ENV: production
+    volumes:
+      - ./app:/var/www/html
+    
+  redis:
+    image: redis:alpine
+    volumes:
+      - redis_data:/data
+
+  db:
+    image: postgres:15
+    volumes:
+      - db_data:/var/lib/postgresql/data
+```
+
+### Disaster Recovery
+
+```mermaid
+graph TD
+  A[Daily Backups] --> B[Encrypted S3]
+  A --> C[Local NAS]
+  D[Failover] -->|Primary Down| E[DigitalOcean]
+```
+
+## Compliance Automation
+
+### GDPR Compliance
+- Automated cookie consent
+- Privacy policy generator
+- Data export/deletion tools
+- Consent management
+
+### CCPA Implementation
+- Privacy notice generator
+- Opt-out mechanisms
+- Data inventory tools
+- Request handling system
+
+### ADA Compliance
+- Automated accessibility scans
+- WCAG 2.1 validation
+- Screen reader optimization
+- Color contrast checking
+
+## Security Measures
+
+### Rate Limiting
+```python
+from bot_core.security.rate_limiter import AIMeter
+
+meter = AIMeter()
+limits = {
+    'gpt4': (1000, 'day'),    # 1k requests/day
+    'dalle': (50, 'hour')     # 50 requests/hour
+}
+```
+
+### Client Isolation
+```yaml
+# Per-client database configuration
+CLIENT_db_1:
+  image: postgres:15
+  volumes:
+    - client1_data:/var/lib/postgresql/data
+```
+
+## Support Protocol
+
+### Tiered Support System
+1. **Tier 1: AI Chatbot**
+   - 24/7 automated support
+   - Common issue resolution
+   - Documentation access
+
+2. **Tier 2: Community Forum**
+   - Peer support
+   - Knowledge sharing
+   - Feature requests
+
+3. **Tier 3: Paid Support**
+   - Direct technical assistance
+   - Custom development
+   - Priority issue resolution
+
+## Client Onboarding
+
+### Process Flow
+1. Brand questionnaire completion
+2. AI configuration generation
+3. Domain auto-configuration
+4. Compliance setup
+5. Documentation handoff
+
+### Automation Example
+```python
+from bot_core.commercial.onboarding import ClientOnboarding
+
+onboarding = ClientOnboarding()
+setup = onboarding.initialize_client(
+    brand_data=questionnaire.responses,
+    domain="client-domain.com",
+    plan="enterprise"
+)
+```
 
