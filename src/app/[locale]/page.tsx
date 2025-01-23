@@ -1,6 +1,8 @@
+'use client';
+
 import { useTranslations } from 'next-intl';
 
-export default function Home() {
+export default function LocalePage() {
   const t = useTranslations('Index');
 
   return (

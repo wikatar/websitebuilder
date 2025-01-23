@@ -4,6 +4,4 @@ export default function RootPage() {
   redirect('/sv');
 }
 
-export { default } from './(locales)/[locale]/page';
-
-// redirect('/sv');
+// Remove the second export and commented code
