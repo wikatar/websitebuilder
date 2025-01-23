@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: theme('colors.blue.500');
+  --secondary-color: theme('colors.purple.500');
+  --accent-color: theme('colors.pink.500');
+}
+
+@layer base {
+  body {
+    @apply font-sans text-base-content;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .section {
+    @apply py-12 sm:py-16 lg:py-20;
+  }
+}
+
+/* Template Customization Classes */
+.template-section {
+  @apply relative overflow-hidden;
+}
+
+.template-container {
+  @apply container mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.template-heading {
+  @apply text-4xl md:text-5xl lg:text-6xl font-bold;
+}
+
+.template-subheading {
+  @apply text-xl md:text-2xl text-base-content/80;
+}
+
+/* Animation Classes */
+.fade-in {
+  @apply opacity-0 animate-[fadeIn_0.5s_ease-in_forwards];
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
