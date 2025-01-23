@@ -2,13 +2,13 @@
 
 import Link from 'next/link';
 import { LanguageSwitcher } from '../ui';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
+import { useLocale } from 'next-intl';
 import { useState } from 'react';
 
 const Navigation = () => {
-  const router = useRouter();
-  const { locale } = router;
-
+  const locale = useLocale();
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
@@ -41,6 +41,11 @@ const Navigation = () => {
             ))}
           </div>
 
+          {/* Language Switcher */}
+          <div className="hidden md:block">
+            <LanguageSwitcher />
+          </div>
+
           {/* Mobile menu button */}
           <div className="md:hidden">
             <button
@@ -64,11 +69,6 @@ const Navigation = () => {
                 )}
               </svg>
             </button>
-          </div>
-
-          {/* Language Switcher */}
-          <div className="md:hidden flex items-center">
-            <LanguageSwitcher />
           </div>
         </div>
 
