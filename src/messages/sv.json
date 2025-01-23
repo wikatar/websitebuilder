@@ -54,5 +54,10 @@
       "location": "Stockholm, Sverige"
     },
     "copyright": "© {year} Balthazar Project. Alla rättigheter förbehållna."
+  },
+  "Index": {
+    "title": "Balthazar Projektet",
+    "description": "Bygger skalbara webblösningar med modern teknik",
+    "getStarted": "Kom igång"
   }
 }
