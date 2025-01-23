@@ -7,9 +7,7 @@ const nextConfig = {
     locales: ['sv', 'en'],
     defaultLocale: 'sv',
     localeDetection: false
-  },
-  output: 'standalone',
-  basePath: process.env.NEXT_PUBLIC_BASE_PATH || ''
+  }
 }
 
 module.exports = withNextIntl(nextConfig);
