@@ -1,0 +1,58 @@
+{
+  "navigation": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About",
+    "portfolio": "Portfolio",
+    "contact": "Contact"
+  },
+  "home": {
+    "hero": {
+      "title": "Building Digital Excellence",
+      "subtitle": "Web development, SEO optimization, and digital solutions that drive results.",
+      "cta": "Get Started"
+    },
+    "services": {
+      "title": "Our Services",
+      "webdev": {
+        "title": "Web Development",
+        "description": "Custom websites and applications built with modern technologies."
+      },
+      "seo": {
+        "title": "SEO Optimization",
+        "description": "Improve your visibility and reach your target audience."
+      },
+      "strategy": {
+        "title": "Digital Strategy",
+        "description": "Comprehensive digital solutions for your business growth."
+      }
+    },
+    "about": {
+      "title": "Why Choose Us?",
+      "description": "We combine technical expertise with creative innovation to deliver exceptional digital solutions."
+    },
+    "cta": {
+      "title": "Ready to Start Your Project?",
+      "description": "Let's discuss how we can help you achieve your digital goals.",
+      "button": "Contact Us"
+    }
+  },
+  "footer": {
+    "company": {
+      "about": "Professional web development and digital solutions for modern businesses."
+    },
+    "services": {
+      "title": "Services",
+      "webdev": "Web Development",
+      "seo": "SEO Optimization",
+      "strategy": "Digital Strategy",
+      "ai": "AI Solutions"
+    },
+    "contact": {
+      "title": "Contact Us",
+      "email": "contact@balthazarproject.com",
+      "location": "Stockholm, Sweden"
+    },
+    "copyright": "© {year} Balthazar Project. All rights reserved."
+  }
+}

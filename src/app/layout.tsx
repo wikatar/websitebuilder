@@ -25,8 +25,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" data-theme="light" className={`${inter.variable} ${montserrat.variable}`}>
-      <body className="min-h-screen bg-base-100">
+    <html lang="en" data-theme="dark" className={`${inter.variable} ${montserrat.variable} dark`}>
+      <body className="min-h-screen bg-base-100 text-base-content">
         <MainLayout>
           {children}
         </MainLayout>
