@@ -1,6 +1,6 @@
 import { NextIntlClientProvider } from 'next-intl';
 import { notFound } from 'next/navigation';
-import Navigation from '@/components/layout/Navigation';
+import { Navigation } from '@/components/layout';
 import '../globals.css';
 
 export function generateStaticParams() {
