@@ -1,17 +1,22 @@
 'use client';
 
 import Link from 'next/link';
+import LanguageSwitcher from '../LanguageSwitcher';
+import { useRouter } from 'next/router';
 import { useState } from 'react';
 
 const Navigation = () => {
+  const router = useRouter();
+  const { locale } = router;
+
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { name: 'Home', path: '/' },
-    { name: 'Services', path: '/services' },
-    { name: 'About', path: '/about' },
-    { name: 'Portfolio', path: '/portfolio' },
-    { name: 'Contact', path: '/contact' },
+    { name: locale === 'sv' ? 'Hem' : 'Home', path: '/' },
+    { name: locale === 'sv' ? 'Tjänster' : 'Services', path: '/services' },
+    { name: locale === 'sv' ? 'Om oss' : 'About', path: '/about' },
+    { name: locale === 'sv' ? 'Portfolio' : 'Portfolio', path: '/portfolio' },
+    { name: locale === 'sv' ? 'Kontakt' : 'Contact', path: '/contact' },
   ];
 
   return (
@@ -60,6 +65,11 @@ const Navigation = () => {
               </svg>
             </button>
           </div>
+
+          {/* Language Switcher */}
+          <div className="md:hidden flex items-center">
+            <LanguageSwitcher />
+          </div>
         </div>
 
         {/* Mobile Navigation */}
@@ -75,6 +85,9 @@ const Navigation = () => {
                 {item.name}
               </Link>
             ))}
+            <div className="py-2">
+              <LanguageSwitcher />
+            </div>
           </div>
         )}
       </div>
