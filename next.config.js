@@ -1,11 +1,6 @@
 const createNextIntlPlugin = require('next-intl/plugin');
 
-const withNextIntl = createNextIntlPlugin({
-  locales: ['en', 'sv'],
-  defaultLocale: 'sv',
-  localePrefix: 'always',
-  messagesDirectory: './src/messages'
-});
+const withNextIntl = createNextIntlPlugin('./i18n.ts');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
