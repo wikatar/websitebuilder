@@ -21,11 +21,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  locale,
 }: {
   children: React.ReactNode
+  locale: string
 }) {
   return (
-    <html lang="en" data-theme="dark" className={`${inter.variable} ${montserrat.variable} dark`}>
+    <html lang={locale} data-theme="dark" className={`${inter.variable} ${montserrat.variable} dark`}>
       <body className="min-h-screen bg-base-100 text-base-content">
         <MainLayout>
           {children}

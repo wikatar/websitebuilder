@@ -7,11 +7,11 @@ export default createMiddleware({
   // If this locale is matched, pathnames work without a prefix (e.g. `/about`)
   defaultLocale: 'sv',
   
-  // Set default locale to Swedish for all users
-  localePrefix: 'always'
+  // Always show the locale prefix
+  localePrefix: 'as-needed'
 });
  
 export const config = {
-  // Match only internationalized pathnames
-  matcher: ['/', '/(sv|en)/:path*']
+  // Skip all paths that should not be internationalized
+  matcher: ['/((?!api|_next|.*\\..*).*)']
 };
