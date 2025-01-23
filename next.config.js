@@ -1,20 +1,17 @@
 const createNextIntlPlugin = require('next-intl/plugin');
 
-const withNextIntl = createNextIntlPlugin();
+const withNextIntl = createNextIntlPlugin({
+  locales: ['en', 'sv'],
+  defaultLocale: 'sv',
+  localePrefix: 'always',
+  messagesDirectory: './src/messages'
+});
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  trailingSlash: false,
-  skipTrailingSlashRedirect: true,
-  async redirects() {
-    return [
-      {
-        source: '/:path*/',
-        destination: '/:path*',
-        permanent: true,
-      },
-    ];
+  env: {
+    _next_intl_trailing_slash: 'never'
   }
 }
 

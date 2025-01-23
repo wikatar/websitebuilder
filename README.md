@@ -1,8 +1,117 @@
-# The Balthazar Project Website
+# Balthazar Project Website
 
-Welcome to The Balthazar Project website repository! This project serves a dual purpose:
-1. Our company website at balthazarproject.com
-2. A comprehensive template system for rapid website development
+A modern, internationalized Next.js website showcasing web development expertise and services.
+
+## Project Overview
+
+This project is built with Next.js 15.1.6 and features:
+- Full internationalization support (Swedish and English)
+- Modern UI with Tailwind CSS and DaisyUI
+- TypeScript for type safety
+- ESLint and Prettier for code quality
+
+## Project Structure
+
+```
+├── src/
+│   ├── app/                 # Next.js app directory
+│   │   ├── [locale]/       # Locale-specific routes
+│   │   └── layout.tsx      # Root layout
+│   ├── components/         # React components
+│   │   ├── layout/        # Layout components
+│   │   └── ui/            # UI components
+│   ├── messages/          # Translation files
+│   │   ├── en.json       # English translations
+│   │   └── sv.json       # Swedish translations
+│   └── config.ts         # Project configuration
+├── middleware.ts         # Internationalization middleware
+└── next.config.js       # Next.js configuration
+```
+
+## Internationalization (i18n)
+
+The project uses `next-intl` for internationalization with the following setup:
+- Default locale: Swedish (sv)
+- Supported locales: Swedish (sv), English (en)
+- Automatic locale detection and routing
+- Translation files in `src/messages/`
+
+### Key Files:
+- `middleware.ts`: Handles locale routing and prefixing
+- `src/messages/*.json`: Translation files
+- `src/i18n/request.ts`: Server-side i18n configuration
+
+## Development Setup
+
+1. **Install Dependencies**:
+   ```bash
+   npm install
+   ```
+
+2. **Environment Setup**:
+   - Node.js 18+ required
+   - Ensure all dependencies are installed
+
+3. **Development Server**:
+   ```bash
+   npm run dev
+   ```
+   Access the site at http://localhost:3000
+
+4. **Code Quality Checks**:
+   ```bash
+   npm run type-check  # Check types
+   npm run lint       # Check for issues
+   npm run format    # Format code
+   ```
+
+5. **Building for Production**:
+   ```bash
+   npm run build    # Create production build
+   npm start       # Start production server
+   ```
+
+## Git Workflow
+- Main branch: `main`
+- Commit convention: 
+  - `feat:` New features
+  - `fix:` Bug fixes
+  - `chore:` Maintenance tasks
+  - `docs:` Documentation updates
+  - `style:` Code style changes
+  - `refactor:` Code refactoring
+  - `test:` Adding tests
+
+## Configuration Files
+
+### next.config.js
+- Next.js configuration
+- next-intl plugin setup
+- Environment variables
+
+### middleware.ts
+- Internationalization routing
+- Path matching configuration
+- Locale prefix settings
+
+### tailwind.config.js
+- Theme configuration
+- DaisyUI setup
+- Custom color schemes
+
+## IDE Configuration
+- VSCode recommended extensions:
+  - ESLint
+  - Prettier
+  - Tailwind CSS IntelliSense
+  - TypeScript and JavaScript Language Features
+
+## Troubleshooting
+
+Common issues and solutions:
+1. **Port Already in Use**: Kill the process using `pkill -f "next dev"` and restart
+2. **Type Errors**: Run `npm run type-check` to identify issues
+3. **Linting Errors**: Run `npm run lint:fix` to auto-fix common issues
 
 ## 🎯 Vision
 
