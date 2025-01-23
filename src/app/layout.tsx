@@ -1,8 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter, Montserrat } from 'next/font/google'
 import './globals.css'
-import MainLayout from '@/components/layout/MainLayout'
-import { useRouter } from 'next/router'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -24,5 +22,9 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  return children;
+  return (
+    <div className={`${inter.variable} ${montserrat.variable}`}>
+      {children}
+    </div>
+  );
 }
