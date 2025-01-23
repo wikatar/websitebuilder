@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import LanguageSwitcher from '../LanguageSwitcher';
+import { LanguageSwitcher } from '../ui';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 

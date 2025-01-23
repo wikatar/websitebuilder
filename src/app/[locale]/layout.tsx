@@ -2,7 +2,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { notFound } from 'next/navigation';
 
 export function generateStaticParams() {
-  return [{ locale: 'en' }, { locale: 'sv' }];
+  return [{ locale: 'sv' }, { locale: 'en' }];
 }
 
 export default async function LocaleLayout({ children, params: { locale } }) {
