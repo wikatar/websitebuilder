@@ -5,11 +5,13 @@ import './globals.css'
 const inter = Inter({ 
   subsets: ['latin'],
   variable: '--font-sans',
+  display: 'swap',
 })
 
 const montserrat = Montserrat({ 
   subsets: ['latin'],
   variable: '--font-heading',
+  display: 'swap',
 })
 
 export const metadata: Metadata = {
@@ -23,8 +25,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <div className={`${inter.variable} ${montserrat.variable}`}>
-      {children}
-    </div>
+    <html suppressHydrationWarning>
+      <head />
+      <body className={`${inter.variable} ${montserrat.variable}`}>
+        {children}
+      </body>
+    </html>
   );
 }
