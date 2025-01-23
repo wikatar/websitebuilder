@@ -15,9 +15,8 @@ const montserrat = Montserrat({
 })
 
 export const metadata: Metadata = {
-  title: 'The Balthazar Project - Professional Web Development Services',
-  description: 'Expert web development and digital solutions by The Balthazar Project. Custom websites, SEO optimization, and digital strategy consulting.',
-  keywords: 'web development, digital solutions, SEO, website design, digital strategy',
+  title: 'Balthazar Project',
+  description: 'Building scalable web solutions with modern technologies',
 }
 
 export default function RootLayout({
@@ -25,13 +24,5 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  return (
-    <html data-theme="dark" className={`${inter.variable} ${montserrat.variable} dark`}>
-      <body className="min-h-screen bg-base-100 text-base-content">
-        <MainLayout>
-          {children}
-        </MainLayout>
-      </body>
-    </html>
-  )
+  return children;
 }

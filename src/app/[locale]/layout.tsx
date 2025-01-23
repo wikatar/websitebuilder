@@ -7,7 +7,13 @@ export function generateStaticParams() {
   return [{ locale: 'sv' }, { locale: 'en' }];
 }
 
-export default async function LocaleLayout({ children, params: { locale } }) {
+export default async function LocaleLayout({
+  children,
+  params: { locale },
+}: {
+  children: React.ReactNode;
+  params: { locale: string };
+}) {
   let messages;
   try {
     messages = (await import(`../../messages/${locale}.json`)).default;
@@ -16,11 +22,13 @@ export default async function LocaleLayout({ children, params: { locale } }) {
   }
 
   return (
-    <html lang={locale}>
+    <html lang={locale} data-theme="light">
       <body>
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <Navigation />
-          {children}
+          <div className="min-h-screen bg-base-100">
+            <Navigation />
+            {children}
+          </div>
         </NextIntlClientProvider>
       </body>
     </html>
