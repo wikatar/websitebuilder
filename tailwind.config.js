@@ -3,6 +3,7 @@ module.exports = {
   content: [
     './src/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
@@ -21,27 +22,18 @@ module.exports = {
     require('daisyui'),
   ],
   daisyui: {
-    themes: [
-      {
-        light: {
-          ...require('daisyui/src/theming/themes')['light'],
-          primary: '#007AFF',
-          secondary: '#5856D6',
-          accent: '#FF2D55',
-        },
-        dark: {
-          ...require('daisyui/src/theming/themes')['dark'],
-          primary: '#8B0000',
-          secondary: '#D10000',
-          accent: '#FF0000',
-          neutral: '#1a1a1a',
-          'base-100': '#0f0f0f',
-          'base-200': '#1a1a1a',
-          'base-300': '#262626',
-          'base-content': '#ffffff',
-        },
-      },
-    ],
+    themes: [{
+      dark: {
+        ...require('daisyui/src/theming/themes')['dark'],
+        "base-100": "#000000",
+        "base-200": "#0a0a0a",
+        "base-300": "#1a1a1a",
+        "base-content": "#ffffff",
+        primary: "#8B0000",
+        secondary: "#D10000",
+        accent: "#FF0000"
+      }
+    }],
     darkTheme: 'dark',
     base: true,
     styled: true,
