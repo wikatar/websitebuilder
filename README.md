@@ -148,3 +148,118 @@ Built-in SEO tools handle:
 ---
 
 Built with ❤️ by The Balthazar Project Team
+
+## 🛠 Development Infrastructure
+
+### Core Technologies
+- **Framework**: Next.js 13.5.6 with React 18.2.0
+- **Language**: TypeScript 5.3.3
+- **Styling**: 
+  - Tailwind CSS 3.4.0
+  - DaisyUI 4.4.24
+  - PostCSS 8.4.32
+  - Autoprefixer 10.4.16
+
+### Development Tools
+- **Code Quality**:
+  - ESLint 8.56.0 with TypeScript support
+  - Prettier 3.4.2
+  - TypeScript strict mode enabled
+  
+- **Type Definitions**:
+  - @types/react 18.2.46
+  - @types/react-dom 18.2.18
+  - @types/node 20.10.6
+
+### Directory Structure
+```
+balthazarproject.com/
+├── src/                    # Source code
+│   ├── app/               # Next.js app router
+│   ├── components/        # React components
+│   │   ├── ui/           # UI components
+│   │   ├── layout/       # Layout components
+│   │   ├── features/     # Feature components
+│   │   └── templates/    # Page templates
+│   ├── styles/           # Global styles
+│   └── utils/            # Utility functions
+│
+├── public/               # Static files
+├── content/             # Content files
+└── docs/               # Documentation
+```
+
+### Code Quality Tools Configuration
+
+#### TypeScript (`tsconfig.json`)
+- Strict type checking enabled
+- Path aliases configured (@/*)
+- Next.js specific settings
+- ES5 target for compatibility
+
+#### ESLint (`.eslintrc.json`)
+- Next.js core web vitals
+- TypeScript recommended rules
+- Prettier integration
+- Custom rules:
+  - No unused variables (error)
+  - No explicit any (warning)
+  - Prettier formatting (error)
+
+#### Prettier (`.prettierrc`)
+- 100 character line width
+- Single quotes
+- 2 space indentation
+- ES5 trailing commas
+- No tabs
+- Auto end of line
+
+### Available Scripts
+- **Development**:
+  - `npm run dev`: Start development server
+  - `npm run build`: Build for production
+  - `npm start`: Run production server
+
+- **Code Quality**:
+  - `npm run lint`: Check for code issues
+  - `npm run lint:fix`: Fix code issues
+  - `npm run format`: Format all code files
+  - `npm run type-check`: Verify TypeScript types
+
+### Development Workflow
+1. **Starting Development**:
+   ```bash
+   npm install    # Install dependencies
+   npm run dev    # Start development server
+   ```
+
+2. **Code Quality Checks**:
+   ```bash
+   npm run type-check  # Check types
+   npm run lint       # Check for issues
+   npm run format    # Format code
+   ```
+
+3. **Building for Production**:
+   ```bash
+   npm run build    # Create production build
+   npm start       # Start production server
+   ```
+
+### Git Workflow
+- Main branch: `main`
+- Commit convention: 
+  - `feat:` New features
+  - `fix:` Bug fixes
+  - `chore:` Maintenance tasks
+  - `docs:` Documentation updates
+  - `style:` Code style changes
+  - `refactor:` Code refactoring
+  - `test:` Adding tests
+
+### IDE Configuration
+- VSCode recommended extensions:
+  - ESLint
+  - Prettier
+  - Tailwind CSS IntelliSense
+  - TypeScript and JavaScript Language Features
