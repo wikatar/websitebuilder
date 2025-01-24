@@ -1,5 +1,12 @@
 # Balthazar Project Sitemap
 
+> **AI Note**: For comprehensive understanding of the project structure:
+> - **SEO Implementation**: Review [SEO Guidelines](docs/guides/SEO_GUIDELINES.md) for our AI-first SEO approach, schema structure, and content optimization patterns
+> - **Design System**: Check [Design System](docs/guides/DESIGN_SYSTEM.md) for component architecture, styling patterns, and UI/UX guidelines
+> - **Development Flow**: When building pages, always reference this sitemap in conjunction with SEO and Design guidelines to ensure consistency
+>
+> This integrated approach ensures all pages maintain our SEO strategy and design principles while following the sitemap structure.
+
 ## Overview
 This document serves as both a sitemap for the website and a development guide. It's structured to be easily parsed by both humans and AI, ensuring consistent development across the team.
 
