@@ -44,17 +44,13 @@ export default async function LocaleLayout({
   const messages = await getMessages(locale);
 
   return (
-    <html lang={locale} suppressHydrationWarning>
-      <body suppressHydrationWarning>
-        <NextIntlClientProvider locale={locale} messages={messages}>
-          <FontProvider>
-            <ThemeProvider>
-              <Navigation />
-              {children}
-            </ThemeProvider>
-          </FontProvider>
-        </NextIntlClientProvider>
-      </body>
-    </html>
+    <NextIntlClientProvider locale={locale} messages={messages}>
+      <FontProvider>
+        <ThemeProvider>
+          <Navigation />
+          {children}
+        </ThemeProvider>
+      </FontProvider>
+    </NextIntlClientProvider>
   );
 } 

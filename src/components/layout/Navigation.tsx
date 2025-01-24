@@ -3,20 +3,21 @@
 import Link from 'next/link';
 import { LanguageSwitcher } from '../ui';
 import { usePathname } from 'next/navigation';
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { useState } from 'react';
 
 const Navigation = () => {
   const locale = useLocale();
   const pathname = usePathname();
+  const t = useTranslations('navigation');
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { name: locale === 'sv' ? 'Hem' : 'Home', path: '/' },
-    { name: locale === 'sv' ? 'Tjänster' : 'Services', path: '/services' },
-    { name: locale === 'sv' ? 'Om oss' : 'About', path: '/about' },
-    { name: locale === 'sv' ? 'Portfolio' : 'Portfolio', path: '/portfolio' },
-    { name: locale === 'sv' ? 'Kontakt' : 'Contact', path: '/contact' },
+    { name: t('home'), path: '/' },
+    { name: t('services'), path: '/services' },
+    { name: t('about'), path: '/about' },
+    { name: t('portfolio'), path: '/portfolio' },
+    { name: t('contact'), path: '/contact' },
   ];
 
   return (
@@ -24,7 +25,7 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
+          <Link href={`/${locale}`} className="flex items-center">
             <span className="text-xl font-bold">Balthazar Project</span>
           </Link>
 
@@ -33,7 +34,7 @@ const Navigation = () => {
             {navItems.map((item) => (
               <Link
                 key={item.path}
-                href={item.path}
+                href={`/${locale}${item.path}`}
                 className="text-base-content hover:text-primary transition-colors"
               >
                 {item.name}
@@ -78,7 +79,7 @@ const Navigation = () => {
             {navItems.map((item) => (
               <Link
                 key={item.path}
-                href={item.path}
+                href={`/${locale}${item.path}`}
                 className="block py-2 text-base-content hover:text-primary transition-colors"
                 onClick={() => setIsOpen(false)}
               >

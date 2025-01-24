@@ -2,19 +2,19 @@
 
 import { useTranslations } from 'next-intl';
 import { PageSEO } from '@/components/seo/PageSEO';
-import { Hero } from '@/components/templates/agency';
+import { Services } from '@/components/templates/agency/Services';
 
-export default function LocalePage() {
-  const t = useTranslations('home');
+export default function ServicesPage() {
+  const t = useTranslations('services');
 
   return (
     <>
       <PageSEO 
-        path="/" 
-        pageKey="home"
+        path="/services" 
+        pageKey="services"
       />
       <main className="min-h-screen">
-        <Hero />
+        <Services />
       </main>
     </>
   );

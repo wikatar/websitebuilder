@@ -19,15 +19,19 @@ export const metadata: Metadata = {
   description: 'Building scalable web solutions with modern technologies',
 }
 
+type RootLayoutProps = {
+  children: React.ReactNode;
+  params: { locale: string };
+}
+
 export default function RootLayout({
   children,
-}: {
-  children: React.ReactNode
-}) {
+  params: { locale = 'sv' }
+}: RootLayoutProps) {
   return (
-    <html suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <head />
-      <body className={`${inter.variable} ${montserrat.variable}`}>
+      <body className={`${inter.variable} ${montserrat.variable} min-h-screen bg-base-100`}>
         {children}
       </body>
     </html>

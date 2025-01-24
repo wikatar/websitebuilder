@@ -95,5 +95,42 @@
         "keywords": "contact, web development, project inquiry"
       }
     }
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Comprehensive solutions for your digital needs",
+    "webdev": {
+      "title": "Web Development",
+      "description": "Custom websites and applications built with modern technologies."
+    },
+    "seo": {
+      "title": "SEO Optimization",
+      "description": "Improve your visibility and reach your target audience."
+    },
+    "strategy": {
+      "title": "Digital Strategy",
+      "description": "Comprehensive digital solutions for your business growth."
+    }
+  },
+  "about": {
+    "title": "About Us",
+    "description": "We are a team of passionate developers and designers dedicated to creating exceptional digital experiences. Our expertise in modern web technologies and commitment to quality sets us apart.",
+    "mission": "Our mission is to help businesses thrive in the digital age through innovative solutions and cutting-edge technology."
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "description": "We'd love to hear from you. Send us a message and we'll respond as soon as possible.",
+    "form": {
+      "name": "Your Name",
+      "email": "Email Address",
+      "message": "Your Message",
+      "submit": "Send Message"
+    }
+  },
+  "Hero": {
+    "title": "Building Digital Excellence",
+    "subtitle": "Web development, SEO optimization, and digital solutions that drive results.",
+    "primaryCTA": "Get Started",
+    "secondaryCTA": "Learn More"
   }
 }
