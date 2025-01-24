@@ -11,7 +11,7 @@ export default function AboutPage() {
   const services = t.raw('sections.whatWeDo.services') || [];
   const principles = t.raw('sections.howWeWork.principles') || [];
   const benefits = t.raw('sections.whyChooseUs.benefits') || [];
-  const values = t.raw('values.items') || [];
+  const values = t.raw('sections.values.items') || [];
   
   // Ensure arrays are actually arrays
   const safeServices = Array.isArray(services) ? services : [];
@@ -206,7 +206,7 @@ export default function AboutPage() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-red-700">
-              {t('values.title')}
+              {t('sections.values.title')}
             </h2>
           </motion.div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -252,13 +252,13 @@ export default function AboutPage() {
             className="max-w-4xl mx-auto text-center"
           >
             <h2 className="text-4xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-red-700">
-              {t('cta.title')}
+              {t('sections.cta.title')}
             </h2>
             <p className="text-xl text-base-content/80 mb-12">
-              {t('cta.description')}
+              {t('sections.cta.description')}
             </p>
             <button className="px-8 py-4 bg-gradient-to-r from-red-500 to-red-700 text-white rounded-xl font-semibold hover:shadow-lg hover:shadow-red-500/20 transition-all">
-              {t('cta.button')}
+              {t('sections.cta.button')}
             </button>
           </motion.div>
         </div>
