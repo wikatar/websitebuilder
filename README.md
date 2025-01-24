@@ -1,117 +1,169 @@
 # Balthazar Project Website
 
-A modern, internationalized Next.js website showcasing web development expertise and services.
+A modern, internationalized Next.js website with built-in dark theme support and robust font handling.
 
 ## Project Overview
 
-This project is built with Next.js 15.1.6 and features:
-- Full internationalization support (Swedish and English)
-- Modern UI with Tailwind CSS and DaisyUI
-- TypeScript for type safety
-- ESLint and Prettier for code quality
+- **Framework**: Next.js 15.1.6
+- **Styling**: Tailwind CSS + DaisyUI
+- **Internationalization**: next-intl
+- **Fonts**: Google Fonts (Inter & Montserrat)
 
 ## Project Structure
 
 ```
-├── src/
-│   ├── app/                 # Next.js app directory
-│   │   ├── [locale]/       # Locale-specific routes
-│   │   └── layout.tsx      # Root layout
-│   ├── components/         # React components
-│   │   ├── layout/        # Layout components
-│   │   └── ui/            # UI components
-│   ├── messages/          # Translation files
-│   │   ├── en.json       # English translations
-│   │   └── sv.json       # Swedish translations
-│   └── config.ts         # Project configuration
-├── middleware.ts         # Internationalization middleware
-└── next.config.js       # Next.js configuration
+src/
+├── app/
+│   └── [locale]/        # Locale-based routing
+│       ├── layout.tsx   # Root layout with i18n providers
+│       └── page.tsx     # Home page
+├── components/
+│   └── layout/
+│       ├── FontProvider.tsx    # Client-side font handling
+│       ├── ThemeProvider.tsx   # Client-side theme handling
+│       └── Navigation.tsx      # Site navigation
+├── messages/            # Internationalization files
+│   ├── en.json         # English translations
+│   └── sv.json         # Swedish translations
+└── config.ts           # Global configuration
 ```
 
-## Internationalization (i18n)
+## Key Features
 
-The project uses `next-intl` for internationalization with the following setup:
+### 1. Internationalization (i18n)
+- Automatic locale detection and routing
 - Default locale: Swedish (sv)
 - Supported locales: Swedish (sv), English (en)
-- Automatic locale detection and routing
-- Translation files in `src/messages/`
+- URL structure: `/{locale}/path`
 
-### Key Files:
-- `middleware.ts`: Handles locale routing and prefixing
-- `src/messages/*.json`: Translation files
-- `src/i18n/request.ts`: Server-side i18n configuration
+### 2. Theme Support
+- Dark theme by default using DaisyUI
+- Client-side theme handling to prevent hydration issues
+- Customizable through Tailwind configuration
+
+### 3. Font System
+- Primary font: Inter (--font-sans)
+- Heading font: Montserrat (--font-heading)
+- Optimized loading with `next/font/google`
 
 ## Development Setup
 
-1. **Install Dependencies**:
+1. Install dependencies:
    ```bash
    npm install
    ```
 
-2. **Environment Setup**:
-   - Node.js 18+ required
-   - Ensure all dependencies are installed
-
-3. **Development Server**:
+2. Start development server:
    ```bash
    npm run dev
    ```
-   Access the site at http://localhost:3000
 
-4. **Code Quality Checks**:
+3. Build for production:
    ```bash
-   npm run type-check  # Check types
-   npm run lint       # Check for issues
-   npm run format    # Format code
+   npm run build
    ```
 
-5. **Building for Production**:
-   ```bash
-   npm run build    # Create production build
-   npm start       # Start production server
-   ```
+## Common Issues and Solutions
 
-## Git Workflow
-- Main branch: `main`
-- Commit convention: 
-  - `feat:` New features
-  - `fix:` Bug fixes
-  - `chore:` Maintenance tasks
-  - `docs:` Documentation updates
-  - `style:` Code style changes
-  - `refactor:` Code refactoring
-  - `test:` Adding tests
+### 1. Hydration Errors
+To prevent hydration mismatches:
+- Use client components for dynamic content
+- Separate font and theme providers
+- Add `suppressHydrationWarning` where needed
+- Handle client-side mounting properly
 
-## Configuration Files
+Example of proper client component setup:
+```typescript
+'use client';
 
-### next.config.js
-- Next.js configuration
-- next-intl plugin setup
-- Environment variables
+import { useEffect, useState } from 'react';
 
-### middleware.ts
-- Internationalization routing
-- Path matching configuration
-- Locale prefix settings
+export function ClientComponent() {
+  const [mounted, setMounted] = useState(false);
 
-### tailwind.config.js
-- Theme configuration
-- DaisyUI setup
-- Custom color schemes
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
-## IDE Configuration
-- VSCode recommended extensions:
-  - ESLint
-  - Prettier
-  - Tailwind CSS IntelliSense
-  - TypeScript and JavaScript Language Features
+  if (!mounted) return null;
+  
+  return <div>Client Content</div>;
+}
+```
+
+### 2. Internationalization Setup
+Key points for proper i18n configuration:
+- Use middleware for locale detection
+- Handle async locale loading
+- Properly type messages
+- Use correct import paths
+
+### 3. Font Implementation
+Best practices for font setup:
+- Use separate provider component
+- Handle variables properly
+- Implement proper fallbacks
+- Consider performance implications
+
+## Creating New Projects
+
+To create a new project using this structure:
+
+1. Clone this repository
+2. Update package.json with new project details
+3. Modify configuration files:
+   - next.config.js
+   - tailwind.config.js
+   - src/config.ts
+
+4. Update content:
+   - Modify messages files
+   - Update components as needed
+   - Add new pages under [locale]
+
+## Development Guidelines
+
+### 1. Component Structure
+- Use client components for interactive elements
+- Keep providers separate and focused
+- Follow atomic design principles
+
+### 2. Styling Approach
+- Use Tailwind utility classes
+- Leverage DaisyUI components
+- Create custom components when needed
+
+### 3. Performance Considerations
+- Optimize images using next/image
+- Implement proper loading states
+- Use dynamic imports when appropriate
 
 ## Troubleshooting
 
-Common issues and solutions:
-1. **Port Already in Use**: Kill the process using `pkill -f "next dev"` and restart
-2. **Type Errors**: Run `npm run type-check` to identify issues
-3. **Linting Errors**: Run `npm run lint:fix` to auto-fix common issues
+1. **Server/Client Mismatch**
+   - Check component boundaries
+   - Verify provider setup
+   - Ensure proper mounting handling
+
+2. **Locale Issues**
+   - Verify middleware configuration
+   - Check message file structure
+   - Validate locale detection
+
+3. **Styling Problems**
+   - Clear .next cache
+   - Verify Tailwind configuration
+   - Check class name conflicts
+
+## Contributing
+
+1. Fork the repository
+2. Create feature branch
+3. Submit pull request
+
+## License
+
+MIT License - feel free to use this structure for any project.
 
 ## 🎯 Vision
 

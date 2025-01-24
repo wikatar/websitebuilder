@@ -3,10 +3,12 @@ import {locales, defaultLocale} from './src/config';
 
 export default createMiddleware({
   defaultLocale,
-  locales: locales,
+  locales,
   localePrefix: 'always'
 });
 
 export const config = {
-  matcher: ['/', '/(sv|en)/:path*']
+  matcher: [
+    '/((?!api|_next|_vercel|.*\\..*).*)'
+  ]
 }; 
