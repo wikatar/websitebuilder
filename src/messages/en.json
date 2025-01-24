@@ -1,32 +1,52 @@
 {
   "navigation": {
-    "home": "Home",
-    "services": "Services",
-    "about": "About",
-    "portfolio": "Portfolio",
-    "contact": "Contact"
+    "home": {
+      "title": "Home"
+    },
+    "about": {
+      "title": "About",
+      "story": "Our Story",
+      "team": "Our Team",
+      "vision": "Vision & Mission"
+    },
+    "services": {
+      "title": "Services",
+      "webdev": "Web Development",
+      "ai": "AI Integration",
+      "growth": "Digital Growth",
+      "software": "Software Solutions"
+    },
+    "portfolio": {
+      "title": "Portfolio",
+      "projects": "Projects",
+      "cases": "Case Studies"
+    },
+    "contact": {
+      "title": "Contact"
+    },
+    "cta": "Get Started"
   },
   "home": {
     "hero": {
-      "title": "Your AI Partnership Journey Starts Here",
-      "subtitle": "We don't just build digital solutions - we create AI-powered foundations that evolve with technology, ensuring your business stays ahead of the curve.",
-      "primaryCta": "Start Your AI Journey",
-      "secondaryCta": "Learn About Our Approach",
-      "imageAlt": "Digital solutions illustration"
+      "title": "The Balthazar Project",
+      "subtitle": "We are a leading web agency combining creative expertise with advanced AI technology to create exceptional digital solutions for our clients.",
+      "primaryCta": "Discuss Your Project",
+      "secondaryCta": "View Our Services",
+      "imageAlt": "The Balthazar Project illustration"
     },
     "services": {
-      "title": "Our Services",
+      "title": "Our Expertise",
       "webdev": {
-        "title": "Web Development",
-        "description": "Custom websites and applications built with modern technologies."
+        "title": "Custom Web Development",
+        "description": "We develop modern, fast, and user-friendly websites with a focus on conversion and user experience."
       },
       "seo": {
-        "title": "SEO Optimization",
-        "description": "Improve your visibility and reach your target audience."
+        "title": "AI-Driven SEO & Content",
+        "description": "We use our proprietary AI tools to optimize your digital presence and create engaging content."
       },
       "strategy": {
-        "title": "Digital Strategy",
-        "description": "Comprehensive digital solutions for your business growth."
+        "title": "Digital Strategy & AI Integration",
+        "description": "We help you integrate AI into your business for increased efficiency and growth."
       }
     },
     "about": {
@@ -39,24 +59,24 @@
       "button": "Contact Us"
     },
     "features": {
-      "title": "Why Partner With Us",
-      "subtitle": "Building Tomorrow's Solutions Today",
+      "title": "Why Clients Choose The Balthazar Project",
+      "subtitle": "We Deliver Tomorrow's Digital Solutions",
       "items": [
         {
-          "title": "Future-Proof Solutions",
-          "description": "Our frameworks and tools are designed to evolve with AI advancements, ensuring your investment grows in value over time."
+          "title": "Expertise & Innovation",
+          "description": "Our team combines deep technical knowledge with creative innovation, enhanced by our proprietary AI tools."
         },
         {
-          "title": "Custom AI Integration",
-          "description": "We build tailored AI solutions that fit your specific needs, from automation to intelligent decision-making."
+          "title": "Tailored Solutions",
+          "description": "We create unique digital solutions perfectly aligned with your business and goals."
         },
         {
-          "title": "Continuous Evolution",
-          "description": "As AI technology improves, your solutions automatically benefit from enhanced capabilities and features."
+          "title": "AI-Enhanced Development",
+          "description": "Our AI tools streamline the development process and give you a competitive edge in the market."
         },
         {
-          "title": "Strategic Partnership",
-          "description": "We're not just a service provider - we're your long-term partner in navigating the AI-driven future."
+          "title": "Long-term Partnership",
+          "description": "We are your strategic partner in the digital world, always ready to support your continued growth."
         }
       ]
     }
@@ -165,24 +185,12 @@
       "whatWeDo": {
         "title": "What We Do",
         "content": "We create future-proof digital solutions that leverage the power of AI. From AI-enhanced websites to custom software solutions, our work is characterized by its ability to evolve and improve automatically as AI technology advances.",
-        "services": [
-          "AI-Enhanced Web Development",
-          "Custom AI Integration & Tools",
-          "AI-Powered Digital Growth",
-          "Intelligent Software Solutions",
-          "Strategic AI Consultation"
-        ]
+        "services": "AI-Enhanced Web Development, Custom AI Integration & Tools, AI-Powered Digital Growth, Intelligent Software Solutions, Strategic AI Consultation"
       },
       "howWeWork": {
         "title": "How We Work",
         "content": "Our approach combines human expertise with AI capabilities. We've developed proprietary frameworks and tools that allow us to create solutions that continuously learn and improve. This means your investment doesn't just maintain value – it grows over time.",
-        "principles": [
-          "AI-First Development",
-          "Continuous Evolution",
-          "Scalable Architecture",
-          "Future-Proof Design",
-          "Strategic Partnership"
-        ]
+        "principles": "AI-First Development, Continuous Evolution, Scalable Architecture, Future-Proof Design, Strategic Partnership"
       },
       "whyChooseUs": {
         "title": "Why Choose Us",

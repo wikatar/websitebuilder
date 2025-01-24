@@ -1,55 +1,46 @@
-import { NextIntlClientProvider } from 'next-intl';
+import { Inter } from 'next/font/google';
 import { notFound } from 'next/navigation';
-import { Navigation } from '@/components/layout/Navigation';
-import { Footer } from '@/components/layout/Footer';
-import { ThemeProvider } from '@/components/layout/ThemeProvider';
+import { NextIntlClientProvider } from 'next-intl';
 import { locales } from '../../../i18n';
+import { ClientLayout } from '@/components/layout/ClientLayout';
 import '../globals.css';
 
-export function generateStaticParams() {
-  return locales.map((locale) => ({ locale }));
-}
+const inter = Inter({ subsets: ['latin'] });
 
-interface LocaleLayoutProps {
-  children: React.ReactNode;
-  params: {
-    locale: string;
-  };
-}
-
+// This is a server component
 async function getMessages(locale: string) {
   try {
-    return (await import(`../../../src/messages/${locale}.json`)).default;
+    return (await import(`@/messages/${locale}.json`)).default;
   } catch (error) {
     notFound();
   }
 }
 
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
+}
+
+// Make the root layout a Server Component
 export default async function LocaleLayout({
   children,
-  params,
-}: LocaleLayoutProps) {
-  const { locale } = params;
-
-  // Validate the locale
-  if (!locales.includes(locale as any)) {
-    notFound();
-  }
-
-  // Get messages for the locale
+  params: { locale }
+}: {
+  children: React.ReactNode;
+  params: { locale: string };
+}) {
+  if (!locales.includes(locale as any)) notFound();
+  
   const messages = await getMessages(locale);
 
   return (
-    <NextIntlClientProvider locale={locale} messages={messages}>
-      <ThemeProvider>
-        <div className="flex flex-col min-h-screen">
-          <Navigation />
-          <main className="flex-grow">
+    <html lang={locale} suppressHydrationWarning>
+      <body className={`${inter.className} min-h-screen bg-background antialiased`} suppressHydrationWarning>
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <ClientLayout>
             {children}
-          </main>
-          <Footer />
-        </div>
-      </ThemeProvider>
-    </NextIntlClientProvider>
+          </ClientLayout>
+        </NextIntlClientProvider>
+      </body>
+    </html>
   );
 } 

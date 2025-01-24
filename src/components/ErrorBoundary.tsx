@@ -4,6 +4,7 @@ import React from 'react';
 
 interface Props {
   children: React.ReactNode;
+  fallback?: React.ReactNode;
 }
 
 interface State {
@@ -17,26 +18,35 @@ export class ErrorBoundary extends React.Component<Props, State> {
     this.state = { hasError: false, error: null };
   }
 
-  static getDerivedStateFromError(error: Error): State {
+  static getDerivedStateFromError(error: Error) {
     return { hasError: true, error };
   }
 
   componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
-    console.error('ErrorBoundary caught an error:', error, errorInfo);
+    // Log to terminal
+    console.group('Error caught by boundary:');
+    console.error('Error:', error);
+    console.error('Component stack:', errorInfo.componentStack);
+    console.groupEnd();
+
+    // You can also send to an error reporting service here
   }
 
   render() {
     if (this.state.hasError) {
-      return (
-        <div className="min-h-screen bg-base-100 flex items-center justify-center p-4">
-          <div className="max-w-md w-full bg-base-200 p-6 rounded-lg shadow-lg">
+      // You can render any custom fallback UI
+      return this.props.fallback || (
+        <div className="min-h-screen flex items-center justify-center bg-base-200">
+          <div className="max-w-xl p-8 bg-base-100 shadow-xl rounded-lg">
             <h2 className="text-2xl font-bold text-error mb-4">Something went wrong</h2>
-            <p className="text-base-content/80 mb-4">
-              {this.state.error?.message || 'An unexpected error occurred'}
-            </p>
+            <div className="bg-base-300 p-4 rounded mb-4">
+              <pre className="whitespace-pre-wrap break-words">
+                {this.state.error?.message}
+              </pre>
+            </div>
             <button
-              onClick={() => this.setState({ hasError: false, error: null })}
               className="btn btn-primary"
+              onClick={() => window.location.reload()}
             >
               Try again
             </button>
