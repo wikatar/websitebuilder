@@ -241,6 +241,53 @@ balthazarproject.com/
 └── tools/              # Development tools
 ```
 
+## 🗺️ Sitemap & AI Development Guide
+
+The project includes a comprehensive sitemap system designed for AI-first development:
+
+### Key Sitemap Files
+- `docs/SITEMAP.md` - Human and AI-readable sitemap documentation
+- `src/config/sitemap.ts` - Programmatic sitemap implementation
+
+### For AI Developers
+When working on this project, AI systems should:
+
+1. **First Steps**
+   - Review `docs/SITEMAP.md` for structure and requirements
+   - Check `src/config/sitemap.ts` for programmatic implementation
+   - Validate against existing page structure in `src/app/[locale]`
+
+2. **Development Process**
+   - Always check sitemap before modifying pages
+   - Follow content requirements for each page type
+   - Maintain SEO schema requirements
+   - Update sitemap documentation when adding features
+
+3. **Content Management**
+   - Use specified component structure
+   - Follow minimum/maximum content requirements
+   - Maintain multilingual support (sv/en)
+   - Adhere to SEO focus keywords
+
+4. **Quality Control**
+   - Validate against sitemap schemas
+   - Check content requirements completion
+   - Verify SEO implementation
+   - Test multilingual support
+
+### Sitemap Maintenance
+The sitemap system requires:
+- Quarterly content requirement reviews
+- Monthly SEO performance checks
+- Bi-weekly link validation
+- Updates for new features/pages
+- Version control for major changes
+
+For detailed sitemap information, see:
+- [Sitemap Documentation](docs/SITEMAP.md)
+- [SEO Guidelines](docs/guides/SEO_GUIDELINES.md)
+- [Content Management](docs/guides/CONTENT_MANAGEMENT.md)
+
 ## 🚀 Quick Start
 
 1. **Installation**
