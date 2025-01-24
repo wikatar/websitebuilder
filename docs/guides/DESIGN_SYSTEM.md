@@ -10,7 +10,12 @@
 ## Core Design Principles
 
 ### Brand Identity
-- **Colors**: Using DaisyUI dark theme with custom primary/secondary colors
+- **Colors**: 
+  - Primary: Deep Wine Red (#660000)
+  - Secondary: Rich Red (#990000)
+  - Accent: Bright Red (#CC0000)
+  - Base Dark: Pure Black (#000000)
+  - Base Light: Pure White (#ffffff)
 - **Typography**: Inter for body text, Montserrat for headings
 - **Spacing**: Consistent 4px/8px grid system
 - **Animations**: Smooth, purposeful motion
@@ -48,9 +53,15 @@ templates/      // Page layouts
 ```css
 :root {
   /* Colors */
-  --primary: #8B0000;
-  --secondary: #D10000;
-  --accent: #FF0000;
+  --primary: #660000;    /* Deep wine red - Used for primary actions and main brand elements */
+  --secondary: #990000;  /* Rich red - Used for secondary actions and supporting elements */
+  --accent: #CC0000;    /* Bright red - Used for highlights and calls-to-action */
+  
+  /* Base Colors */
+  --base-100: #000000;  /* Pure black - Main background */
+  --base-200: #0a0a0a;  /* Slightly lighter black - Card backgrounds */
+  --base-300: #141414;  /* Dark gray - Elevated elements */
+  --base-content: #ffffff; /* Pure white - Main text color */
   
   /* Typography */
   --font-sans: var(--font-inter);
@@ -61,6 +72,66 @@ templates/      // Page layouts
   --section-padding: 5rem;
 }
 ```
+
+### Color Usage Guidelines
+
+#### Brand Colors Application
+1. **Primary Wine Red (#660000)**
+   - Main navigation elements
+   - Primary buttons
+   - Section headers
+   - Brand accents in development showcases
+
+2. **Secondary Rich Red (#990000)**
+   - Secondary buttons
+   - Hover states
+   - Progress indicators
+   - Service cards backgrounds
+
+3. **Accent Bright Red (#CC0000)**
+   - Call-to-action buttons
+   - Important notifications
+   - Highlight text
+   - Interactive elements
+
+#### Base Colors Application
+1. **Pure Black (#000000)**
+   - Main background
+   - Dark mode foundation
+   - Code blocks
+   - Technical documentation
+
+2. **Pure White (#ffffff)**
+   - Main text
+   - Icons
+   - Borders
+   - Overlay text
+
+#### Service-Specific Color Usage
+1. **Web Development**
+   - Primary wine red for technical diagrams
+   - Secondary red for code examples
+   - Accent red for interactive elements
+
+2. **SEO Services**
+   - Gradient combinations of primary and secondary
+   - Analytics dashboards
+   - Performance metrics
+
+3. **Software Development**
+   - Dark backgrounds with accent highlights
+   - System architecture diagrams
+   - Technical documentation
+
+4. **AI Solutions**
+   - Neural network visualizations
+   - Data flow diagrams
+   - Algorithm explanations
+
+5. **Design Work**
+   - Creative process timelines
+   - Portfolio showcases
+   - UI/UX examples
 
 ## Design Constraints
 

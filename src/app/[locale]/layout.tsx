@@ -1,7 +1,6 @@
 import { Inter, Montserrat } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import { NextIntlClientProvider } from 'next-intl';
-import { locales } from '@/config';
 import { ThemeProvider } from '@/components/layout/ThemeProvider';
 import Navigation from '@/components/layout/Navigation';
 import '../globals.css';
@@ -39,29 +38,29 @@ async function getMessages(locale: string) {
   }
 }
 
+interface LocaleLayoutProps {
+  children: React.ReactNode;
+  params: { locale: string };
+}
+
 export default async function LocaleLayout({
   children,
   params,
-}: {
-  children: React.ReactNode;
-  params: Promise<{ locale: string }> | { locale: string };
-}) {
-  // Ensure params is resolved
-  const { locale } = await Promise.resolve(params);
-
-  // Validate locale first to fail fast
-  if (!locales.includes(locale)) notFound();
-
-  const messages = await getMessages(locale);
+}: LocaleLayoutProps) {
+  const messages = await getMessages(params.locale);
 
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <html lang={params.locale} suppressHydrationWarning>
       <head />
       <body className={`${inter.variable} ${montserrat.variable} min-h-screen bg-base-100`}>
-        <NextIntlClientProvider locale={locale} messages={messages} timeZone="Europe/Stockholm">
+        <NextIntlClientProvider locale={params.locale} messages={messages} timeZone="Europe/Stockholm">
           <ThemeProvider>
-            <Navigation />
-            {children}
+            <div className="flex flex-col min-h-screen">
+              <Navigation />
+              <main className="flex-grow">
+                {children}
+              </main>
+            </div>
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>
