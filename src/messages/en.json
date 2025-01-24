@@ -10,7 +10,9 @@
     "hero": {
       "title": "Building Digital Excellence",
       "subtitle": "Web development, SEO optimization, and digital solutions that drive results.",
-      "cta": "Get Started"
+      "cta": "Explore Services",
+      "secondaryCta": "Learn More",
+      "imageAlt": "Digital solutions illustration"
     },
     "services": {
       "title": "Our Services",

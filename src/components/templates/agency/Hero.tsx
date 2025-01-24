@@ -2,9 +2,13 @@
 
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
+import Link from 'next/link';
+import Image from 'next/image';
+import { useLocale } from 'next-intl';
 
 export function Hero() {
-  const t = useTranslations('Hero');
+  const t = useTranslations('home.hero');
+  const locale = useLocale();
 
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-base-200">
@@ -29,12 +33,12 @@ export function Hero() {
               {t('subtitle')}
             </p>
             <div className="flex flex-wrap gap-4">
-              <button className="btn btn-primary btn-lg">
-                {t('primaryCTA')}
-              </button>
-              <button className="btn btn-outline btn-lg">
-                {t('secondaryCTA')}
-              </button>
+              <Link href={`/${locale}/services`} className="btn btn-primary btn-lg">
+                {t('cta')}
+              </Link>
+              <Link href={`/${locale}/about`} className="btn btn-outline btn-lg">
+                {t('secondaryCta')}
+              </Link>
             </div>
           </motion.div>
 
@@ -45,11 +49,15 @@ export function Hero() {
             className="relative"
           >
             <div className="aspect-square rounded-2xl bg-base-300 overflow-hidden">
-              <img
-                src="/images/hero-image.webp"
-                alt="Hero illustration"
-                className="w-full h-full object-cover"
-              />
+              <div className="relative w-full h-full">
+                <Image
+                  src="/images/hero-illustration.svg"
+                  alt={t('imageAlt')}
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
             </div>
           </motion.div>
         </div>
