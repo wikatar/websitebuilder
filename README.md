@@ -1,6 +1,138 @@
 # Balthazar Project Website
 
-A modern, internationalized Next.js website with built-in dark theme support, robust font handling, and comprehensive SEO optimization.
+A modern, internationalized Next.js website built with performance and user experience in mind.
+
+## Project Overview
+
+### Core Features
+- 🌐 Full internationalization (i18n) with Swedish and English support
+- 🎨 Dynamic theming with dark mode support
+- 🚀 Optimized performance with message caching and font preloading
+- 📱 Responsive design with mobile-first approach
+- 🔍 SEO optimized with next-seo integration
+
+### Tech Stack
+- Next.js 14 with App Router
+- TypeScript
+- next-intl for internationalization
+- Tailwind CSS with DaisyUI
+- Framer Motion for animations
+
+## Project Structure
+
+```
+src/
+├── app/
+│   └── [locale]/          # Locale-based routing
+│       ├── layout.tsx     # Root layout with i18n provider
+│       ├── page.tsx       # Home page
+│       ├── services/      # Services section
+│       └── about/         # About section
+├── components/
+│   ├── layout/           # Layout components
+│   │   ├── Navigation.tsx
+│   │   ├── ThemeProvider.tsx
+│   │   └── FontProvider.tsx
+│   ├── seo/             # SEO components
+│   ├── templates/       # Page templates
+│   └── ui/             # Reusable UI components
+├── messages/           # Translation files
+│   ├── en.json
+│   └── sv.json
+└── config.ts          # Global configuration
+```
+
+## Development Progress
+
+### Iteration 1: Basic Setup
+- ✅ Next.js with TypeScript setup
+- ✅ Basic project structure
+- ✅ Initial routing configuration
+
+### Iteration 2: Internationalization
+- ✅ next-intl integration
+- ✅ Language switching functionality
+- ✅ Translation file structure
+- ✅ Locale-based routing
+
+### Iteration 3: Design System
+- ✅ Tailwind CSS with DaisyUI setup
+- ✅ Dark theme configuration
+- ✅ Custom font integration (Inter & Montserrat)
+- ✅ Responsive navigation
+
+### Iteration 4: Performance Optimization
+- ✅ Message caching implementation
+- ✅ Font preloading
+- ✅ Component memoization
+- ✅ Optimized client/server code splitting
+
+### Current Working Features
+1. Language Switching:
+   - Automatic redirection to default locale (/sv)
+   - Working language switcher in navigation
+   - Persistent language selection
+
+2. Navigation:
+   - Responsive mobile/desktop design
+   - Smooth transitions
+   - Proper routing with locale prefixes
+
+3. Theme System:
+   - Dark mode implementation
+   - Custom font variables
+   - DaisyUI integration
+
+4. Performance:
+   - Cached translations
+   - Preloaded fonts
+   - Optimized component rendering
+
+## Upcoming Features
+1. Button Functionality:
+   - Implement service exploration
+   - Add contact form integration
+   - Create portfolio showcase
+
+2. Content Sections:
+   - Complete services section
+   - Add about page content
+   - Implement portfolio gallery
+
+3. Additional Features:
+   - Blog integration
+   - Newsletter signup
+   - Social media integration
+
+## Development Setup
+
+1. Install dependencies:
+```bash
+npm install
+```
+
+2. Run development server:
+```bash
+npm run dev
+```
+
+3. Access the site:
+- Main site: http://localhost:3000
+- Swedish version: http://localhost:3000/sv
+- English version: http://localhost:3000/en
+
+## Known Issues
+- Some buttons need proper functionality implementation
+- Portfolio section pending development
+- Contact form integration pending
+
+## Contributing
+1. Create a feature branch
+2. Make your changes
+3. Submit a pull request
+
+## License
+MIT License
 
 ## 🎯 Vision & Features
 

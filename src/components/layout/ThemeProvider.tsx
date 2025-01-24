@@ -1,8 +1,12 @@
 'use client';
 
-import { ReactNode, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
-export function ThemeProvider({ children }: { children: ReactNode }) {
+interface ThemeProviderProps {
+  children: React.ReactNode;
+}
+
+export function ThemeProvider({ children }: ThemeProviderProps) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -10,11 +14,11 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   }, []);
 
   if (!mounted) {
-    return <div className="min-h-screen">{children}</div>;
+    return null;
   }
 
   return (
-    <div className="min-h-screen bg-base-100" data-theme="dark">
+    <div data-theme="dark">
       {children}
     </div>
   );

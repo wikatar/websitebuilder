@@ -2,19 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --primary-color: theme('colors.blue.500');
-  --secondary-color: theme('colors.purple.500');
-  --accent-color: theme('colors.pink.500');
-}
-
 @layer base {
-  body {
-    @apply font-sans text-base-content;
-  }
-  
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-heading font-bold;
+  :root {
+    --font-sans: var(--font-inter);
+    --font-heading: var(--font-montserrat);
   }
 }
 
@@ -28,7 +19,11 @@
   }
 
   .section-padding {
-    @apply py-16 sm:py-20 lg:py-24;
+    @apply py-16 md:py-24;
+  }
+
+  .btn-gradient {
+    @apply bg-gradient-to-r from-primary to-secondary text-white transition-colors duration-300 hover:opacity-90;
   }
 }
 
@@ -98,12 +93,12 @@
 
 /* Glass Effect */
 .glass-effect {
-  @apply bg-white/10 backdrop-blur-lg;
+  @apply bg-white/10 backdrop-blur-md;
 }
 
 /* Text Gradient */
 .text-gradient {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent;
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
 }
 
 /* Card Styles */
@@ -111,7 +106,55 @@
   @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
 }
 
-/* Button Styles */
-.btn-gradient {
-  @apply bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity duration-300;
+@layer utilities {
+  @keyframes blob {
+    0% {
+      transform: translate(0px, 0px) scale(1);
+    }
+    33% {
+      transform: translate(30px, -50px) scale(1.1);
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+    100% {
+      transform: translate(0px, 0px) scale(1);
+    }
+  }
+
+  .animate-blob {
+    animation: blob 7s infinite;
+  }
+
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+
+  .hover-lift {
+    @apply transition-transform duration-300 hover:-translate-y-1;
+  }
+
+  .hover-scale {
+    @apply transition-transform duration-300 hover:scale-105;
+  }
+
+  .glass-effect {
+    @apply bg-white/10 backdrop-blur-md;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+
+  .btn-gradient {
+    @apply bg-gradient-to-r from-primary to-secondary text-white transition-colors duration-300 hover:opacity-90;
+  }
 }

@@ -2,27 +2,38 @@ import { Inter, Montserrat } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import { NextIntlClientProvider } from 'next-intl';
 import { locales } from '@/config';
-import { Metadata } from '@/components/seo/Metadata';
 import { ThemeProvider } from '@/components/layout/ThemeProvider';
-import { FontProvider } from '@/components/layout/FontProvider';
 import Navigation from '@/components/layout/Navigation';
-import './globals.css';
+import '../globals.css';
 
+// Preload fonts
 const inter = Inter({ 
   subsets: ['latin'],
-  variable: '--font-sans',
+  variable: '--font-inter',
   display: 'swap',
+  preload: true,
 });
 
 const montserrat = Montserrat({ 
   subsets: ['latin'],
-  variable: '--font-heading',
+  variable: '--font-montserrat',
   display: 'swap',
+  preload: true,
 });
 
+// Cache messages
+const messagesCache = new Map();
+
 async function getMessages(locale: string) {
+  // Check cache first
+  if (messagesCache.has(locale)) {
+    return messagesCache.get(locale);
+  }
+
   try {
-    return (await import(`@/messages/${locale}.json`)).default;
+    const messages = (await import(`@/messages/${locale}.json`)).default;
+    messagesCache.set(locale, messages);
+    return messages;
   } catch (error) {
     notFound();
   }
@@ -30,29 +41,24 @@ async function getMessages(locale: string) {
 
 export default async function LocaleLayout({
   children,
-  params: { locale }
+  params: { locale },
 }: {
   children: React.ReactNode;
   params: { locale: string };
 }) {
-  // Validate that the incoming locale is configured
+  // Validate locale first to fail fast
   if (!locales.includes(locale)) notFound();
 
   const messages = await getMessages(locale);
 
   return (
-    <html suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <head />
-      <body>
-        <NextIntlClientProvider locale={locale} messages={messages}>
+      <body className={`${inter.variable} ${montserrat.variable} min-h-screen bg-base-100`}>
+        <NextIntlClientProvider locale={locale} messages={messages} timeZone="Europe/Stockholm">
           <ThemeProvider>
-            <FontProvider>
-              <Metadata path="/" pageKey="home" />
-              <Navigation />
-              <main className="min-h-screen bg-base-100">
-                {children}
-              </main>
-            </FontProvider>
+            <Navigation />
+            {children}
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>
