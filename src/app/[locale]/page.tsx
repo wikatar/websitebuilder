@@ -2,7 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import { Metadata } from '@/components/seo/Metadata';
-import { Hero } from '@/components/templates/agency';
+import { Hero, Services } from '@/components/templates/agency';
 
 export default function HomePage() {
   const t = useTranslations('home');
@@ -10,7 +10,10 @@ export default function HomePage() {
   return (
     <>
       <Metadata path="/" pageKey="home" />
-      <Hero />
+      <main className="min-h-screen">
+        <Hero />
+        <Services />
+      </main>
     </>
   );
 } 

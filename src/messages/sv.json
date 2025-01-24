@@ -101,6 +101,7 @@
   "Services": {
     "title": "Våra Tjänster",
     "subtitle": "Omfattande lösningar för dina digitala behov",
+    "description": "Vi erbjuder omfattande digitala lösningar anpassade för dina behov, från webbutveckling till AI-integration.",
     "webdev": {
       "title": "Webbutveckling",
       "description": "Skräddarsydda webbplatser och applikationer byggda med modern teknik."

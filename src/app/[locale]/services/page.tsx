@@ -11,17 +11,19 @@ export default function ServicesPage() {
   return (
     <>
       <PageSEO path="/services" pageKey="services" />
-      <main className="min-h-screen py-12">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="container mx-auto px-4"
-        >
-          <h1 className="text-4xl font-bold mb-8">{t('title')}</h1>
-          <p className="text-xl text-base-content/80 mb-12">{t('description')}</p>
-          <Services />
-        </motion.div>
+      <main className="min-h-screen">
+        <section className="py-16 bg-base-200">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="container mx-auto px-4"
+          >
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">{t('title')}</h1>
+            <p className="text-xl text-base-content/80 mb-12 text-center max-w-3xl mx-auto">{t('description')}</p>
+          </motion.div>
+        </section>
+        <Services />
       </main>
     </>
   );

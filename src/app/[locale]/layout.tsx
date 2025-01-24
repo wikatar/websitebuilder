@@ -41,11 +41,14 @@ async function getMessages(locale: string) {
 
 export default async function LocaleLayout({
   children,
-  params: { locale },
+  params,
 }: {
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }> | { locale: string };
 }) {
+  // Ensure params is resolved
+  const { locale } = await Promise.resolve(params);
+
   // Validate locale first to fail fast
   if (!locales.includes(locale)) notFound();
 
