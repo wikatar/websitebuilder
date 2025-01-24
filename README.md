@@ -916,3 +916,63 @@ The site will be available at http://localhost:3000 and will automatically redir
 ├── i18n.ts               # Internationalization configuration
 └── package.json          # Project dependencies
 ```
+
+## SEO Architecture
+
+### AI-First SEO Structure
+Our SEO implementation is designed for AI-driven content generation and optimization. The structure is maintained in `src/messages/{locale}.json` files and includes:
+
+```typescript
+interface SEOStructure {
+  siteName: string;
+  defaultTitle: string;
+  defaultDescription: string;
+  defaultKeywords: string;
+  pages: {
+    [key: string]: {
+      SEO: {
+        title: string;
+        description: string;
+        keywords: string;
+        metaDescription: string;
+        focus: {
+          primary: string;
+          secondary: string;
+          tertiary: string;
+        };
+        targetAudience: {
+          primary: string;
+          secondary: string;
+          tertiary: string;
+        };
+      };
+    };
+  };
+}
+```
+
+### Key Components
+1. **Brand Identity**
+   - Consistent messaging across all pages
+   - AI-friendly content structure
+   - Multi-language support (en/sv)
+
+2. **Page-Specific SEO**
+   - Structured meta information
+   - Target audience definition
+   - Focus area hierarchy
+   - Keyword optimization
+
+3. **Content Guidelines**
+   - AI-generated content parameters
+   - Brand voice consistency
+   - Value proposition emphasis
+   - Service descriptions
+
+### Implementation
+- SEO components in `src/components/seo/`
+- Translation files in `src/messages/`
+- Page-specific SEO in route files
+- Automated meta tag generation
+
+For detailed SEO implementation guidelines, see [SEO Guidelines](docs/guides/SEO_GUIDELINES.md).

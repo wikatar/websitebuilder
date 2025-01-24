@@ -8,10 +8,10 @@
   },
   "home": {
     "hero": {
-      "title": "Digital Excellens",
-      "subtitle": "Webbutveckling, SEO-optimering och digitala lösningar som ger resultat.",
-      "primaryCta": "Utforska Tjänster",
-      "secondaryCta": "Läs Mer",
+      "title": "Din AI-Partnerskap Börjar Här",
+      "subtitle": "Vi bygger inte bara digitala lösningar - vi skapar AI-drivna fundament som utvecklas med tekniken och säkerställer att ditt företag ligger steget före.",
+      "primaryCta": "Starta Din AI-Resa",
+      "secondaryCta": "Lär Dig Mer Om Vårt Arbetssätt",
       "imageAlt": "Digital lösningar illustration"
     },
     "services": {
@@ -37,6 +37,28 @@
       "title": "Redo att starta ditt projekt?",
       "description": "Låt oss diskutera hur vi kan hjälpa dig att nå dina digitala mål.",
       "button": "Kontakta oss"
+    },
+    "features": {
+      "title": "Varför Välja Oss Som Partner",
+      "subtitle": "Vi Bygger Morgondagens Lösningar Idag",
+      "items": [
+        {
+          "title": "Framtidssäkra Lösningar",
+          "description": "Våra ramverk och verktyg är designade för att utvecklas med AI-framsteg, vilket säkerställer att din investering växer i värde över tid."
+        },
+        {
+          "title": "Skräddarsydd AI-Integration",
+          "description": "Vi bygger anpassade AI-lösningar som passar dina specifika behov, från automation till intelligent beslutsfattande."
+        },
+        {
+          "title": "Kontinuerlig Utveckling",
+          "description": "När AI-teknologin förbättras, drar dina lösningar automatiskt nytta av förbättrade funktioner och möjligheter."
+        },
+        {
+          "title": "Strategiskt Partnerskap",
+          "description": "Vi är inte bara en tjänsteleverantör - vi är din långsiktiga partner i att navigera den AI-drivna framtiden."
+        }
+      ]
     }
   },
   "footer": {
@@ -64,9 +86,9 @@
   },
   "SEO": {
     "siteName": "Balthazar Project",
-    "defaultTitle": "Modern Webbutveckling",
-    "defaultDescription": "Vi bygger skalbara och högpresterande webbapplikationer med Next.js, TypeScript och moderna best practices.",
-    "defaultKeywords": "webbutveckling, next.js, react, typescript, seo, prestanda"
+    "defaultTitle": "AI-First Digital Partner",
+    "defaultDescription": "Din strategiska partner för AI-driven digital transformation. Vi bygger framtidssäkra lösningar som utvecklas med AI-teknologin.",
+    "defaultKeywords": "ai partnerskap, webbutveckling, digital transformation, ai integration, skräddarsydda ai-lösningar"
   },
   "pages": {
     "home": {
@@ -85,9 +107,20 @@
     },
     "about": {
       "SEO": {
-        "title": "Om Oss",
-        "description": "Lär dig mer om vårt uppdrag att skapa exceptionella webbupplevelser genom modern teknik och best practices.",
-        "keywords": "om oss, webbutvecklingsteam, mission, värderingar"
+        "title": "AI-First Digital Evolutionspartner | Balthazar Project",
+        "description": "Samarbeta med Balthazar Project för AI-driven digital transformation. Vi skapar framtidssäkra lösningar som utvecklas med AI-teknologi och säkerställer att ditt företag ligger steget före i den digitala tidsåldern.",
+        "keywords": "ai partnerskap, digital transformation, framtidssäkra lösningar, ai integration, skräddarsydda ai verktyg, utvecklande teknologi, digital evolution, ai konsulting, strategiskt partnerskap",
+        "metaDescription": "Balthazar Project är din strategiska partner för AI-driven digital evolution. Vi skapar framtidssäkra lösningar som kontinuerligt förbättras när AI-tekniken utvecklas, vilket säkerställer att ditt företag ligger steget före.",
+        "focus": {
+          "primary": "AI-Partnerskap & Digital Evolution",
+          "secondary": "Framtidssäkra Lösningar",
+          "tertiary": "Strategisk Tillväxt"
+        },
+        "targetAudience": {
+          "primary": "Framåtblickande företag som söker AI-integration",
+          "secondary": "Företag som söker strategisk digital transformation",
+          "tertiary": "Organisationer som vill utnyttja AI-utveckling"
+        }
       }
     },
     "contact": {
@@ -100,29 +133,87 @@
   },
   "Services": {
     "title": "Våra Tjänster",
-    "subtitle": "Omfattande lösningar för dina digitala behov",
-    "description": "Vi erbjuder omfattande digitala lösningar anpassade för dina behov, från webbutveckling till AI-integration.",
+    "subtitle": "Framtidssäkra Digitala Lösningar",
+    "description": "Vi hjälper företag att utnyttja kraften i AI genom skräddarsydda verktyg och ramverk som utvecklas med tekniken.",
     "webdev": {
-      "title": "Webbutveckling",
-      "description": "Skräddarsydda webbplatser och applikationer byggda med modern teknik."
+      "title": "AI-Förstärkt Webbutveckling",
+      "description": "Skräddarsydda webbplatser och applikationer byggda med vårt AI-first ramverk, designade för att utvecklas och förbättras i takt med AI-teknologin."
     },
     "ai": {
-      "title": "AI-Lösningar",
-      "description": "Intelligenta lösningar som automatiserar och optimerar dina processer."
+      "title": "AI-Integration & Verktyg",
+      "description": "Skräddarsydda AI-lösningar och verktyg som hjälper ditt företag att dra nytta av det senaste inom artificiell intelligens."
     },
     "seo": {
-      "title": "SEO-Optimering",
-      "description": "Förbättra din synlighet och nå din målgrupp effektivt."
+      "title": "AI-Driven Digital Tillväxt",
+      "description": "Omfattande optimering av digital närvaro med våra AI-verktyg för innehåll, SEO och prestandaförbättring."
     },
-    "design": {
-      "title": "Digital Design",
-      "description": "Kreativa och användarvänliga designlösningar som engagerar."
+    "software": {
+      "title": "Skräddarsydda Mjukvarulösningar",
+      "description": "Specialutvecklad mjukvara med inbyggda AI-funktioner som blir smartare över tid."
     }
   },
   "about": {
-    "title": "Om Oss",
-    "description": "Vi är ett team av passionerade utvecklare och designers dedikerade till att skapa exceptionella digitala upplevelser. Vår expertis inom modern webbteknologi och engagemang för kvalitet särskiljer oss.",
-    "mission": "Vårt uppdrag är att hjälpa företag att blomstra i den digitala tidsåldern genom innovativa lösningar och toppmodern teknik."
+    "title": "Banbrytande AI-First Digital Evolution",
+    "description": "På Balthazar Project är vi inte bara en digital byrå – vi är din strategiska partner i att navigera AI-revolutionen. Grundade på principen att AI fundamentalt kommer att förändra hur företag fungerar, har vi byggt ett unikt ekosystem av AI-drivna verktyg och ramverk som utvecklas tillsammans med teknologiska framsteg.",
+    "mission": "Vårt uppdrag är att ge företag möjlighet att blomstra i en AI-driven framtid genom att tillhandahålla skalbara, intelligenta lösningar som blir smartare över tid.",
+    "vision": "Vi ser en framtid där företag sömlöst integrerar med AI och utnyttjar dess kraft för att uppnå oöverträffad tillväxt och effektivitet.",
+    "sections": {
+      "whoWeAre": {
+        "title": "Vilka Vi Är",
+        "content": "Vi är ett team av AI-specialister, utvecklare och digitala strateger som förstår att framtiden tillhör de som anammar AI idag. Vår expertis omfattar webbutveckling, mjukvaruutveckling, AI-integration och digital optimering, allt förenat av vårt AI-first tillvägagångssätt."
+      },
+      "whatWeDo": {
+        "title": "Vad Vi Gör",
+        "content": "Vi skapar framtidssäkra digitala lösningar som utnyttjar kraften i AI. Från AI-förstärkta webbplatser till skräddarsydda mjukvarulösningar kännetecknas vårt arbete av förmågan att utvecklas och förbättras automatiskt när AI-tekniken går framåt.",
+        "services": [
+          "AI-Förstärkt Webbutveckling",
+          "Skräddarsydd AI-Integration & Verktyg",
+          "AI-Driven Digital Tillväxt",
+          "Intelligenta Mjukvarulösningar",
+          "Strategisk AI-Konsultation"
+        ]
+      },
+      "howWeWork": {
+        "title": "Hur Vi Arbetar",
+        "content": "Vårt tillvägagångssätt kombinerar mänsklig expertis med AI-kapacitet. Vi har utvecklat egna ramverk och verktyg som gör att vi kan skapa lösningar som kontinuerligt lär sig och förbättras. Detta innebär att din investering inte bara behåller värdet – den växer över tid.",
+        "principles": [
+          "AI-First Utveckling",
+          "Kontinuerlig Evolution",
+          "Skalbar Arkitektur",
+          "Framtidssäker Design",
+          "Strategiskt Partnerskap"
+        ]
+      },
+      "whyChooseUs": {
+        "title": "Varför Välja Oss",
+        "content": "Vi implementerar inte bara AI – vi bygger grunder som utvecklas med den. Våra lösningar är designade för att bli kraftfullare när AI-tekniken går framåt, vilket säkerställer att ditt företag ligger steget före.",
+        "benefits": [
+          "Framtidssäkra Lösningar",
+          "Utvecklande AI-Kapacitet",
+          "Strategiskt Långsiktigt Partnerskap",
+          "Egenutvecklade AI-Verktyg",
+          "Kontinuerlig Optimering"
+        ]
+      }
+    },
+    "values": [
+      {
+        "title": "Innovation Först",
+        "description": "Vi flyttar ständigt gränserna för vad som är möjligt med AI-teknologi."
+      },
+      {
+        "title": "Strategiskt Partnerskap",
+        "description": "Vi investerar i din långsiktiga framgång och tillväxt."
+      },
+      {
+        "title": "Kontinuerlig Utveckling",
+        "description": "Våra lösningar blir smartare och mer kapabla över tid."
+      },
+      {
+        "title": "Kvalitet & Pålitlighet",
+        "description": "Vi levererar robusta lösningar som skalar med dina behov."
+      }
+    ]
   },
   "contact": {
     "title": "Kontakta Oss",

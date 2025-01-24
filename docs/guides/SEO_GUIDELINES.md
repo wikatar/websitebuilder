@@ -1,176 +1,194 @@
-# SEO Guidelines for Balthazar Project
+# AI-First SEO Guidelines
 
-## Table of Contents
-1. [Core SEO Principles](#core-seo-principles)
-2. [Technical SEO Requirements](#technical-seo-requirements)
-3. [Content Guidelines](#content-guidelines)
-4. [Performance Optimization](#performance-optimization)
-5. [Monitoring and Maintenance](#monitoring-and-maintenance)
+## Overview
+This document outlines the SEO strategy and implementation guidelines for the Balthazar Project's AI-first approach. Our SEO structure is designed to be easily understood and utilized by AI systems for content generation while maintaining high standards for search engine optimization.
 
-## Core SEO Principles
+## Core SEO Structure
 
-### Meta Information
-- **Title Tags**: `<title>` should be unique, 50-60 characters
-- **Meta Descriptions**: 150-160 characters, action-oriented
-- **Canonical URLs**: Always implement to prevent duplicate content
-- **Structured Data**: Use Schema.org markup for rich snippets
+### Base Configuration
+Located in `src/messages/{locale}.json`:
+```json
+{
+  "SEO": {
+    "siteName": "Balthazar Project",
+    "defaultTitle": "AI-First Digital Solutions Partner",
+    "defaultDescription": "Your strategic partner in leveraging AI technology for digital transformation. We build future-proof solutions that evolve with AI advancements.",
+    "defaultKeywords": "ai partnership, web development, digital transformation, ai integration, custom ai solutions"
+  }
+}
+```
 
-### URL Structure
-- Use semantic URLs: `/services/web-development` instead of `/s/wd`
-- Include target keywords naturally
-- Keep URLs short and descriptive
-- Use hyphens (-) for word separation
+### Page-Specific SEO
+Each page includes:
+```json
+{
+  "pages": {
+    "about": {
+      "SEO": {
+        "title": "AI-First Digital Evolution Partner | Balthazar Project",
+        "description": "Partner with Balthazar Project for AI-powered digital transformation...",
+        "keywords": "ai partnership, digital transformation, future-proof solutions...",
+        "metaDescription": "Balthazar Project is your strategic partner in AI-powered digital evolution...",
+        "focus": {
+          "primary": "AI Partnership & Digital Evolution",
+          "secondary": "Future-Proof Solutions",
+          "tertiary": "Strategic Growth"
+        },
+        "targetAudience": {
+          "primary": "Forward-thinking businesses seeking AI integration",
+          "secondary": "Companies looking for strategic digital transformation",
+          "tertiary": "Organizations wanting to leverage AI advancement"
+        }
+      }
+    }
+  }
+}
+```
 
-### Content Hierarchy
-- One H1 tag per page
-- Logical heading structure (H1 → H2 → H3)
-- Use semantic HTML elements
-- Implement proper content sectioning
+## Brand Voice Guidelines
 
-## Technical SEO Requirements
+### Core Message Components
+1. **AI Partnership Focus**
+   - Emphasize strategic partnership
+   - Highlight AI evolution capabilities
+   - Focus on future-proofing
+   - Stress continuous improvement
 
-### Performance Metrics
-- Core Web Vitals targets:
-  - LCP (Largest Contentful Paint): < 2.5s
-  - FID (First Input Delay): < 100ms
-  - CLS (Cumulative Layout Shift): < 0.1
+2. **Value Proposition**
+   - AI-powered solutions
+   - Evolving capabilities
+   - Strategic growth
+   - Long-term partnership
 
-### Mobile Optimization
-- Responsive design implementation
-- Touch-friendly navigation
-- Readable font sizes (minimum 16px)
-- Adequate tap target sizes
+3. **Technical Expertise**
+   - AI integration
+   - Custom development
+   - Digital optimization
+   - Performance focus
 
-### Indexing & Crawling
-- Proper robots.txt configuration
-- XML sitemap implementation
-- Strategic internal linking
-- Regular crawl error monitoring
+## Content Generation Guidelines
 
-## Content Guidelines
+### AI Content Parameters
+1. **Tone & Style**
+   - Professional but approachable
+   - Technology-focused but not overwhelming
+   - Forward-thinking and innovative
+   - Partnership-oriented
 
-### Content Quality
-- Minimum 300 words per page
-- Original, valuable content
-- Clear purpose and user intent
-- Regular updates and maintenance
+2. **Key Themes**
+   - AI evolution and advancement
+   - Strategic partnership
+   - Future-proofing
+   - Continuous improvement
+   - Digital transformation
 
-### Keyword Strategy
-- Primary keyword in H1
-- Secondary keywords in H2s
-- Natural keyword distribution
-- Long-tail keyword integration
+3. **Content Structure**
+   - Clear hierarchy
+   - Scannable format
+   - Value-focused messaging
+   - Action-oriented conclusions
 
-### Content Structure
-- Clear introduction
-- Scannable paragraphs
-- Bullet points and lists
-- Relevant images with alt text
+## Implementation Guide
 
-## Performance Optimization
+### 1. Setting Up New Pages
+```typescript
+// pages/[locale]/new-page/page.tsx
+export const metadata = {
+  title: t('pages.newPage.SEO.title'),
+  description: t('pages.newPage.SEO.description'),
+  keywords: t('pages.newPage.SEO.keywords')
+};
+```
 
-### Image Optimization
-- Use next/image component
-- WebP format with fallbacks
-- Lazy loading implementation
-- Proper image dimensions
+### 2. Adding SEO Content
+1. Add page-specific SEO to translation files
+2. Include all required SEO fields
+3. Ensure content aligns with brand voice
+4. Maintain consistency across languages
 
-### Code Optimization
-- Minified CSS/JS
-- Tree shaking
-- Code splitting
-- Resource prioritization
+### 3. Meta Tag Implementation
+```typescript
+// components/seo/PageSEO.tsx
+<NextSeo
+  title={t('pages.current.SEO.title')}
+  description={t('pages.current.SEO.description')}
+  canonical={fullUrl}
+  openGraph={{...}}
+/>
+```
 
-### Caching Strategy
-- Browser caching
-- Static page generation
-- Incremental Static Regeneration
-- CDN implementation
+## Quality Assurance
 
-## Monitoring and Maintenance
+### SEO Checklist
+- [ ] All required SEO fields present
+- [ ] Content aligns with brand voice
+- [ ] Keywords properly integrated
+- [ ] Meta descriptions optimized
+- [ ] Target audience defined
+- [ ] Focus areas specified
+- [ ] Translations complete
 
-### Regular Checks
-- Weekly performance monitoring
-- Monthly content audits
-- Quarterly technical SEO audits
-- Continuous error monitoring
+### Common Pitfalls
+1. Inconsistent messaging across pages
+2. Missing required SEO fields
+3. Poorly defined target audience
+4. Unclear value proposition
+5. Keyword stuffing
 
-### Tools Integration
-- Google Search Console
-- Google Analytics
-- Core Web Vitals monitoring
-- Custom error tracking
+## Maintenance Guidelines
 
-## Implementation Checklist
+### Regular Updates
+1. Review and update keywords quarterly
+2. Assess content performance monthly
+3. Update value propositions as services evolve
+4. Maintain language consistency
 
-### New Page Creation
-1. [ ] Define target keywords
-2. [ ] Create meta information
-3. [ ] Implement structured data
-4. [ ] Optimize images and media
-5. [ ] Test performance metrics
-6. [ ] Validate mobile responsiveness
-7. [ ] Check accessibility compliance
+### Performance Monitoring
+1. Track search rankings
+2. Monitor page performance
+3. Analyze user engagement
+4. Assess conversion rates
 
-### Content Updates
-1. [ ] Audit existing content
-2. [ ] Update meta information
-3. [ ] Refresh outdated content
-4. [ ] Verify internal links
-5. [ ] Check for broken links
-6. [ ] Update last modified date
+## AI Content Generation
 
-## Best Practices for Our Stack
+### Guidelines for AI Systems
+1. **Content Creation**
+   - Use defined brand voice
+   - Follow key themes
+   - Maintain consistency
+   - Include all SEO elements
 
-### Next.js Specific
-- Use static generation when possible
-- Implement ISR for dynamic content
-- Optimize image loading
-- Utilize built-in SEO features
+2. **Content Optimization**
+   - Follow SEO structure
+   - Use defined keywords
+   - Target specified audience
+   - Maintain readability
 
-### Internationalization
-- Proper hreflang implementation
-- Language-specific content
-- URL structure per locale
-- Translation quality control
+3. **Quality Control**
+   - Verify brand alignment
+   - Check completeness
+   - Ensure consistency
+   - Validate technical SEO
 
-## Content Moderation Guidelines
+## Internationalization
 
-### Quality Standards
-- Professional tone of voice
-- Error-free writing
-- Factual accuracy
-- Regular updates
+### Multi-Language SEO
+1. Maintain consistent messaging across languages
+2. Adapt keywords for local markets
+3. Use proper language targeting
+4. Consider cultural nuances
 
-### Content Types
-1. **Service Pages**
-   - Clear value proposition
-   - Detailed service descriptions
-   - Relevant case studies
-   - Clear call-to-actions
+### Language-Specific Guidelines
+1. **English**
+   - Focus on global reach
+   - Use international business terminology
+   - Maintain professional tone
 
-2. **Blog Posts**
-   - Minimum 800 words
-   - Original research when possible
-   - Expert insights
-   - Regular publishing schedule
+2. **Swedish**
+   - Adapt to local market
+   - Use regional terminology
+   - Consider cultural context
 
-3. **Case Studies**
-   - Clear problem statement
-   - Detailed solution
-   - Measurable results
-   - Client testimonials
+---
 
-## Automated SEO Checks
-Our project includes automated checks for:
-- Meta tag completeness
-- Image optimization
-- Performance metrics
-- Mobile responsiveness
-- Accessibility compliance
-
-## Future Improvements
-- [ ] Implement automated content scoring
-- [ ] Add AI-powered content suggestions
-- [ ] Enhance performance monitoring
-- [ ] Expand structured data implementation 
+*Note: This document is designed to be read and interpreted by both AI systems and human developers. All guidelines are optimized for AI comprehension while maintaining human readability.* 
