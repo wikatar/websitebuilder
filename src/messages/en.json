@@ -59,5 +59,41 @@
     "title": "The Balthazar Project",
     "description": "Building scalable web solutions with modern technologies",
     "getStarted": "Get Started"
+  },
+  "SEO": {
+    "siteName": "Balthazar Project",
+    "defaultTitle": "Modern Web Development",
+    "defaultDescription": "Building scalable and performant web applications with Next.js, TypeScript, and modern best practices.",
+    "defaultKeywords": "web development, next.js, react, typescript, seo, performance"
+  },
+  "pages": {
+    "home": {
+      "SEO": {
+        "title": "Modern Web Development Solutions",
+        "description": "Transform your digital presence with our cutting-edge web development solutions. Expert Next.js, React, and TypeScript development services.",
+        "keywords": "web development, next.js, react, typescript, modern web, digital solutions"
+      }
+    },
+    "services": {
+      "SEO": {
+        "title": "Our Services",
+        "description": "Comprehensive web development services including frontend development, backend integration, SEO optimization, and performance tuning.",
+        "keywords": "web services, development, seo, performance, optimization"
+      }
+    },
+    "about": {
+      "SEO": {
+        "title": "About Us",
+        "description": "Learn about our mission to create exceptional web experiences through modern technology and best practices.",
+        "keywords": "about us, web development team, mission, values"
+      }
+    },
+    "contact": {
+      "SEO": {
+        "title": "Contact Us",
+        "description": "Get in touch with our team to discuss your next web development project.",
+        "keywords": "contact, web development, project inquiry"
+      }
+    }
   }
 }

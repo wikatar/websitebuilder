@@ -59,5 +59,41 @@
     "title": "Balthazar Projektet",
     "description": "Bygger skalbara webblösningar med modern teknik",
     "getStarted": "Kom igång"
+  },
+  "SEO": {
+    "siteName": "Balthazar Project",
+    "defaultTitle": "Modern Webbutveckling",
+    "defaultDescription": "Vi bygger skalbara och högpresterande webbapplikationer med Next.js, TypeScript och moderna best practices.",
+    "defaultKeywords": "webbutveckling, next.js, react, typescript, seo, prestanda"
+  },
+  "pages": {
+    "home": {
+      "SEO": {
+        "title": "Moderna Webbutvecklingslösningar",
+        "description": "Transformera din digitala närvaro med våra toppmoderna webbutvecklingslösningar. Expert på Next.js, React och TypeScript-utveckling.",
+        "keywords": "webbutveckling, next.js, react, typescript, modern webb, digitala lösningar"
+      }
+    },
+    "services": {
+      "SEO": {
+        "title": "Våra Tjänster",
+        "description": "Omfattande webbutvecklingstjänster inklusive frontend-utveckling, backend-integration, SEO-optimering och prestandajustering.",
+        "keywords": "webbtjänster, utveckling, seo, prestanda, optimering"
+      }
+    },
+    "about": {
+      "SEO": {
+        "title": "Om Oss",
+        "description": "Lär dig mer om vårt uppdrag att skapa exceptionella webbupplevelser genom modern teknik och best practices.",
+        "keywords": "om oss, webbutvecklingsteam, mission, värderingar"
+      }
+    },
+    "contact": {
+      "SEO": {
+        "title": "Kontakta Oss",
+        "description": "Kontakta vårt team för att diskutera ditt nästa webbutvecklingsprojekt.",
+        "keywords": "kontakt, webbutveckling, projektförfrågan"
+      }
+    }
   }
 }

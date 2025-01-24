@@ -1,6 +1,202 @@
 # Balthazar Project Website
 
-A modern, internationalized Next.js website with built-in dark theme support and robust font handling.
+A modern, internationalized Next.js website with built-in dark theme support, robust font handling, and comprehensive SEO optimization.
+
+## 🎯 Vision & Features
+
+### Core Features
+- **Modern Design System**: Tailwind CSS + DaisyUI with custom animations
+- **Internationalization**: Multi-language support with next-intl
+- **SEO Optimization**: Built-in SEO components and best practices
+- **Performance**: Optimized loading and rendering strategies
+- **Accessibility**: WCAG compliance built into components
+
+### Design System
+- **Typography**: Dual font system (Sans + Heading)
+- **Colors**: Theme-based with dark mode support
+- **Components**: Reusable UI components with animations
+- **Layout**: Responsive grid system with consistent spacing
+- **Animations**: Custom animation library with performance optimization
+
+### SEO System (2024-2025 Ready)
+- **Automated Meta Tags**: Dynamic generation based on content
+- **Social Media Integration**: OpenGraph and Twitter Cards
+- **Structured Data**: JSON-LD for rich snippets
+- **Performance Metrics**: Core Web Vitals optimization
+- **Analytics Integration**: Ready for GA4 and custom analytics
+
+## 📁 Project Structure
+
+```
+src/
+├── app/                    # Next.js app directory
+│   └── [locale]/          # Locale-based routing
+├── components/
+│   ├── layout/            # Layout components
+│   ├── seo/               # SEO components
+│   └── templates/         # Page templates
+│       └── agency/        # Agency-specific components
+├── styles/                # Global styles
+└── utils/                 # Utility functions
+```
+
+## 🎨 Design System
+
+### 1. Typography
+- **Primary Font**: Inter (--font-sans)
+- **Heading Font**: Montserrat (--font-heading)
+- **Scale**: Modular scale with responsive adjustments
+- **Weights**: 400 (regular), 500 (medium), 700 (bold)
+
+### 2. Colors
+- **Primary**: Brand color with semantic variations
+- **Secondary**: Supporting color palette
+- **Accent**: Highlight and emphasis colors
+- **Neutral**: Background and text colors
+- **Semantic**: Success, warning, error, info
+
+### 3. Components
+- **Atoms**: Buttons, inputs, icons
+- **Molecules**: Cards, forms, navigation items
+- **Organisms**: Headers, footers, sections
+- **Templates**: Page layouts and structures
+- **Pages**: Complete page implementations
+
+### 4. Animations
+- **Transitions**: Smooth state changes
+- **Micro-interactions**: Subtle feedback
+- **Page transitions**: Smooth navigation
+- **Loading states**: Skeleton screens
+- **Scroll effects**: Parallax and reveal
+
+## 🔍 SEO Implementation
+
+### 1. Base SEO Configuration
+```typescript
+// DefaultSEO.tsx
+- Base meta tags
+- OpenGraph defaults
+- Twitter Card defaults
+- Canonical URLs
+- Favicon and manifest
+```
+
+### 2. Page-Specific SEO
+```typescript
+// PageSEO.tsx
+- Custom titles and descriptions
+- Page-specific OpenGraph
+- Structured data
+- Keywords and meta tags
+```
+
+### 3. Performance Optimization
+- Automatic image optimization
+- Font optimization with next/font
+- Code splitting and lazy loading
+- Cache optimization
+- Core Web Vitals monitoring
+
+## 🚀 Getting Started
+
+1. **Installation**
+```bash
+npm install
+```
+
+2. **Development**
+```bash
+npm run dev
+```
+
+3. **Production Build**
+```bash
+npm run build
+npm start
+```
+
+## 📚 Documentation
+
+### Component Usage
+Each component follows a standard structure:
+```typescript
+interface ComponentProps {
+  // Props documentation
+}
+
+export function Component({ prop1, prop2 }: ComponentProps) {
+  // Implementation
+}
+```
+
+### SEO Implementation
+1. Add DefaultSEO to root layout
+2. Use PageSEO for specific pages
+3. Configure meta tags in messages files
+4. Add structured data where needed
+
+### Design System Usage
+1. Use utility classes for consistency
+2. Follow component hierarchy
+3. Implement animations thoughtfully
+4. Maintain accessibility standards
+
+## 🔧 Customization
+
+### 1. Theme Configuration
+- Modify `tailwind.config.js`
+- Update color schemes
+- Adjust typography scale
+- Customize animations
+
+### 2. Component Templates
+- Extend base components
+- Create new variations
+- Maintain consistency
+- Document changes
+
+### 3. SEO Optimization
+- Update meta templates
+- Add custom structured data
+- Optimize for specific keywords
+- Monitor performance
+
+## 📈 Best Practices
+
+### 1. Development
+- Use TypeScript strictly
+- Follow component patterns
+- Maintain test coverage
+- Document changes
+
+### 2. Performance
+- Optimize images and fonts
+- Minimize bundle size
+- Use proper loading strategies
+- Monitor metrics
+
+### 3. SEO
+- Keep meta tags updated
+- Use semantic HTML
+- Implement structured data
+- Monitor search console
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create feature branch
+3. Follow style guide
+4. Submit pull request
+
+## 📝 License
+
+MIT License - See LICENSE file
+
+## 🆘 Support
+
+- GitHub Issues
+- Documentation
+- Community Discord
 
 ## Project Overview
 
@@ -164,15 +360,6 @@ To create a new project using this structure:
 ## License
 
 MIT License - feel free to use this structure for any project.
-
-## 🎯 Vision
-
-We're building more than just a website - we're creating a foundation for scalable web development:
-
-- **Template-First Development**: Every component, page, and feature is designed for reuse
-- **Built-In SEO**: Automated SEO optimization with built-in best practices
-- **Comprehensive Documentation**: Capturing decisions, patterns, and guides for future reference
-- **Client-Ready Framework**: Ready to be adapted for client projects with minimal modifications
 
 ## 🏗 Project Structure
 
