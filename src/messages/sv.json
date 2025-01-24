@@ -184,21 +184,33 @@
     "sections": {
       "whoWeAre": {
         "title": "Vilka Vi Är",
-        "content": "Vi är ett team av AI-specialister, utvecklare och digitala strateger som förstår att framtiden tillhör de som anammar AI idag. Vår expertis omfattar webbutveckling, mjukvaruutveckling, AI-integration och digital optimering, allt förenat av vårt AI-first tillvägagångssätt."
+        "content": "Vi är ett team av AI-specialister, utvecklare och digitala strateger som förstår att framtiden tillhör dem som omfamnar AI idag. Vår expertis omfattar webbutveckling, mjukvaruutveckling, AI-integration och digital optimering, allt förenat av vår AI-first-approach."
       },
       "whatWeDo": {
         "title": "Vad Vi Gör",
-        "content": "Vi skapar framtidssäkra digitala lösningar som utnyttjar kraften i AI. Från AI-förstärkta webbplatser till skräddarsydda mjukvarulösningar kännetecknas vårt arbete av förmågan att utvecklas och förbättras automatiskt när AI-tekniken går framåt.",
-        "services": "AI-Förstärkt Webbutveckling, Skräddarsydd AI-Integration & Verktyg, AI-Driven Digital Tillväxt, Intelligenta Mjukvarulösningar, Strategisk AI-Konsultation"
+        "content": "Vi skapar framtidssäkra digitala lösningar som utnyttjar kraften i AI. Från AI-förbättrade webbplatser till skräddarsydda mjukvarulösningar kännetecknas vårt arbete av förmågan att utvecklas och förbättras automatiskt i takt med att AI-tekniken utvecklas.",
+        "services": [
+          "AI-Förstärkt Webbutveckling",
+          "Skräddarsydd AI-Integration & Verktyg",
+          "AI-Driven Digital Tillväxt",
+          "Intelligenta Mjukvarulösningar",
+          "Strategisk AI-Konsultation"
+        ]
       },
       "howWeWork": {
         "title": "Hur Vi Arbetar",
         "content": "Vårt tillvägagångssätt kombinerar mänsklig expertis med AI-kapacitet. Vi har utvecklat egna ramverk och verktyg som gör att vi kan skapa lösningar som kontinuerligt lär sig och förbättras. Detta innebär att din investering inte bara behåller värdet – den växer över tid.",
-        "principles": "AI-First Utveckling, Kontinuerlig Evolution, Skalbar Arkitektur, Framtidssäker Design, Strategiskt Partnerskap"
+        "principles": [
+          "AI-First Utveckling",
+          "Kontinuerlig Evolution",
+          "Skalbar Arkitektur",
+          "Framtidssäker Design",
+          "Strategiskt Partnerskap"
+        ]
       },
       "whyChooseUs": {
         "title": "Varför Välja Oss",
-        "content": "Vi implementerar inte bara AI – vi bygger grunder som utvecklas med den. Våra lösningar är designade för att bli kraftfullare när AI-tekniken går framåt, vilket säkerställer att ditt företag ligger steget före.",
+        "content": "Vi implementerar inte bara AI – vi bygger grunder som utvecklas med den. Våra lösningar är designade för att bli kraftfullare i takt med att AI-tekniken utvecklas, vilket säkerställer att ditt företag ligger steget före.",
         "benefits": [
           "Framtidssäkra Lösningar",
           "Utvecklande AI-Kapacitet",
@@ -222,7 +234,7 @@
         "description": "Våra lösningar blir smartare och mer kapabla över tid."
       },
       {
-        "title": "Kvalitet & Pålitlighet",
+        "title": "Kvalitet & Tillförlitlighet",
         "description": "Vi levererar robusta lösningar som skalar med dina behov."
       }
     ]
