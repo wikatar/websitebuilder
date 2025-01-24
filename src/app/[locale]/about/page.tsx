@@ -7,12 +7,18 @@ import Image from 'next/image';
 export default function AboutPage() {
   const t = useTranslations('about');
   
-  // Get the arrays using t.raw()
-  const services = t.raw('sections.whatWeDo.services') as string[];
-  const principles = t.raw('sections.howWeWork.principles') as string[];
-  const benefits = t.raw('sections.whyChooseUs.benefits') as string[];
-  const values = t.raw('values') as Array<{ title: string; description: string }>;
+  // Get the arrays using t.raw() with fallbacks
+  const services = t.raw('sections.whatWeDo.services') || [];
+  const principles = t.raw('sections.howWeWork.principles') || [];
+  const benefits = t.raw('sections.whyChooseUs.benefits') || [];
+  const values = t.raw('values') || [];
   
+  // Ensure arrays are actually arrays
+  const safeServices = Array.isArray(services) ? services : [];
+  const safePrinciples = Array.isArray(principles) ? principles : [];
+  const safeBenefits = Array.isArray(benefits) ? benefits : [];
+  const safeValues = Array.isArray(values) ? values : [];
+
   return (
     <div className="min-h-screen">
       {/* Hero Section with Visual Impact */}
@@ -124,7 +130,7 @@ export default function AboutPage() {
             </p>
           </motion.div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
+            {safeServices.map((service, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
@@ -168,7 +174,7 @@ export default function AboutPage() {
           <div className="relative">
             <div className="absolute top-1/2 left-0 w-full h-1 bg-gradient-to-r from-red-500/20 to-red-700/20 transform -translate-y-1/2" />
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
-              {principles.map((principle, index) => (
+              {safePrinciples.map((principle, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
@@ -204,7 +210,7 @@ export default function AboutPage() {
             </h2>
           </motion.div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((value, index) => (
+            {safeValues.map((value, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
