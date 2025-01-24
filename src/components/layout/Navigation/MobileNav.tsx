@@ -1,26 +1,25 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiMenu, FiX } from 'react-icons/fi';
 import { LanguageSelector } from '@/components/layout/LanguageSelector';
-import { ErrorBoundary } from '@/components/ErrorBoundary';
 
 interface SubMenu {
   key: string;
   href: string;
 }
 
-interface NavItem {
+interface MenuItem {
   key: string;
   href: string;
   subItems?: SubMenu[];
 }
 
-const navItems: NavItem[] = [
+const navItems: MenuItem[] = [
   {
     key: 'home',
     href: '/',
@@ -59,77 +58,85 @@ const navItems: NavItem[] = [
 ];
 
 export function MobileNav() {
-  const [mounted, setMounted] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const t = useTranslations();
   const locale = useLocale();
   const pathname = usePathname();
 
-  // Ensure hydration completes before showing dynamic content
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
   const getLocalizedHref = (href: string) => {
     return `/${locale}${href}`;
   };
 
-  // Handle cleanup when component unmounts
-  useEffect(() => {
-    return () => {
-      setIsOpen(false);
-    };
-  }, []);
-
-  if (!mounted) {
-    return null; // Return null on server-side and first render
-  }
+  // Safe translation function
+  const getNavTitle = (key: string) => {
+    try {
+      return t(`navigation.${key}.title`);
+    } catch (error) {
+      console.error(`Translation error for key "navigation.${key}.title":`, error);
+      return key;
+    }
+  };
 
   return (
-    <ErrorBoundary>
-      <div className="relative">
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="inline-flex items-center justify-center p-2 rounded-md text-base-content hover:text-primary hover:bg-base-200 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary"
-          aria-label="Toggle menu"
-        >
-          {isOpen ? <FiX className="h-6 w-6" /> : <FiMenu className="h-6 w-6" />}
-        </button>
+    <div className="relative">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="p-2 text-base-content hover:text-primary transition-colors"
+        aria-label={isOpen ? 'Close menu' : 'Open menu'}
+      >
+        {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+      </button>
 
-        <AnimatePresence mode="wait">
-          {isOpen && mounted && (
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.2 }}
-              className="absolute left-0 mt-2 w-screen bg-base-100 shadow-lg border border-base-200 rounded-b-lg"
-            >
-              <div className="px-4 pt-2 pb-3 space-y-1">
-                {navItems.map((item) => (
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.2 }}
+            className="absolute top-full left-0 w-screen bg-base-100 shadow-lg py-4 px-6"
+          >
+            <nav className="flex flex-col space-y-4">
+              {navItems.map((item) => (
+                <div key={item.key} className="flex flex-col space-y-2">
                   <Link
-                    key={item.key}
                     href={getLocalizedHref(item.href)}
-                    onClick={() => setIsOpen(false)}
-                    className={`block px-3 py-2 rounded-md text-base font-medium ${
+                    className={`text-base font-medium transition-colors hover:text-primary ${
                       pathname === getLocalizedHref(item.href)
-                        ? 'text-primary bg-base-200'
-                        : 'text-base-content hover:text-primary hover:bg-base-200'
+                        ? 'text-primary'
+                        : 'text-base-content'
                     }`}
+                    onClick={() => setIsOpen(false)}
                   >
-                    {t(`navigation.${item.key}.title`)}
+                    {getNavTitle(item.key)}
                   </Link>
-                ))}
-                <div className="pt-4 pb-2 border-t border-base-200">
-                  <div className="flex items-center px-3">
-                    <LanguageSelector />
-                  </div>
+                  {item.subItems && (
+                    <div className="pl-4 flex flex-col space-y-2">
+                      {item.subItems.map((subItem) => (
+                        <Link
+                          key={subItem.key}
+                          href={getLocalizedHref(subItem.href)}
+                          className={`text-sm transition-colors hover:text-primary ${
+                            pathname === getLocalizedHref(subItem.href)
+                              ? 'text-primary'
+                              : 'text-base-content'
+                          }`}
+                          onClick={() => setIsOpen(false)}
+                        >
+                          {getNavTitle(subItem.key)}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
                 </div>
+              ))}
+              <div className="pt-2">
+                <LanguageSelector />
               </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
-    </ErrorBoundary>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
   );
 } 

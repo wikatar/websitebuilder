@@ -153,23 +153,23 @@
   },
   "Services": {
     "title": "Våra Tjänster",
-    "subtitle": "Framtidssäkra Digitala Lösningar",
-    "description": "Vi hjälper företag att utnyttja kraften i AI genom skräddarsydda verktyg och ramverk som utvecklas med tekniken.",
+    "description": "Vi erbjuder ett brett utbud av digitala tjänster för att hjälpa ditt företag växa",
+    "learnMore": "Läs mer",
     "webdev": {
-      "title": "AI-Förstärkt Webbutveckling",
-      "description": "Skräddarsydda webbplatser och applikationer byggda med vårt AI-first ramverk, designade för att utvecklas och förbättras i takt med AI-teknologin."
+      "title": "Webbutveckling",
+      "description": "Moderna och skalbara webbapplikationer byggda med de senaste teknologierna"
     },
     "ai": {
-      "title": "AI-Integration & Verktyg",
-      "description": "Skräddarsydda AI-lösningar och verktyg som hjälper ditt företag att dra nytta av det senaste inom artificiell intelligens."
+      "title": "AI-Integration",
+      "description": "Smarta AI-lösningar som hjälper ditt företag att bli mer effektivt"
     },
-    "seo": {
-      "title": "AI-Driven Digital Tillväxt",
-      "description": "Omfattande optimering av digital närvaro med våra AI-verktyg för innehåll, SEO och prestandaförbättring."
+    "growth": {
+      "title": "Digital Tillväxt",
+      "description": "Strategier och verktyg för att accelerera din digitala närvaro"
     },
     "software": {
-      "title": "Skräddarsydda Mjukvarulösningar",
-      "description": "Specialutvecklad mjukvara med inbyggda AI-funktioner som blir smartare över tid."
+      "title": "Mjukvarulösningar",
+      "description": "Skräddarsydda mjukvarulösningar för dina specifika behov"
     }
   },
   "about": {

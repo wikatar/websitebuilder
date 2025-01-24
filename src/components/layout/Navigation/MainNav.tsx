@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { LanguageSelector } from '@/components/layout/LanguageSelector';
-import { ErrorBoundary } from '@/components/ErrorBoundary';
 
 const navItems = [
   {
@@ -65,27 +64,25 @@ export function MainNav() {
   };
 
   return (
-    <ErrorBoundary fallback={<div>Error loading navigation</div>}>
-      <nav className="flex items-center justify-between w-full">
-        <div className="flex items-center space-x-8">
-          {navItems.map((item) => (
-            <Link
-              key={item.key}
-              href={getLocalizedHref(item.href)}
-              className={`text-base font-medium transition-colors hover:text-primary ${
-                pathname === getLocalizedHref(item.href)
-                  ? 'text-primary'
-                  : 'text-base-content'
-              }`}
-            >
-              {getNavTitle(item.key)}
-            </Link>
-          ))}
-        </div>
-        <div className="flex items-center space-x-4">
-          <LanguageSelector />
-        </div>
-      </nav>
-    </ErrorBoundary>
+    <nav className="flex items-center justify-between w-full">
+      <div className="flex items-center space-x-8">
+        {navItems.map((item) => (
+          <Link
+            key={item.key}
+            href={getLocalizedHref(item.href)}
+            className={`text-base font-medium transition-colors hover:text-primary ${
+              pathname === getLocalizedHref(item.href)
+                ? 'text-primary'
+                : 'text-base-content'
+            }`}
+          >
+            {getNavTitle(item.key)}
+          </Link>
+        ))}
+      </div>
+      <div className="flex items-center space-x-4">
+        <LanguageSelector />
+      </div>
+    </nav>
   );
 } 
