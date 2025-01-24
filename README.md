@@ -2,6 +2,154 @@
 
 A modern, internationalized Next.js website built with performance and user experience in mind.
 
+## 📚 Documentation Structure
+
+This project includes comprehensive documentation divided into several key areas:
+
+1. **[Project Structure Guide](docs/guides/PROJECT_STRUCTURE.md)**
+   - Complete directory structure
+   - Development workflow
+   - Critical areas and common pitfalls
+   - Best practices
+
+2. **[SEO Guidelines](docs/guides/SEO_GUIDELINES.md)**
+   - Core SEO principles
+   - Technical requirements
+   - Content guidelines
+   - Performance optimization
+   - Monitoring and maintenance
+
+3. **[Design System](docs/guides/DESIGN_SYSTEM.md)**
+   - Core design principles
+   - Component architecture
+   - Design constraints
+   - Page-specific guidelines
+   - Change management
+
+4. **[Security Guidelines](docs/guides/SECURITY.md)**
+   - Security implementation
+   - Monitoring system
+   - Deployment security
+   - Error handling
+   - Future enhancements
+
+## 🎯 Core Features
+
+- 🌐 Full internationalization (i18n) with Swedish and English support
+- 🎨 Dynamic theming with dark mode support
+- 🚀 Optimized performance with message caching and font preloading
+- 📱 Responsive design with mobile-first approach
+- 🔍 SEO optimized with next-seo integration
+
+## 🛠 Tech Stack
+
+- Next.js 15.1.6
+- TypeScript
+- next-intl for internationalization
+- Tailwind CSS with DaisyUI
+- Framer Motion for animations
+
+## 📁 Project Structure
+
+```
+balthazarproject.com/
+├── src/
+│   ├── app/                 # Next.js app router
+│   │   └── [locale]/       # Locale-based routing
+│   ├── components/         # React components
+│   │   ├── ui/            # Basic UI components
+│   │   ├── layout/        # Layout components
+│   │   ├── features/      # Feature components
+│   │   └── templates/     # Page templates
+│   ├── messages/          # Translation files
+│   └── utils/            # Utility functions
+├── public/               # Static assets
+├── docs/                # Documentation
+│   ├── guides/          # Development guides
+│   ├── decisions/       # Architecture decisions
+│   └── templates/       # Component templates
+└── tools/              # Development tools
+```
+
+## 🚀 Quick Start
+
+1. **Installation**
+```bash
+npm install
+```
+
+2. **Development**
+```bash
+npm run dev
+```
+
+3. **Access the site**
+- Main site: http://localhost:3000
+- Swedish version: http://localhost:3000/sv
+- English version: http://localhost:3000/en
+
+## 🎨 Design System Overview
+
+### Core Principles
+- **Typography**: Inter for body, Montserrat for headings
+- **Colors**: DaisyUI dark theme with custom primary/secondary
+- **Spacing**: 4px/8px grid system
+- **Animations**: Smooth, purposeful motion
+
+### Component Architecture
+- Atomic design principles
+- Strict TypeScript typing
+- Consistent styling patterns
+- Reusable components
+
+## 🔒 Security Implementation
+
+### Core Security Measures
+- HTTPS implementation
+- Content security policies
+- Data protection
+- Authentication system
+- Error monitoring
+
+## 🔍 SEO Strategy
+
+### Key Elements
+- Semantic HTML structure
+- Optimized meta tags
+- Structured data (Schema.org)
+- Performance optimization
+- Mobile responsiveness
+
+## 📈 Development Status
+
+### Completed Features
+- ✅ Next.js with TypeScript setup
+- ✅ Internationalization system
+- ✅ Design system implementation
+- ✅ Core security measures
+- ✅ Basic SEO optimization
+
+### In Progress
+- 🚧 Advanced monitoring
+- 🚧 Content management system
+- 🚧 Performance optimization
+- 🚧 Additional language support
+
+## 🤝 Contributing
+
+1. Review the documentation in `/docs/guides/`
+2. Create a feature branch
+3. Follow our coding standards
+4. Submit a pull request
+
+## 📄 License
+
+MIT License - see LICENSE file for details
+
+## 📞 Support
+
+For detailed information about any aspect of the project, please refer to the corresponding guide in the `/docs/guides/` directory.
+
 ## Project Overview
 
 ### Core Features
@@ -163,186 +311,6 @@ MIT License
 src/
 ├── app/                    # Next.js app directory
 │   └── [locale]/          # Locale-based routing
-├── components/
-│   ├── layout/            # Layout components
-│   ├── seo/               # SEO components
-│   └── templates/         # Page templates
-│       └── agency/        # Agency-specific components
-├── styles/                # Global styles
-└── utils/                 # Utility functions
-```
-
-## 🎨 Design System
-
-### 1. Typography
-- **Primary Font**: Inter (--font-sans)
-- **Heading Font**: Montserrat (--font-heading)
-- **Scale**: Modular scale with responsive adjustments
-- **Weights**: 400 (regular), 500 (medium), 700 (bold)
-
-### 2. Colors
-- **Primary**: Brand color with semantic variations
-- **Secondary**: Supporting color palette
-- **Accent**: Highlight and emphasis colors
-- **Neutral**: Background and text colors
-- **Semantic**: Success, warning, error, info
-
-### 3. Components
-- **Atoms**: Buttons, inputs, icons
-- **Molecules**: Cards, forms, navigation items
-- **Organisms**: Headers, footers, sections
-- **Templates**: Page layouts and structures
-- **Pages**: Complete page implementations
-
-### 4. Animations
-- **Transitions**: Smooth state changes
-- **Micro-interactions**: Subtle feedback
-- **Page transitions**: Smooth navigation
-- **Loading states**: Skeleton screens
-- **Scroll effects**: Parallax and reveal
-
-## 🔍 SEO Implementation
-
-### 1. Base SEO Configuration
-```typescript
-// DefaultSEO.tsx
-- Base meta tags
-- OpenGraph defaults
-- Twitter Card defaults
-- Canonical URLs
-- Favicon and manifest
-```
-
-### 2. Page-Specific SEO
-```typescript
-// PageSEO.tsx
-- Custom titles and descriptions
-- Page-specific OpenGraph
-- Structured data
-- Keywords and meta tags
-```
-
-### 3. Performance Optimization
-- Automatic image optimization
-- Font optimization with next/font
-- Code splitting and lazy loading
-- Cache optimization
-- Core Web Vitals monitoring
-
-## 🚀 Getting Started
-
-1. **Installation**
-```bash
-npm install
-```
-
-2. **Development**
-```bash
-npm run dev
-```
-
-3. **Production Build**
-```bash
-npm run build
-npm start
-```
-
-## 📚 Documentation
-
-### Component Usage
-Each component follows a standard structure:
-```typescript
-interface ComponentProps {
-  // Props documentation
-}
-
-export function Component({ prop1, prop2 }: ComponentProps) {
-  // Implementation
-}
-```
-
-### SEO Implementation
-1. Add DefaultSEO to root layout
-2. Use PageSEO for specific pages
-3. Configure meta tags in messages files
-4. Add structured data where needed
-
-### Design System Usage
-1. Use utility classes for consistency
-2. Follow component hierarchy
-3. Implement animations thoughtfully
-4. Maintain accessibility standards
-
-## 🔧 Customization
-
-### 1. Theme Configuration
-- Modify `tailwind.config.js`
-- Update color schemes
-- Adjust typography scale
-- Customize animations
-
-### 2. Component Templates
-- Extend base components
-- Create new variations
-- Maintain consistency
-- Document changes
-
-### 3. SEO Optimization
-- Update meta templates
-- Add custom structured data
-- Optimize for specific keywords
-- Monitor performance
-
-## 📈 Best Practices
-
-### 1. Development
-- Use TypeScript strictly
-- Follow component patterns
-- Maintain test coverage
-- Document changes
-
-### 2. Performance
-- Optimize images and fonts
-- Minimize bundle size
-- Use proper loading strategies
-- Monitor metrics
-
-### 3. SEO
-- Keep meta tags updated
-- Use semantic HTML
-- Implement structured data
-- Monitor search console
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create feature branch
-3. Follow style guide
-4. Submit pull request
-
-## 📝 License
-
-MIT License - See LICENSE file
-
-## 🆘 Support
-
-- GitHub Issues
-- Documentation
-- Community Discord
-
-## Project Overview
-
-- **Framework**: Next.js 15.1.6
-- **Styling**: Tailwind CSS + DaisyUI
-- **Internationalization**: next-intl
-- **Fonts**: Google Fonts (Inter & Montserrat)
-
-## Project Structure
-
-```
-src/
-├── app/
-│   └── [locale]/        # Locale-based routing
 │       ├── layout.tsx   # Root layout with i18n providers
 │       └── page.tsx     # Home page
 ├── components/
