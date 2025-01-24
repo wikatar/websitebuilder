@@ -220,24 +220,32 @@
         ]
       }
     },
-    "values": [
-      {
-        "title": "Innovation Först",
-        "description": "Vi flyttar ständigt gränserna för vad som är möjligt med AI-teknologi."
-      },
-      {
-        "title": "Strategiskt Partnerskap",
-        "description": "Vi investerar i din långsiktiga framgång och tillväxt."
-      },
-      {
-        "title": "Kontinuerlig Utveckling",
-        "description": "Våra lösningar blir smartare och mer kapabla över tid."
-      },
-      {
-        "title": "Kvalitet & Tillförlitlighet",
-        "description": "Vi levererar robusta lösningar som skalar med dina behov."
-      }
-    ]
+    "values": {
+      "title": "Våra Värderingar",
+      "items": [
+        {
+          "title": "Innovation Först",
+          "description": "Vi flyttar ständigt gränserna för vad som är möjligt med AI-teknologi."
+        },
+        {
+          "title": "Strategiskt Partnerskap",
+          "description": "Vi investerar i din långsiktiga framgång och tillväxt."
+        },
+        {
+          "title": "Kontinuerlig Utveckling",
+          "description": "Våra lösningar blir smartare och mer kapabla över tid."
+        },
+        {
+          "title": "Kvalitet & Tillförlitlighet",
+          "description": "Vi levererar robusta lösningar som skalar med dina behov."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Redo att börja din resa med oss?",
+      "description": "Låt oss skapa något extraordinärt tillsammans.",
+      "button": "Kontakta oss"
+    }
   },
   "contact": {
     "title": "Kontakta Oss",
