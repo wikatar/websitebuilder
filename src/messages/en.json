@@ -138,5 +138,88 @@
     "subtitle": "Web development, SEO optimization, and digital solutions that drive results.",
     "primaryCTA": "Get Started",
     "secondaryCTA": "Learn More"
+  },
+  "Navigation": {
+    "home": "Home",
+    "documentation": "Documentation",
+    "features": "Features",
+    "examples": "Examples"
+  },
+  "Footer": {
+    "product": "Product",
+    "features": "Features",
+    "documentation": "Documentation",
+    "examples": "Examples",
+    "pricing": "Pricing",
+    "resources": "Resources",
+    "blog": "Blog",
+    "guides": "Guides",
+    "showcase": "Showcase",
+    "roadmap": "Roadmap",
+    "company": "Company",
+    "about": "About",
+    "contact": "Contact",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "tagline": "AI-First Web Development Framework for rapid, scalable website development.",
+    "rights": "All rights reserved."
+  },
+  "Home": {
+    "hero": {
+      "title": "The Future of Web Development",
+      "subtitle": "An AI-First framework that enables rapid, scalable website development with minimal human intervention.",
+      "cta": "Get Started",
+      "secondaryCta": "View Documentation"
+    },
+    "features": {
+      "title": "Why Choose Balthazar",
+      "subtitle": "Built for scale, optimized for AI",
+      "items": [
+        {
+          "title": "AI-First Development",
+          "description": "Designed from the ground up for AI comprehension and manipulation."
+        },
+        {
+          "title": "Rapid Scaling",
+          "description": "Deploy and manage hundreds of websites with automated content generation."
+        },
+        {
+          "title": "Performance Focused",
+          "description": "Optimized for speed with automated performance monitoring and improvements."
+        },
+        {
+          "title": "Error Resolution",
+          "description": "AI-driven error detection and autonomous resolution."
+        }
+      ]
+    },
+    "howItWorks": {
+      "title": "How It Works",
+      "subtitle": "Simple, powerful, and autonomous",
+      "steps": [
+        {
+          "title": "Define Your Project",
+          "description": "Specify your requirements and let AI handle the implementation."
+        },
+        {
+          "title": "AI Builds",
+          "description": "Watch as AI creates your website with best practices and optimizations."
+        },
+        {
+          "title": "Automated Management",
+          "description": "Let AI handle maintenance, updates, and content generation."
+        },
+        {
+          "title": "Scale Effortlessly",
+          "description": "Deploy multiple sites with consistent quality and performance."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ready to Transform Your Web Development?",
+      "subtitle": "Join the AI-First revolution and scale your web presence.",
+      "button": "Start Building Today",
+      "secondaryButton": "Schedule a Demo"
+    }
   }
 }

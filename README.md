@@ -66,26 +66,68 @@ This repository serves as the foundation for an AI-first web development framewo
 - API security guidelines
 - Deployment security measures
 
+## Error Handling & Monitoring
+
+### AI-Driven Error Management
+- Comprehensive error classification and reporting
+- Autonomous error detection and resolution
+- Email notifications for critical issues
+- AI analysis for pattern recognition and prevention
+- Performance monitoring and optimization
+
+### Error Classification System
+```typescript
+interface ErrorReport {
+  severity: 'CRITICAL' | 'HIGH' | 'MEDIUM' | 'LOW';
+  type: string;
+  message: string;
+  aiAnalysis?: {
+    possibleCauses: string[];
+    suggestedFixes: string[];
+    autoResolved: boolean;
+  };
+}
+```
+
+### Performance Monitoring
+- Core Web Vitals tracking
+- Automated performance optimization
+- Real-time health checks
+- Resource usage monitoring
+- Threshold-based alerts
+
+### Monitoring Metrics
+```typescript
+interface PerformanceMetric {
+  name: string;  // TTFB, FCP, LCP, CLS, FID
+  value: number;
+  timestamp: Date;
+}
+```
+
 ## AI Operation Guidelines
 
 ### Autonomous Operations
-1. Content Generation
-   - Follow SEO best practices
+1. Error Resolution
+   - Monitor error logs and metrics
+   - Analyze patterns and identify root causes
+   - Implement fixes within defined boundaries
+   - Validate solutions and document resolutions
+   - Learn from resolution patterns
+
+2. Performance Optimization
+   - Track Core Web Vitals
+   - Identify performance bottlenecks
+   - Implement optimizations
+   - Validate improvements
+   - Document optimization patterns
+
+3. Content Management
+   - Generate SEO-optimized content
    - Maintain brand voice and style
    - Ensure factual accuracy
    - Optimize for readability
-
-2. Error Resolution
-   - Monitor error logs
-   - Identify root causes
-   - Implement fixes within defined boundaries
-   - Document resolutions
-
-3. Performance Optimization
-   - Monitor performance metrics
-   - Identify bottlenecks
-   - Implement optimizations
-   - Validate improvements
+   - Monitor content performance
 
 ### Boundaries and Limitations
 - No changes to core architecture without approval
@@ -839,3 +881,38 @@ balthazarproject.com/
   - Prettier
   - Tailwind CSS IntelliSense
   - TypeScript and JavaScript Language Features
+
+## Recent Changes
+
+### Internationalization Setup (2024-01-24)
+- Configured next-intl (v3.5.0) for multi-language support
+- Added support for English (en) and Swedish (sv) locales
+- Implemented locale-based routing with middleware
+- Fixed client/server component issues with framer-motion
+- Added locale-specific message files in src/messages/
+
+### Development Setup
+To run the development server:
+
+```bash
+npm run dev
+```
+
+The site will be available at http://localhost:3000 and will automatically redirect to your preferred language (/en or /sv).
+
+### Project Structure
+```
+├── src/
+│   ├── app/                 # Next.js app directory
+│   │   ├── [locale]/       # Locale-specific routes
+│   │   └── layout.tsx      # Root layout
+│   ├── components/         # React components
+│   │   ├── home/          # Homepage components
+│   │   └── layout/        # Layout components
+│   ├── messages/          # Internationalization messages
+│   │   ├── en.json       # English translations
+│   │   └── sv.json       # Swedish translations
+│   └── middleware.ts      # Next.js middleware for i18n
+├── i18n.ts               # Internationalization configuration
+└── package.json          # Project dependencies
+```

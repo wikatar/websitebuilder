@@ -139,5 +139,88 @@
     "subtitle": "Webbutveckling, SEO-optimering och digitala lösningar som ger resultat.",
     "primaryCTA": "Kom igång",
     "secondaryCTA": "Läs mer"
+  },
+  "Navigation": {
+    "home": "Hem",
+    "documentation": "Dokumentation",
+    "features": "Funktioner",
+    "examples": "Exempel"
+  },
+  "Footer": {
+    "product": "Produkt",
+    "features": "Funktioner",
+    "documentation": "Dokumentation",
+    "examples": "Exempel",
+    "pricing": "Priser",
+    "resources": "Resurser",
+    "blog": "Blogg",
+    "guides": "Guider",
+    "showcase": "Showcase",
+    "roadmap": "Utvecklingsplan",
+    "company": "Företag",
+    "about": "Om oss",
+    "contact": "Kontakt",
+    "privacy": "Integritetspolicy",
+    "terms": "Användarvillkor",
+    "tagline": "AI-First webbutvecklingsramverk för snabb och skalbar webbutveckling.",
+    "rights": "Alla rättigheter förbehållna."
+  },
+  "Home": {
+    "hero": {
+      "title": "Framtidens Webbutveckling",
+      "subtitle": "Ett AI-First ramverk som möjliggör snabb och skalbar webbutveckling med minimal mänsklig inblandning.",
+      "cta": "Kom igång",
+      "secondaryCta": "Se dokumentation"
+    },
+    "features": {
+      "title": "Varför välja Balthazar",
+      "subtitle": "Byggd för skalbarhet, optimerad för AI",
+      "items": [
+        {
+          "title": "AI-First Utveckling",
+          "description": "Designad från grunden för AI-förståelse och manipulation."
+        },
+        {
+          "title": "Snabb Skalning",
+          "description": "Driftsätt och hantera hundratals webbplatser med automatiserad innehållsgenerering."
+        },
+        {
+          "title": "Prestandafokuserad",
+          "description": "Optimerad för hastighet med automatisk prestandaövervakning och förbättringar."
+        },
+        {
+          "title": "Felhantering",
+          "description": "AI-driven feldetektering och autonom problemlösning."
+        }
+      ]
+    },
+    "howItWorks": {
+      "title": "Hur det fungerar",
+      "subtitle": "Enkelt, kraftfullt och autonomt",
+      "steps": [
+        {
+          "title": "Definiera ditt projekt",
+          "description": "Specificera dina krav och låt AI hantera implementeringen."
+        },
+        {
+          "title": "AI bygger",
+          "description": "Se hur AI skapar din webbplats med bästa praxis och optimeringar."
+        },
+        {
+          "title": "Automatiserad hantering",
+          "description": "Låt AI hantera underhåll, uppdateringar och innehållsgenerering."
+        },
+        {
+          "title": "Skala enkelt",
+          "description": "Driftsätt flera webbplatser med konsekvent kvalitet och prestanda."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Redo att transformera din webbutveckling?",
+      "subtitle": "Gå med i AI-First revolutionen och skala din webbnärvaro.",
+      "button": "Börja bygga idag",
+      "secondaryButton": "Boka en demo"
+    }
   }
 }

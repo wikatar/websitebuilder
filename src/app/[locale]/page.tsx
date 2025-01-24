@@ -1,19 +1,15 @@
-'use client';
-
-import { useTranslations } from 'next-intl';
-import { Metadata } from '@/components/seo/Metadata';
-import { Hero, Services } from '@/components/templates/agency';
+import { Hero } from '@/components/home/Hero';
+import { Features } from '@/components/home/Features';
+import { HowItWorks } from '@/components/home/HowItWorks';
+import { CTA } from '@/components/home/CTA';
 
 export default function HomePage() {
-  const t = useTranslations('home');
-
   return (
-    <>
-      <Metadata path="/" pageKey="home" />
-      <main className="min-h-screen">
-        <Hero />
-        <Services />
-      </main>
-    </>
+    <main className="min-h-screen">
+      <Hero />
+      <Features />
+      <HowItWorks />
+      <CTA />
+    </main>
   );
 } 

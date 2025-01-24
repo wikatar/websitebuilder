@@ -1,4 +1,121 @@
 import { CacheManager } from './cache';
+import { NextResponse } from 'next/server';
+
+export interface ErrorReport {
+  timestamp: Date;
+  severity: 'CRITICAL' | 'HIGH' | 'MEDIUM' | 'LOW';
+  type: string;
+  message: string;
+  stack?: string;
+  component?: string;
+  url?: string;
+  userId?: string;
+  metadata?: Record<string, any>;
+  aiAnalysis?: {
+    possibleCauses: string[];
+    suggestedFixes: string[];
+    autoResolved: boolean;
+    resolutionSteps?: string[];
+  };
+}
+
+export class ErrorManager {
+  private static instance: ErrorManager;
+  private emailConfig: {
+    to: string;
+    from: string;
+  };
+
+  private constructor() {
+    this.emailConfig = {
+      to: process.env.ERROR_EMAIL_TO || '',
+      from: process.env.ERROR_EMAIL_FROM || '',
+    };
+  }
+
+  static getInstance(): ErrorManager {
+    if (!ErrorManager.instance) {
+      ErrorManager.instance = new ErrorManager();
+    }
+    return ErrorManager.instance;
+  }
+
+  async logError(error: ErrorReport): Promise<void> {
+    // Log to monitoring service
+    await this.logToMonitoring(error);
+    
+    // Send email for critical errors
+    if (error.severity === 'CRITICAL') {
+      await this.sendErrorEmail(error);
+    }
+
+    // Store for AI analysis
+    await this.storeForAIAnalysis(error);
+  }
+
+  private async logToMonitoring(error: ErrorReport): Promise<void> {
+    // Implement your monitoring service integration
+    console.error('[ERROR]', error);
+  }
+
+  private async sendErrorEmail(error: ErrorReport): Promise<void> {
+    // Implement email sending logic
+    console.log('[EMAIL]', 'Error notification sent to', this.emailConfig.to);
+  }
+
+  private async storeForAIAnalysis(error: ErrorReport): Promise<void> {
+    // Store error data for AI analysis
+    // This will be used by AI systems to learn and improve error handling
+  }
+
+  static handleApiError(error: unknown): NextResponse {
+    const errorReport: ErrorReport = {
+      timestamp: new Date(),
+      severity: 'HIGH',
+      type: error instanceof Error ? error.name : 'UnknownError',
+      message: error instanceof Error ? error.message : 'An unknown error occurred',
+      stack: error instanceof Error ? error.stack : undefined,
+    };
+
+    ErrorManager.getInstance().logError(errorReport);
+
+    return NextResponse.json(
+      { error: errorReport.message },
+      { status: 500 }
+    );
+  }
+}
+
+// Error boundary wrapper for components
+export const withErrorBoundary = <P extends object>(
+  Component: React.ComponentType<P>,
+  componentName: string
+): React.FC<P> => {
+  return function WithErrorBoundary(props: P) {
+    return (
+      <ErrorBoundary componentName={componentName}>
+        <Component {...props} />
+      </ErrorBoundary>
+    );
+  };
+};
+
+// Result type for error handling
+export type Result<T, E = Error> = {
+  ok: boolean;
+  value?: T;
+  error?: E;
+};
+
+export const Ok = <T,>(value: T): Result<T> => ({
+  ok: true,
+  value,
+});
+
+export const Err = <T,>(error: Error): Result<T> => ({
+  ok: false,
+  error,
+});
 
 interface ErrorContext {
   message: string;
