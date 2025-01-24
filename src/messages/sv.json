@@ -8,9 +8,11 @@
   },
   "home": {
     "hero": {
-      "title": "Digital Excellence",
+      "title": "Digital Excellens",
       "subtitle": "Webbutveckling, SEO-optimering och digitala lösningar som ger resultat.",
-      "cta": "Kom igång"
+      "primaryCta": "Utforska Tjänster",
+      "secondaryCta": "Läs Mer",
+      "imageAlt": "Digital lösningar illustration"
     },
     "services": {
       "title": "Våra Tjänster",
@@ -96,20 +98,24 @@
       }
     }
   },
-  "services": {
+  "Services": {
     "title": "Våra Tjänster",
     "subtitle": "Omfattande lösningar för dina digitala behov",
     "webdev": {
       "title": "Webbutveckling",
       "description": "Skräddarsydda webbplatser och applikationer byggda med modern teknik."
     },
+    "ai": {
+      "title": "AI-Lösningar",
+      "description": "Intelligenta lösningar som automatiserar och optimerar dina processer."
+    },
     "seo": {
       "title": "SEO-Optimering",
-      "description": "Förbättra din synlighet och nå din målgrupp."
+      "description": "Förbättra din synlighet och nå din målgrupp effektivt."
     },
-    "strategy": {
-      "title": "Digital Strategi",
-      "description": "Omfattande digitala lösningar för din företagstillväxt."
+    "design": {
+      "title": "Digital Design",
+      "description": "Kreativa och användarvänliga designlösningar som engagerar."
     }
   },
   "about": {

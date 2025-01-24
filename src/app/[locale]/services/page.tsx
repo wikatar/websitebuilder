@@ -5,7 +5,7 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { Services } from '@/components/templates/agency/Services';
 
 export default function ServicesPage() {
-  const t = useTranslations('services');
+  const t = useTranslations('Services');
 
   return (
     <>

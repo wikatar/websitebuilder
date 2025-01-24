@@ -34,7 +34,7 @@ export function Hero() {
             </p>
             <div className="flex flex-wrap gap-4">
               <Link href={`/${locale}/services`} className="btn btn-primary btn-lg">
-                {t('cta')}
+                {t('primaryCta')}
               </Link>
               <Link href={`/${locale}/about`} className="btn btn-outline btn-lg">
                 {t('secondaryCta')}

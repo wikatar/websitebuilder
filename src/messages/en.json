@@ -10,7 +10,7 @@
     "hero": {
       "title": "Building Digital Excellence",
       "subtitle": "Web development, SEO optimization, and digital solutions that drive results.",
-      "cta": "Explore Services",
+      "primaryCta": "Explore Services",
       "secondaryCta": "Learn More",
       "imageAlt": "Digital solutions illustration"
     },
@@ -98,20 +98,24 @@
       }
     }
   },
-  "services": {
+  "Services": {
     "title": "Our Services",
     "subtitle": "Comprehensive solutions for your digital needs",
     "webdev": {
       "title": "Web Development",
       "description": "Custom websites and applications built with modern technologies."
     },
+    "ai": {
+      "title": "AI Solutions",
+      "description": "Intelligent solutions that automate and optimize your processes."
+    },
     "seo": {
       "title": "SEO Optimization",
-      "description": "Improve your visibility and reach your target audience."
+      "description": "Improve your visibility and reach your target audience effectively."
     },
-    "strategy": {
-      "title": "Digital Strategy",
-      "description": "Comprehensive digital solutions for your business growth."
+    "design": {
+      "title": "Digital Design",
+      "description": "Creative and user-friendly design solutions that engage."
     }
   },
   "about": {

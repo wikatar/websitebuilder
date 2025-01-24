@@ -1,28 +1,32 @@
 'use client';
 
 import { useLocale } from 'next-intl';
-import { usePathname, useRouter } from 'next/navigation';
-import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export function LanguageSwitcher() {
   const locale = useLocale();
   const pathname = usePathname();
 
+  const handleLanguageChange = (newLocale: string) => {
+    const newPath = pathname.replace(/^\/[a-z]{2}/, `/${newLocale}`);
+    window.location.href = newPath;
+  };
+
   return (
     <div className="flex gap-2">
-      <Link
-        href={pathname.replace(/^\/[a-z]{2}/, '/sv')}
+      <button
+        onClick={() => handleLanguageChange('sv')}
         className={`text-sm ${locale === 'sv' ? 'font-bold' : ''}`}
       >
         SV
-      </Link>
+      </button>
       <span className="text-gray-300">|</span>
-      <Link
-        href={pathname.replace(/^\/[a-z]{2}/, '/en')}
+      <button
+        onClick={() => handleLanguageChange('en')}
         className={`text-sm ${locale === 'en' ? 'font-bold' : ''}`}
       >
         EN
-      </Link>
+      </button>
     </div>
   );
 }
