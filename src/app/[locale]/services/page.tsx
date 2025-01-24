@@ -1,21 +1,16 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { PageSEO } from '@/components/seo/PageSEO';
-import { Services } from '@/components/templates/agency/Services';
+import { Metadata } from '@/components/seo/Metadata';
+import { Services } from '@/components/templates/agency';
 
 export default function ServicesPage() {
   const t = useTranslations('Services');
 
   return (
     <>
-      <PageSEO 
-        path="/services" 
-        pageKey="services"
-      />
-      <main className="min-h-screen">
-        <Services />
-      </main>
+      <Metadata path="/services" pageKey="services" />
+      <Services />
     </>
   );
 } 
