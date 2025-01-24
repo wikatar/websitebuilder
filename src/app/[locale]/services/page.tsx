@@ -1,3 +1,5 @@
+'use client';
+
 import { useTranslations } from 'next-intl';
 import { FiCode, FiCpu, FiTrendingUp, FiBox } from 'react-icons/fi';
 import { ServiceCard } from '@/components/services/ServiceCard';
@@ -28,7 +30,7 @@ export default function ServicesPage({
             key={service.key}
             title={t(`${service.key}.title`)}
             description={t(`${service.key}.description`)}
-            iconName={service.iconName}
+            iconName={service.iconName as keyof typeof FiCode}
             href={`/${locale}/services/${service.key}`}
             learnMoreText={t('learnMore')}
           />

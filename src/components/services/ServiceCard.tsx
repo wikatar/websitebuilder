@@ -23,7 +23,7 @@ export function ServiceCard({
   description, 
   iconName, 
   href, 
-  learnMoreText 
+  learnMoreText = 'Läs mer' // Default Swedish text
 }: ServiceCardProps) {
   const Icon = iconMap[iconName];
 
@@ -34,9 +34,9 @@ export function ServiceCard({
           <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
             <Icon className="w-6 h-6 text-primary" />
           </div>
-          <h2 className="card-title text-2xl">{title}</h2>
+          <h2 className="card-title text-2xl">{title || 'Service Title'}</h2>
         </div>
-        <p className="text-base-content/70">{description}</p>
+        <p className="text-base-content/70">{description || 'Service Description'}</p>
         <div className="card-actions justify-end mt-6">
           <Link href={href} className="btn btn-primary">
             {learnMoreText}

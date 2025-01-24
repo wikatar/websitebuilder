@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { NextIntlClientProvider } from 'next-intl';
 import { locales } from '../../../i18n';
 import { ClientLayout } from '@/components/layout/ClientLayout';
+import { ThemeProvider } from '@/components/layout/ThemeProvider';
 import '../globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -35,11 +36,13 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <body className={`${inter.className} min-h-screen bg-background antialiased`} suppressHydrationWarning>
-        <NextIntlClientProvider locale={locale} messages={messages}>
-          <ClientLayout>
-            {children}
-          </ClientLayout>
-        </NextIntlClientProvider>
+        <ThemeProvider>
+          <NextIntlClientProvider locale={locale} messages={messages}>
+            <ClientLayout>
+              {children}
+            </ClientLayout>
+          </NextIntlClientProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

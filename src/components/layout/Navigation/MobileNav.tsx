@@ -59,7 +59,7 @@ const navItems: MenuItem[] = [
 
 export function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
-  const t = useTranslations();
+  const t = useTranslations('navigation');
   const locale = useLocale();
   const pathname = usePathname();
 
@@ -68,11 +68,16 @@ export function MobileNav() {
   };
 
   // Safe translation function
-  const getNavTitle = (key: string) => {
+  const getNavTitle = (key: string, parentKey?: string) => {
     try {
-      return t(`navigation.${key}.title`);
+      if (parentKey) {
+        // For sub-items, we need to get them directly from the parent section
+        return t(`${parentKey}.${key}`);
+      }
+      // For main items, we get the title
+      return t(`${key}.title`);
     } catch (error) {
-      console.error(`Translation error for key "navigation.${key}.title":`, error);
+      console.error(`Translation error for key "${key}":`, error);
       return key;
     }
   };
@@ -123,7 +128,7 @@ export function MobileNav() {
                           }`}
                           onClick={() => setIsOpen(false)}
                         >
-                          {getNavTitle(subItem.key)}
+                          {getNavTitle(subItem.key, item.key)}
                         </Link>
                       ))}
                     </div>

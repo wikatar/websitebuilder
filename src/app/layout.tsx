@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import { Inter, Montserrat } from 'next/font/google'
 import './globals.css'
 import { initPerformanceMonitoring } from '@/utils/performance'
-import { ErrorBoundary } from '@/components/ErrorBoundary'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -57,12 +56,8 @@ export default function RootLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <head />
-      <body className={`${inter.variable} ${montserrat.variable} min-h-screen bg-base-100`}>
-        <ErrorBoundary>
-          <div className="flex flex-col min-h-screen">
-            {children}
-          </div>
-        </ErrorBoundary>
+      <body className={`${inter.variable} ${montserrat.variable} min-h-screen bg-base-100 font-sans`}>
+        {children}
       </body>
     </html>
   );
