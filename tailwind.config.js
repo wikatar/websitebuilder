@@ -60,19 +60,41 @@ module.exports = {
     themes: [{
       dark: {
         ...require('daisyui/src/theming/themes')['dark'],
-        "base-100": "#000000",
-        "base-200": "#0a0a0a",
-        "base-300": "#141414",
+        // Base colors - Dark theme
+        "base-100": "#000000", // Pure black - Your specified base
+        "base-200": "#0A0707", // Slightly lighter with a hint of red
+        "base-300": "#141010", // Even lighter with red undertone
         "base-content": "#ffffff",
-        primary: "#660000",
-        secondary: "#990000",
-        accent: "#CC0000",
-        neutral: "#1a1a1a",
+
+        // Primary colors - Main brand color
+        primary: "#3D0000", // Your specified deep dark red
+        "primary-focus": "#4D0000", // Slightly lighter for hover states
+        "primary-content": "#ffffff",
+
+        // Secondary colors - Supporting color
+        secondary: "#950101", // Your specified darker red
+        "secondary-focus": "#A50101", // Slightly lighter for hover states
+        "secondary-content": "#ffffff",
+
+        // Accent colors - Highlights and special elements
+        accent: "#CC0000", // Brighter red for accents
+        "accent-focus": "#DD0000",
+        "accent-content": "#ffffff",
+
+        // Neutral colors - Text and backgrounds
+        neutral: "#1A1616", // Dark gray with red undertone
+        "neutral-focus": "#242020",
         "neutral-content": "#ffffff",
+
+        // State colors - Feedback and status
         info: "#0070f3",
         success: "#00cc88",
         warning: "#ff9900",
         error: "#ff0000",
+
+        // Additional custom colors for gradients and effects
+        "red-dark": "#2D0000",
+        "red-light": "#FF0000",
       }
     }],
     darkTheme: 'dark',
