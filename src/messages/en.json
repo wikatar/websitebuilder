@@ -4,22 +4,13 @@
       "title": "Home"
     },
     "about": {
-      "title": "About",
-      "story": "Our Story",
-      "team": "Our Team",
-      "vision": "Vision & Mission"
+      "title": "About Us"
     },
     "services": {
-      "title": "Services",
-      "webdev": "Web Development",
-      "ai": "AI Integration",
-      "growth": "Digital Growth",
-      "software": "Software Solutions"
+      "title": "Services"
     },
     "portfolio": {
-      "title": "Portfolio",
-      "projects": "Projects",
-      "cases": "Case Studies"
+      "title": "Portfolio"
     },
     "contact": {
       "title": "Contact"
@@ -101,7 +92,7 @@
   },
   "Index": {
     "title": "The Balthazar Project",
-    "description": "Building scalable web solutions with modern technologies",
+    "description": "Building scalable web solutions with modern technology",
     "getStarted": "Get Started"
   },
   "SEO": {
@@ -153,48 +144,59 @@
   },
   "Services": {
     "title": "Our Services",
-    "subtitle": "Future-Proof Digital Solutions",
-    "description": "We help businesses harness the power of AI through custom-built tools and frameworks that evolve with technology.",
+    "description": "We offer a wide range of digital services to help your business grow",
+    "learnMore": "Learn More",
     "webdev": {
-      "title": "AI-Enhanced Web Development",
-      "description": "Custom websites and applications built with our AI-first framework, designed to evolve and improve as AI technology advances."
+      "title": "Web Development",
+      "description": "Modern and scalable web applications built with the latest technologies"
     },
     "ai": {
-      "title": "AI Integration & Tools",
-      "description": "Custom AI solutions and tools that help your business leverage the latest in artificial intelligence, from automation to intelligent decision-making."
+      "title": "AI Integration",
+      "description": "Smart AI solutions that help your business become more efficient"
     },
-    "seo": {
-      "title": "AI-Powered Digital Growth",
-      "description": "Comprehensive digital presence optimization using our AI tools for content, SEO, and performance enhancement."
+    "growth": {
+      "title": "Digital Growth",
+      "description": "Strategies and tools to accelerate your digital presence"
     },
     "software": {
-      "title": "Custom Software Solutions",
-      "description": "Bespoke software development with built-in AI capabilities, creating systems that grow smarter over time."
+      "title": "Software Solutions",
+      "description": "Custom software solutions for your specific needs"
     }
   },
   "about": {
-    "title": "Pioneering AI-First Digital Evolution",
-    "description": "At Balthazar Project, we're not just another digital agency – we're your strategic partner in navigating the AI revolution. Founded on the principle that AI will fundamentally transform how businesses operate, we've built a unique ecosystem of AI-powered tools and frameworks that evolve alongside technological advancements.",
-    "mission": "Our mission is to empower businesses to thrive in an AI-driven future by providing scalable, intelligent solutions that grow smarter over time.",
-    "vision": "We envision a future where businesses seamlessly integrate with AI, leveraging its power to achieve unprecedented growth and efficiency.",
+    "title": "AI-First Digital Evolution Partner",
+    "description": "At Balthazar Project, we're not just a digital agency – we're your strategic partner in navigating the AI revolution. Founded on the principle that AI will fundamentally change how businesses operate, we've built a unique ecosystem of AI-driven tools and frameworks that evolve alongside technological advances.",
+    "mission": "Our mission is to empower businesses to thrive in an AI-driven future by providing scalable, intelligent solutions that become smarter over time.",
     "sections": {
       "whoWeAre": {
         "title": "Who We Are",
-        "content": "We are a team of AI specialists, developers, and digital strategists who understand that the future belongs to those who embrace AI today. Our expertise spans web development, software engineering, AI integration, and digital optimization, all unified by our AI-first approach."
+        "content": "We are a team of AI specialists, developers, and digital strategists who understand that the future belongs to those who embrace AI today. Our expertise spans web development, software development, AI integration, and digital optimization, all united by our AI-first approach."
       },
       "whatWeDo": {
         "title": "What We Do",
-        "content": "We create future-proof digital solutions that leverage the power of AI. From AI-enhanced websites to custom software solutions, our work is characterized by its ability to evolve and improve automatically as AI technology advances.",
-        "services": "AI-Enhanced Web Development, Custom AI Integration & Tools, AI-Powered Digital Growth, Intelligent Software Solutions, Strategic AI Consultation"
+        "content": "We create future-proof digital solutions that harness the power of AI. From AI-enhanced websites to custom software solutions, our work is characterized by the ability to evolve and improve automatically as AI technology advances.",
+        "services": [
+          "AI-Enhanced Web Development",
+          "Custom AI Integration & Tools",
+          "AI-Driven Digital Growth",
+          "Intelligent Software Solutions",
+          "Strategic AI Consultation"
+        ]
       },
       "howWeWork": {
         "title": "How We Work",
         "content": "Our approach combines human expertise with AI capabilities. We've developed proprietary frameworks and tools that allow us to create solutions that continuously learn and improve. This means your investment doesn't just maintain value – it grows over time.",
-        "principles": "AI-First Development, Continuous Evolution, Scalable Architecture, Future-Proof Design, Strategic Partnership"
+        "principles": [
+          "AI-First Development",
+          "Continuous Evolution",
+          "Scalable Architecture",
+          "Future-Proof Design",
+          "Strategic Partnership"
+        ]
       },
       "whyChooseUs": {
         "title": "Why Choose Us",
-        "content": "We don't just implement AI – we build foundations that evolve with it. Our solutions are designed to become more powerful as AI technology advances, ensuring your business stays ahead of the curve.",
+        "content": "We don't just implement AI – we build foundations that evolve with it. Our solutions are designed to become more powerful as AI technology advances, ensuring your business stays ahead.",
         "benefits": [
           "Future-Proof Solutions",
           "Evolving AI Capabilities",
@@ -202,26 +204,34 @@
           "Proprietary AI Tools",
           "Continuous Optimization"
         ]
+      },
+      "values": {
+        "title": "Our Values",
+        "items": [
+          {
+            "title": "Innovation First",
+            "description": "We constantly push the boundaries of what's possible with AI technology."
+          },
+          {
+            "title": "Strategic Partnership",
+            "description": "We invest in your long-term success and growth."
+          },
+          {
+            "title": "Continuous Development",
+            "description": "Our solutions become smarter and more capable over time."
+          },
+          {
+            "title": "Quality & Reliability",
+            "description": "We deliver robust solutions that scale with your needs."
+          }
+        ]
+      },
+      "cta": {
+        "title": "Ready to Start Your Journey?",
+        "description": "Let's create something extraordinary together.",
+        "button": "Contact Us"
       }
-    },
-    "values": [
-      {
-        "title": "Innovation First",
-        "description": "We constantly push the boundaries of what's possible with AI technology."
-      },
-      {
-        "title": "Strategic Partnership",
-        "description": "We're invested in your long-term success and growth."
-      },
-      {
-        "title": "Continuous Evolution",
-        "description": "Our solutions grow smarter and more capable over time."
-      },
-      {
-        "title": "Quality & Reliability",
-        "description": "We deliver robust solutions that scale with your needs."
-      }
-    ]
+    }
   },
   "contact": {
     "title": "Get in Touch",
